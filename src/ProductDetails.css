@@ -1,0 +1,67 @@
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    background-color: #000000;
+    color: #ccc;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+    border: none;
+  }
+  
+  .tabs button.active {
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid orange;
+  }
+  
+  .tab-content p {
+    width: 100%;
+  }
+  
+  .tabs button.active:focus {
+    outline: none;
+  }
+  
+  .tab-content {
+    line-height: 1.5;
+  }
+  
+  .tags {
+    width: 80%;
+  }
+  
+  .tags span {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    flex: 0 0 calc(16.666% - 10px);
+  }
+  
+  .tags span:nth-child(3n+1) {
+    background-color: #f58457;
+    color: #fff;
+  }
+  
+  .tags span:nth-child(3n+2) {
+    background-color: #54a2ef;
+    color: #fff;
+  }
+  
+  .tags span:nth-child(3n+3) {
+    background-color: #5cb85c;
+    color: #fff;
+  }
+  
+  .tags span:hover {
+    background-color: #ccc;
+  }
+  
