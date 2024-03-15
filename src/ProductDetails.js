@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ProductDetails.css"; 
+import "./ProductDetails.css";
 
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState("description");
@@ -38,6 +38,7 @@ const ProductDetails = () => {
           </button>
         </div>
         <div className="tab-content">
+          <h2>Описание</h2>
           {activeTab === "description" && (
             <p>
               Ищете идеальное сочетание стиля, комфорта и функциональности?
@@ -80,21 +81,30 @@ const ProductDetails = () => {
           )}
         </div>
         <div className="tags">
-          <span>Обувь</span>
-          <span>Спорт</span>
-          <span>Одежда</span>
-          <span>Кроссовки</span>
-          <span>Обувь</span>
-          <span>Одежда</span>
-          <span>Кроссовки</span>
-          <span>Обувь</span>
-          <span>Одежда</span>
-          <span>Кроссовки</span>
-          <span>Обувь</span>
-          <span>Одежда</span>
-          <span>Кроссовки</span>
-          <span>Обувь</span>
-          {/* Добавьте другие теги здесь */}
+          <span>обувь</span>
+          <span>спорт</span>
+          <span>одежда</span>
+          <span>кроссовки</span>
+          <span>обувь</span>
+          <span>спорт</span>
+          <span>одежда</span>
+          <span>обувь</span>
+          <span>спорт</span>
+          <span>одежда</span>
+          <span>кроссовки</span>
+          <span>обувь</span>
+        </div>
+        <div className="license">
+          <div className="license-image">
+            <img src="/images/license.jpg" alt="licence" />
+          </div>
+          <div className="license-text">
+            <p className="license-title">Лицензия</p>
+            <p className="license-description">Эта работа под лицензией</p>
+            <p className="license-type">
+              Creative Commons Attribution-NonCommercial
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,47 @@
+.profile_objects_info_button {
+    background-color: #1D1C1C;
+    padding: 12px, 24px, 12px, 24px;
+    width: 140px;
+    height: 38px;
+    font-size: 20px;
+    color: #E5E5E5;
+    border: none;
+    cursor: pointer;
+}
+
+.profile_objects_info_button.active {
+    border-radius: 50px;
+    border: 1px solid #FFB831;
+    font-weight: bold;
+}
+
+.profile_objects_info, .profile_objects_leftinfo, .profile_objects_rightinfo {
+    display: flex;
+}
+
+.profile_objects_info {
+    justify-content: space-between;
+    gap: 197px;
+}
+
+.profile_objects_rightinfo {
+    gap: 10px;
+}
+
+.profile_objects_new-file_button {
+    background-color: #EB572F;
+    padding: 12px, 24px, 12px, 24px;
+    width: 160px;
+    height: 45px;
+    font-size: 20px;
+    color: #E5E5E5;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.printers__form {
+    width: 270px;
+    height: 45px;
+}

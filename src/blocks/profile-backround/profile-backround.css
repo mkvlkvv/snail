@@ -1,0 +1,14 @@
+.profile_background_container {
+    position: relative;
+    width: 98%;
+    height: 233px;
+    border-radius: 50px;
+    overflow: hidden; 
+    z-index: 1;
+}
+
+.profile_background_container img {
+    position: absolute; 
+    top: 100%; 
+    transform: translate(-50%, -50%); 
+}

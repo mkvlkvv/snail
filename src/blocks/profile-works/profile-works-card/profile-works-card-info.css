@@ -1,0 +1,82 @@
+.profile_works_card_info {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.profile_works_card_info_count {
+    display: flex; 
+    align-items: center;
+    margin-top: 20px;
+    margin-right: -2px;
+}
+
+.profile_works_card_info_count, .profile_works_card_info_saves, .profile_works_card_info_likes, .profile_works_card_info_stars {
+    display: flex;
+    align-items: center;
+}
+
+.profile_works_card_info_saves img{
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+}
+
+.profile_works_card_info_likes img{
+    width: 17px;
+    height: 15px;
+    margin-right: 3px;
+}
+
+.profile_works_card_info_stars img {
+    width: 22px;
+    height: 22px;
+    margin-right: 0px;
+    margin-top: -2px;
+}
+
+.profile_works_card_info p {
+    font-size: 12px;
+}
+
+.profile_works_card_info_saves{
+    margin-right: 8px;
+}
+
+.profile_works_card_info_likes {
+    margin-right: 4px;
+}
+
+.profile_works_card_avatar {
+    position: relative; 
+
+}
+.profile_works_card_avatar img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Первое изображение */
+.profile_works_card_avatar img:first-child {
+    z-index: 1; 
+}
+
+/* Второе изображение */
+.profile_works_card_avatar img:last-child {
+    z-index: 2; 
+    margin-left: 10px; 
+}
+
+
+/* Если только одно изображение */
+.profile_works_card_avatar img:only-child {
+    margin-left: 0px; 
+}

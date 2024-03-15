@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/fonts.css");
+@import url("./blocks/page/page.css");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url("./blocks/header/header.css");
+@import url("./blocks/logo/logo.css");
+@import url("./blocks/header/__button/header__button.css");
+@import url("./blocks/header/__button/_exit/header__button_exit.css");
+@import url("./blocks/header/__menu/header__menu.css");
+
+@import url("./blocks/card/card.css");
+@import url("./blocks/card/__img/card__img.css");
+@import url("./blocks/slider/__button_back/slider__button_back.css");
+@import url("./blocks/slider/__button_next/slider__button_next.css");
+@import url("./blocks/card/__img-container/card__img-container.css");
+@import url("./blocks/slider/slider.css");
+@import url("./blocks/slider/__photo-set/slider__photo-set.css");
+@import url("./blocks/slider/__photo/slider__photo.css");
+
+@import url("./blocks/card/__info/card__info.css");
+
+@import url("./blocks/profile/profile.css");
+@import url("./blocks/profile/__description/profile__description.css");
+@import url("./blocks/card/__name/card__name.css");
+
+@import url("./blocks/avatar/avatar.css");
+@import url("./blocks/avatar/__img/avatar__img.css");
+@import url("./blocks/avatar/__name/avatar__name.css");
+@import url("./blocks/avatar/__button/avatar__button.css");
+@import url("./blocks/printers/priters.css");
+@import url("./blocks/printers/__text/printers__text.css");
+
+@import url("./blocks/search-button/search-button.css");
+@import url("./blocks/printers/__form/printers__form.css");
+@import url("./blocks/printers/__input/printers__input.css");
+@import url("./blocks/printers/__search-menu/printers__search-menu.css");
+@import url("./blocks/printers/__add-button/printers__add-button.css");
+@import url("./blocks/printers/__menu/printers__menu.css");
+
+@import url("./blocks/printers/__list/printers__list.css");
+@import url("./blocks/printer/printer.css");
+@import url("./blocks/printer/__img/printer__img.css");
+@import url("./blocks/printer/__description/printer__description.css");
+@import url("./blocks/printer/__name/printer__name.css");
+@import url("./blocks/printer/__items-container/printer__items-container.css");
+@import url("./blocks/printer/__item/printer__item.css");
+@import url("./blocks/printer/__time-img/printer__time-img.css");
+@import url("./blocks/printer/__star/printer__star.css");
+@import url("./blocks/printer/__item/_star/printer__item_star.css");
+
+@import url("./blocks/printer/__char/printer__char.css");
+
+@import url("./blocks/printers/__options/printers__options.css");
+@import url("./blocks/printers/__option/printers__option.css");
+@import url("./blocks/printers/__option-description/printers__option-description.css");
+
+@import url("./blocks/card/__stat/card__stat.css");
+@import url("./blocks/card/__stat-item/card__stat-item.css");
+@import url("./blocks/card/__stat/_left/card__stat_left.css");
+@import url("./blocks//card/__mark-container/card__mark-container.css");
+@import url("./blocks/card/__text/card__text.css");
+@import url("./blocks/card/__star/card__star.css");
+
+@import url("./blocks/profile-backround/profile-backround.css");
+
+@import url("./blocks/profile_card/profile_card.css");
+
+@import url("./blocks/profile-objects/profile_objects.css");
+@import url("./blocks/profile-objects/profile-objects-button.css");
+
+@import url("./blocks/profile-works/profile-works.css");
+@import url("./blocks/profile-works/profile-works-card/profile-works-card.css");
+@import url("./blocks/profile-works/profile-works-card/profile-works-card-maininfo.css");
+@import url("./blocks/profile-works/profile-works-card/profile-works-card-photo.css");
+@import url("./blocks/profile-works/profile-works-card/profile-works-card-info.css");
+
+@import url("./blocks/footer/footer.css");
+@import url("./blocks/footer/footer-buttons/footer-buttons.css");

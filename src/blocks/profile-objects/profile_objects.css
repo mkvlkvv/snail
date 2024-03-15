@@ -1,0 +1,9 @@
+.profile_objects {
+    width: 1200px;
+    height: 710px;
+    margin-top: -415px; 
+    margin-left: 510px; 
+    margin-right: 0; 
+    display: flex;
+    justify-content: flex-start; 
+}

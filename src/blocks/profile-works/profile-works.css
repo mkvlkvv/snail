@@ -1,0 +1,10 @@
+.profile_works {
+    width: 1200px;
+    height: auto;
+    margin-top: -630px; 
+    margin-left: 615px; 
+    margin-right: 0; 
+    gap: 12px;
+    display: flex;
+    flex-wrap: wrap; 
+}

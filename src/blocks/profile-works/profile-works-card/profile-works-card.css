@@ -1,0 +1,8 @@
+.profile_works_card {
+    background-color: #292929;
+    width: calc((100% - 36px) / 4);
+    height: 307px;
+    border-radius: 16px;
+    padding: 14px 16px; 
+    box-sizing: border-box;
+}

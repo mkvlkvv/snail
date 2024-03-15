@@ -1,0 +1,12 @@
+.header__button_exit {
+    background-image: url('../../../../images/exit-button.svg');
+    margin-right: 0px;
+    background-color: #1d1d1d;
+    border: none;
+    height: 36px;
+    width: 50px;
+}
+
+.header__button_exit:hover {
+    background-color: #333333;
+}

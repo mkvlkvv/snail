@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .tabs {
     display: flex;
     margin-bottom: 20px;
   }
   
   .tabs button {
-    background-color: #000000;
+    background-color: #1d1d1d;
     color: #ccc;
     cursor: pointer;
     padding: 10px;
     margin-right: 20px;
     border: none;
+    font-family: 'Roboto', sans-serif;
   }
   
   .tabs button.active {
@@ -20,6 +23,7 @@
   
   .tab-content p {
     width: 100%;
+    color: #ccc;
   }
   
   .tabs button.active:focus {
@@ -44,24 +48,81 @@
     margin-bottom: 5px;
     cursor: pointer;
     flex: 0 0 calc(16.666% - 10px);
+    border: 1px solid #EB572F;
+    font-family: 'Roboto', sans-serif;
   }
   
-  .tags span:nth-child(3n+1) {
-    background-color: #f58457;
+  .tags span {
+    background-color: #1d1d1d;
     color: #fff;
   }
-  
-  .tags span:nth-child(3n+2) {
-    background-color: #54a2ef;
-    color: #fff;
-  }
-  
-  .tags span:nth-child(3n+3) {
-    background-color: #5cb85c;
-    color: #fff;
-  }
-  
+
   .tags span:hover {
     background-color: #ccc;
   }
+    
+  .product-details {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 85%;
+    margin: 20px auto;
+    text-align: left;
+    color: #ffffff;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .product-detail {
+    width: 65%;
+  }
+
+  .license {
+    display: flex;
+    margin-top: 20px;
+    border-radius: 20px 20px 20px 0 ; 
+    background-color: #222222;
+    width: 70%;
+  }
+  
+  .license-text {
+  flex: 1;
+  color: #ccc;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  }
+
+  .license-text p {
+    margin: 3px 0; 
+    font-size: 18px;
+  }
+  
+  .license-text .license-title {
+    font-weight: bold; 
+  }
+  
+  .license-text .license-type {
+    color: #3347FD; 
+  }
+  
+  .license-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .license-image img {
+    max-width: 90%; 
+    max-height: 90%; 
+    object-fit: contain; 
+    border-radius: 30px;
+  }
+
+  .product-details {
+    font-size: 22px;
+  }
+  
   

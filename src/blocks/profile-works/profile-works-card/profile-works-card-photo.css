@@ -1,0 +1,16 @@
+.profile_works_card_photo {
+    width: 264px;
+    height: 220px;
+    overflow: hidden;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.profile_works_card_photo img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 8px;
+}
