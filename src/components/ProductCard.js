@@ -25,8 +25,8 @@ const ProductCard = () => {
         </div>
       </div>
       <div className="card__info">
-        <div className="profile">
-          <p className="profile__description">3D/Обувь</p>
+        <div className="bio">
+          <p className="bio__description">3D/Обувь</p>
           <p className="card__name">cross</p>
           <div className="avatar">
             <img className="avatar__img" src={main} alt="Avatar" />

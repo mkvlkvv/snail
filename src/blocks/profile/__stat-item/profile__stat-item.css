@@ -1,0 +1,9 @@
+.profile__stat-item {
+    background-color: #292929;
+    border: none;
+    padding: 0 8px 0 0;
+}
+
+.profile__stat-item:last-child {
+    padding: 0;
+}
