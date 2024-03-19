@@ -62,7 +62,7 @@
 @import url("./blocks/card/__star/card__star.css");
 
 @import url("./blocks/profile/profile.css");
-@import url("./blocks/profile-backround/profile-backround.css");
+@import url("./blocks/profile/__background/profile__background.css");
 @import url("./blocks/profile/__card/profile__card.css");
 @import url("./blocks/profile/__avatar/profile__avatar.css");
 @import url("./blocks/profile/__info/profile__info.css");
@@ -76,14 +76,14 @@
 @import url("./blocks/profile/__bio-name/profile__bio-name.css");
 @import url("./blocks/profile/__bio-description/profile__bio-description.css");
 
-@import url("./blocks/profile-objects/profile_objects.css");
-@import url("./blocks/profile-objects/profile-objects-button.css");
+@import url("./blocks/profile/__objects/profile__objects.css");
+@import url("./blocks/profile/__objects/profile__objects-button.css");
 
-@import url("./blocks/profile-works/profile-works.css");
-@import url("./blocks/profile-works/profile-works-card/profile-works-card.css");
-@import url("./blocks/profile-works/profile-works-card/profile-works-card-maininfo.css");
-@import url("./blocks/profile-works/profile-works-card/profile-works-card-photo.css");
-@import url("./blocks/profile-works/profile-works-card/profile-works-card-info.css");
+@import url("./blocks/profile/__work/profile__works.css");
+@import url("./blocks/profile/__work/__card/profile__works-card.css");
+@import url("./blocks/profile/__work/__card/profile__works-card-info.css");
+@import url("./blocks/profile/__work/__card/profile__works-card-maininfo.css");
+@import url("./blocks/profile/__work/__card/profile__works-card-photo.css");
 
 @import url("./blocks/footer/footer.css");
-@import url("./blocks/footer/footer-buttons/footer-buttons.css");
+@import url("./blocks/footer/__buttons/footer__buttons.css");

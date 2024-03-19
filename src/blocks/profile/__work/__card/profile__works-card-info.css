@@ -1,4 +1,4 @@
-.profile_works_card_info {
+.profile__works-card-info {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -8,54 +8,54 @@
     align-items: center;
 }
 
-.profile_works_card_info_count {
+.profile__works-card-info-count {
     display: flex; 
     align-items: center;
     margin-top: 20px;
     margin-right: -2px;
 }
 
-.profile_works_card_info_count, .profile_works_card_info_saves, .profile_works_card_info_likes, .profile_works_card_info_stars {
+.profile__works-card-info-count, .profile__works-card-info-saves, .profile__works-card-info-likes, .profile__works-card-info-stars {
     display: flex;
     align-items: center;
 }
 
-.profile_works_card_info_saves img{
+.profile__works-card-info-saves img{
     width: 15px;
     height: 15px;
     margin-right: 3px;
 }
 
-.profile_works_card_info_likes img{
+.profile__works-card-info-likes img{
     width: 17px;
     height: 15px;
     margin-right: 3px;
 }
 
-.profile_works_card_info_stars img {
+.profile__works-card-info-stars img {
     width: 22px;
     height: 22px;
     margin-right: 0px;
     margin-top: -2px;
 }
 
-.profile_works_card_info p {
+.profile__works-card-info p {
     font-size: 12px;
 }
 
-.profile_works_card_info_saves{
+.profile__works-card-info-saves{
     margin-right: 8px;
 }
 
-.profile_works_card_info_likes {
+.profile__works-card-info-likes {
     margin-right: 4px;
 }
 
-.profile_works_card_avatar {
+.profile__works-card-avatar {
     position: relative; 
 
 }
-.profile_works_card_avatar img {
+.profile__works-card-avatar img {
     position: absolute; 
     top: 0; 
     left: 0; 
@@ -65,18 +65,18 @@
 }
 
 /* Первое изображение */
-.profile_works_card_avatar img:first-child {
+.profile__works-card-avatar img:first-child {
     z-index: 1; 
 }
 
 /* Второе изображение */
-.profile_works_card_avatar img:last-child {
+.profile__works-card-avatar img:last-child {
     z-index: 2; 
     margin-left: 10px; 
 }
 
 
 /* Если только одно изображение */
-.profile_works_card_avatar img:only-child {
+.profile__works-card-avatar img:only-child {
     margin-left: 0px; 
 }

@@ -18,7 +18,7 @@ const Profile = () => {
   };
   return (
     <div class="profile">
-      <div class="profile_background_container">
+      <div class="profile__background-container">
         <img src={profile_background} alt="Фото" />
       </div>
       <div class="profile__card">
@@ -47,39 +47,39 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div class="profile_objects">
-        <div className="profile_objects_info">
-          <div className="profile_objects_leftinfo">
+      <div class="profile__objects">
+        <div className="profile__objects-info">
+          <div className="profile__objects-leftinfo">
             <button
-              className={`profile_objects_info_button ${activeButton === 0 ? "active" : ""
+              className={`profile__objects-info-button ${activeButton === 0 ? "active" : ""
                 }`}
               onClick={() => handleButtonClick(0)}
             >
               Работы
             </button>
             <button
-              className={`profile_objects_info_button ${activeButton === 1 ? "active" : ""
+              className={`profile__objects-info-button ${activeButton === 1 ? "active" : ""
                 }`}
               onClick={() => handleButtonClick(1)}
             >
               Коллекции
             </button>
             <button
-              className={`profile_objects_info_button ${activeButton === 2 ? "active" : ""
+              className={`profile__objects-info-button ${activeButton === 2 ? "active" : ""
                 }`}
               onClick={() => handleButtonClick(2)}
             >
               Отзывы
             </button>
             <button
-              className={`profile_objects_info_button ${activeButton === 3 ? "active" : ""
+              className={`profile__objects-info-button ${activeButton === 3 ? "active" : ""
                 }`}
               onClick={() => handleButtonClick(3)}
             >
               Жалобы
             </button>
           </div>
-          <div className="profile_objects_rightinfo">
+          <div className="profile__objects-rightinfo">
             <form className="printers__form" action="" method="get">
               <button className="search-button" type="submit" />
               <input
@@ -89,7 +89,7 @@ const Profile = () => {
                 type="text"
               />
             </form>
-            <button class="profile_objects_new-file_button">Новый файл</button>
+            <button class="profile__objects-newfile-button">Новый файл</button>
           </div>
         </div>
       </div>

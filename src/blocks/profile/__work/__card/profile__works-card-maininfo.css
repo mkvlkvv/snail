@@ -8,7 +8,7 @@
 }
 
 .profile__button_eye {
-    background-image: url('../../../images/eye.png');
+    background-image: url('../../../../images/eye.png');
     background-size: cover; 
     background-position: center;
     background-color: #292929;
@@ -16,7 +16,7 @@
 }
 
 .profile__button_choose {
-    background-image: url('../../../images/choose.png');
+    background-image: url('../../../../images/choose.png');
     background-size: cover; 
     background-position: center;
     background-color: #292929;
@@ -26,11 +26,11 @@
     border: none;
 }
 
-.profile_works_card_maininfo, .profile_works_card_buttons {
+.profile__works-card-maininfo, .profile__works-card-buttons {
     display: flex;
 }
 
-.profile_works_card_maininfo {
+.profile__works-card-maininfo {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -39,7 +39,7 @@
     justify-content: space-between; 
 }
 
-.profile_works_card_maininfo p {
+.profile__works-card-maininfo p {
     font-size: 16px;
     font-weight: bold;
     margin-top: 0px;

@@ -11,282 +11,282 @@ import star from "../images/star.png"
 
 const ProfileWorks = () => {
   return (
-    <div class="profile_works">
-      <div class="profile_works_card">
-        <div class="profile_works_card_maininfo">
+    <div class="profile__works">
+      <div class="profile__works-card">
+        <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_eye"/>
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo1} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>1</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>14</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>4</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Монстрик</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo2} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Девушка в одежде</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_eye"/>
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo4} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_eye"/>
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo4} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-        <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+        <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_eye"/>
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo1} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_eye"/>
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo2} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo4} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo4} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>
             </div>
           </div>
       </div>
-      <div class="profile_works_card">
-      <div class="profile_works_card_maininfo">
+      <div class="profile__works-card">
+      <div class="profile__works-card-maininfo">
           <p>Crocs</p>
-          <div class="profile_works_card_buttons">
+          <div class="profile__works-card-buttons">
             <button className="profile__button profile__button_choose"/>
           </div>
         </div>
-        <div class="profile_works_card_photo">
+        <div class="profile__works-card-photo">
           <img src={profile_works_card_photo4} alt='card_photo'/>
         </div>
-        <div class="profile_works_card_info">
-            <div class="profile_works_card_avatar">
+        <div class="profile__works-card-info">
+            <div class="profile__works-card-avatar">
               <img src={profile_works_card_avatar1} alt='card_avatar'/>
               <img src={profile_works_card_avatar2} alt='card_avatar'/>
             </div>
-            <div class="profile_works_card_info_count">
-              <div class="profile_works_card_info_saves">
+            <div class="profile__works-card-info-count">
+              <div class="profile__works-card-info-saves">
                 <img src={save} alt='save'/>
                 <p>4</p>
               </div>
-              <div class="profile_works_card_info_likes">
+              <div class="profile__works-card-info-likes">
                 <img src={like} alt='like'/>
                 <p>23</p>
               </div>
-              <div class="profile_works_card_info_stars">
+              <div class="profile__works-card-info-stars">
                 <img src={star} alt='star'/>
                 <p>5</p>
               </div>

@@ -1,8 +1,8 @@
-.profile_objects {
+.profile__objects {
     width: 1200px;
     height: 710px;
     margin-top: -375px; 
-    margin-left: 510px; 
+    margin-left: 380px; 
     margin-right: 0; 
     display: flex;
     justify-content: flex-start; 

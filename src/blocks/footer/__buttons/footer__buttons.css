@@ -1,4 +1,4 @@
-.header__button {
+.footer__button {
     border: none;
     padding: 4px 8px;
     margin-right: 42px;
@@ -11,19 +11,19 @@
     line-height: 23.44px;
 }
 
-.header__button_exit1 {
+.footer__button_exit1 {
     background-image: url('../../../images/message.png');
 }
 
-.header__button_exit2 {
+.footer__button_exit2 {
     background-image: url('../../../images/insta.png');
 }
 
-.header__button_exit3 {
+.footer__button_exit3 {
     background-image: url('../../../images/tg.png');
 }
 
-.header__button_exit1, .header__button_exit2, .header__button_exit3 {
+.footer__button_exit1, .footer__button_exit2, .footer__button_exit3 {
     margin-right: 15px;
     background-color: #1d1d1d;
     border: none;

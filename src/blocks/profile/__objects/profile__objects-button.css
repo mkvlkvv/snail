@@ -1,4 +1,4 @@
-.profile_objects_info_button {
+.profile__objects-info-button {
     background-color: #1D1C1C;
     padding: 12px, 24px, 12px, 24px;
     width: 140px;
@@ -9,26 +9,26 @@
     cursor: pointer;
 }
 
-.profile_objects_info_button.active {
+.profile__objects-info-button.active {
     border-radius: 50px;
     border: 1px solid #FFB831;
     font-weight: bold;
 }
 
-.profile_objects_info, .profile_objects_leftinfo, .profile_objects_rightinfo {
+.profile__objects-info, .profile__objects-leftinfo, .profile__objects-rightinfo {
     display: flex;
 }
 
-.profile_objects_info {
+.profile__objects-info {
     justify-content: space-between;
     gap: 197px;
 }
 
-.profile_objects_rightinfo {
+.profile__objects-rightinfo {
     gap: 10px;
 }
 
-.profile_objects_new-file_button {
+.profile__objects-newfile-button {
     background-color: #EB572F;
     padding: 12px, 24px, 12px, 24px;
     width: 160px;

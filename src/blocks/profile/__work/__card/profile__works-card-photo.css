@@ -1,4 +1,4 @@
-.profile_works_card_photo {
+.profile__works-card-photo {
     width: 264px;
     height: 220px;
     overflow: hidden;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.profile_works_card_photo img {
+.profile__works-card-photo img {
     width: 100%; 
     height: 100%; 
     object-fit: cover;

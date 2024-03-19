@@ -1,4 +1,4 @@
-.profile_background_container {
+.profile__background-container {
     position: relative;
     width: 98%;
     height: 233px;
@@ -7,7 +7,7 @@
     z-index: 1;
 }
 
-.profile_background_container img {
+.profile__background-container img {
     position: absolute; 
     top: 100%; 
     transform: translate(-50%, -50%); 
