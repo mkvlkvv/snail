@@ -9,6 +9,7 @@ import Remixes from '../Remixes';
 import Profile from './Profile';
 import Footer from './Footer';
 import ProfileWorks from './ProfileWorks';
+import ProfileCollection from './ProfileCollection';
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -27,6 +28,13 @@ const USER_PROFILE = () => (
   </div>
 )
 
+const USER_PROFILE_COLLECTION = () => (
+  <div>
+    <Profile />
+    <ProfileCollection />
+  </div>
+)
+
 const App = () => {
   return (
     <Router>
@@ -35,6 +43,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<CARD_OF_PRODUCT />} />
           <Route path="/profile" element={<USER_PROFILE />} />
+          <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
         </Routes>
         <Footer />
       </div>

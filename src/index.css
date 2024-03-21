@@ -85,5 +85,18 @@
 @import url("./blocks/profile/__work/__card/profile__works-card-maininfo.css");
 @import url("./blocks/profile/__work/__card/profile__works-card-photo.css");
 
+@import url("./blocks/profile/__collection-container/profile__collection-container.css");
+@import url("./blocks/profile/__collection-card/profile__collection-card.css");
+
+@import url("./blocks/collection/collection.css");
+@import url("./blocks/collection/__card-container/collection__card-container.css");
+@import url("./blocks/collection/__card/collection__card.css");
+@import url("./blocks/collection/__background/collection__background.css");
+@import url("./blocks/collection/__photo-container/collection__photo-container.css");
+@import url("./blocks/collection/__photo/collection__photo.css");
+
 @import url("./blocks/footer/footer.css");
 @import url("./blocks/footer/__buttons/footer__buttons.css");
+
+@import url("./blocks/footer/__left-menu/footer__left-menu.css");
+@import url("./blocks/footer/__button-info/footer__button-info.css");
