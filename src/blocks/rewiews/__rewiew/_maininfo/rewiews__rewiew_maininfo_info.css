@@ -1,0 +1,52 @@
+.info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.avatar {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.left-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: -10px;
+}
+
+.date {
+    color: gray;
+    font-size: 16px; 
+    margin-top: 2px; 
+}
+
+.details {
+    margin-top: 5px;
+    color: #D9D9D9;
+    font-size: 20px;
+}
+
+.rating {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+}
+

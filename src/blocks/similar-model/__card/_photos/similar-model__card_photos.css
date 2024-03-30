@@ -1,0 +1,23 @@
+.similar-card-avatar{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.similar-card-avatar img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.photo {
+    margin-top: 10px;
+}
+
+.photo img {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+}

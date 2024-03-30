@@ -1,0 +1,17 @@
+.tags {
+    width: 93%;
+}
+  
+.tags span {
+    display: inline-block;
+    background-color: #1d1d1d;
+    color: #ccc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-bottom: 13px;
+    cursor: pointer;
+    flex: 0 0 calc(16.666% - 10px);
+    border: 1px solid #EB572F;
+    font-family: 'Roboto', sans-serif;
+}

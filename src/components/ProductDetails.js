@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./ProductDetails.css";
 
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState("description");
@@ -96,7 +95,7 @@ const ProductDetails = () => {
         </div>
         <div className="license">
           <div className="license-image">
-            <img src="/images/license.jpg" alt="licence" />
+          <img src="/images/license.jpg" alt="licence" />
           </div>
           <div className="license-text">
             <p className="license-title">Лицензия</p>

@@ -1,0 +1,46 @@
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author p {
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.details {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+  
+.details span {
+    margin-left: 20px;
+}
+
+.details p {
+    margin-left: 3px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.similar-card-info{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.similar-card-info img {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.namesimilarcard p {
+    margin-top: 6px;
+} 

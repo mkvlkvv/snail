@@ -61,6 +61,36 @@
 @import url("./blocks/card/__text/card__text.css");
 @import url("./blocks/card/__star/card__star.css");
 
+@import url("./blocks/product-details/product-details.css");
+@import url("./blocks/product-details/__tabs/product-details__tabs.css");
+@import url("./blocks/product-details/__tags/product-details__tags.css");
+@import url("./blocks/product-details/__license/product-details__license.css");
+@import url("./blocks/product-details/__license/_text/product-details__license_text.css");
+@import url("./blocks/product-details/__license/_image/product-details__license_image.css");
+
+@import url("./blocks/rewiews/rewiews__container.css");
+@import url("./blocks/rewiews/rewiew__name.css");
+@import url("./blocks/rewiews/__info-container/rewiews__info-container.css");
+@import url("./blocks/rewiews/__info-container/_form/rewiews__info-container_form.css");
+@import url("./blocks/rewiews/__info-container/_form/rewiews__info-container_form_buttons.css");
+@import url("./blocks/rewiews/rewiew__list.css");
+@import url("./blocks/rewiews/__rewiew/rewiew.css");
+@import url("./blocks/rewiews/__rewiew/_maininfo/rewiews__rewiew_maininfo.css");
+@import url("./blocks/rewiews/__rewiew/_maininfo/rewiews__rewiew_maininfo_info.css");
+@import url("./blocks/rewiews/__rewiew/_photos/rewiews__rewiew_photos.css");
+@import url("./blocks/rewiews/__rewiew/_photos/rewiews__rewiew_small-photos.css");
+@import url("./blocks/rewiews/__rewiew/_text/rewiews__rewiew_text.css");
+@import url("./blocks/rewiews/__rewiew/_text/rewiews__rewiew_text_like.css");
+
+@import url("./blocks/remixes/remixes.css");
+@import url("./blocks/remixes/__image/remixes__image.css");
+@import url("./blocks/remixes/__text/remixes__text.css");
+
+@import url("./blocks/similar-model/similar-model-list.css");
+@import url("./blocks/similar-model/__card/similar-model__card.css");
+@import url("./blocks/similar-model/__card/_info/similar-model__card_details.css");
+@import url("./blocks/similar-model/__card/_photos/similar-model__card_photos.css");
+
 @import url("./blocks/profile/profile.css");
 @import url("./blocks/profile/__background/profile__background.css");
 @import url("./blocks/profile/__card/profile__card.css");

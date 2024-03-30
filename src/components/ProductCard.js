@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import main from '../images/main-photo.png';
 import photo2 from '../images/photo2.jpeg';
 import photo3 from '../images/photo3.jpeg';
@@ -10,13 +10,31 @@ import star_black from '../images/Star-black.svg';
 import Printer from "./Printer";
 
 const ProductCard = () => {
+
+  const slides = [main, photo2, photo3]; // Массив со всеми изображениями
+  const [slideIndex, setSlideIndex] = useState(0); // Индекс текущего активного слайда
+
+  // Обработчик нажатия кнопки "Назад"
+  const handlePrev = () => {
+    if (slideIndex > 0) {
+      setSlideIndex(slideIndex - 1);
+    }
+  };
+
+  // Обработчик нажатия кнопки "Вперед"
+  const handleNext = () => {
+    if (slideIndex < slides.length - 1) {
+      setSlideIndex(slideIndex + 1);
+    }
+  };
+
   return (
     <div className="card">
       <div className="slider">
         <div className="card__img-container">
-          <button className="slider__button_back " />
-          <img className="card__img" src={main} alt="основное фото" />
-          <button className="slider__button_next" />
+          <button className="slider__button_back" onClick={handlePrev}/>
+          <img className="card__img" src={slides[slideIndex]} alt="основное фото" />
+          <button className="slider__button_next" onClick={handleNext}/>
         </div>
         <div className="slider__photo-set">
           <img className="slider__photo" src={main} alt="фото1" />

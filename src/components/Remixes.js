@@ -1,5 +1,4 @@
 import React from "react";
-import "./Remixes.css"; 
 
 const Remixes = () => {
   return (
