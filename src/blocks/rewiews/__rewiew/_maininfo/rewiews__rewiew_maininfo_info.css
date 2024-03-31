@@ -22,6 +22,7 @@
     height: 30px;
     border-radius: 50%;
     margin-right: -10px;
+    margin-left: 10px;
 }
 
 .date {
@@ -31,14 +32,14 @@
 }
 
 .details {
-    margin-top: 5px;
+    margin-top: 10px;
     color: #D9D9D9;
     font-size: 20px;
 }
 
 .rating {
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .label {

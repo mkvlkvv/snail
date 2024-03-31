@@ -22,6 +22,7 @@
 .tab-content p {
     width: 93%;
     color: #ccc;
+    margin-top: -10px;
   }
   
 .tabs button.active:focus {

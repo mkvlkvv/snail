@@ -1,6 +1,7 @@
 .rewiew-name {
     display: flex;
     color:#D9D9D9;
+    margin-top: -20px;
 }
   
 .rewiew-name > * {

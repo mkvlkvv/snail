@@ -26,7 +26,7 @@ const Reviews = () => {
     const starButtons = document.querySelectorAll('.submit'); 
     const clickedButtonIndex = Array.from(starButtons).indexOf(event.target); 
     for (let i = 0; i <= clickedButtonIndex; i++) {
-      starButtons[i].style.backgroundImage = "url('../images/Star-white-fill.svg')"; 
+      starButtons[i].style.backgroundImage = `url(${star})`; 
     }
 };
 

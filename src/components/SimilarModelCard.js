@@ -1,4 +1,5 @@
 import React from "react";
+import photo from "../images/photo3.jpeg";
 
 const SimilarModelCard = ({
   title,
@@ -17,7 +18,7 @@ const SimilarModelCard = ({
             <p class="similar-main-text">Crocs</p>
           </div>
           <div className="photo">
-            <img src="/images/photo4.jpg" alt="logo" />
+            <img src={photo} alt="logo" />
           </div>
           <div className="card-content">
             <div className="author">
