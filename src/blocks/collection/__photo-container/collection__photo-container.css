@@ -2,10 +2,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 4px;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
     height: 211px;
-    width: 264.25px;
-    margin-top: 20px;
+    width: 290.25px;
+    margin-top: 30px;
     margin-bottom: 15px;
 
 }
@@ -15,8 +16,8 @@
     grid-template-columns: repeat(2, 2fr);
     gap: 4px;
     height: 211px;
-    width: 264.25px;
-    margin-top: 20px;
+    width: 290.25px;
+    margin-top: 30px;
     margin-bottom: 15px;
 
 }
@@ -24,8 +25,8 @@
 .collection__photo-container1 {
     gap: 4px;
     height: 211px;
-    width: 264.25px;
-    margin-top: 20px;
+    width: 290.25px;
+    margin-top: 30px;
     margin-bottom: 15px;
 
 }
@@ -33,7 +34,7 @@
 .collection__card-info-count {
     display: flex; 
     align-items: center;
-    margin-right: -2px;
+    margin-right: 16px;
     gap: 4px;
 }
 

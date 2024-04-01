@@ -11,11 +11,11 @@ import profile_works_card_photo6 from "../images/profile_card_6.svg";
 import profile_works_card_avatar1 from "../images/avatar.png";
 import profile_works_card_avatar2 from "../images/avatar2.png";
 
-import collection1 from "../images/col_1.svg"
-import collection2 from "../images/col_2.svg"
-import collection3 from "../images/col_3.svg"
-import collection4 from "../images/col_4.svg" 
-import collection5 from "../images/col_5.svg"
+import collection1 from "../images/col1.png"
+import collection2 from "../images/col1.png"
+import collection3 from "../images/col1.png"
+import collection4 from "../images/col1.png" 
+import collection5 from "../images/col1.png"
 
 
 
