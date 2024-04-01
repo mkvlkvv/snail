@@ -7,9 +7,9 @@ const Header = () => {
       <div className="header__menu">
         <img src={logo} alt="Логотип" className="logo" />
         <div className="left-menu-container">
-          <button className="header__button">3D Модели</button>
-          <button className="header__button">Слайсер</button>
-          <button className="header__button">Печать</button>
+          <a className="header__button">3D модели</a>
+          <a className="header__button">Слайсер</a>
+          <a className="header__button">Печать</a>
         </div>
       </div>
       <button className="header__button header__button_exit">
@@ -19,3 +19,4 @@ const Header = () => {
 };
 
 export default Header;
+

@@ -6,23 +6,24 @@ import like from '../images/like-button.svg';
 import follow from '../images/follow.svg';
 import save from '../images/save.svg';
 import { Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+
 
 const Profile = () => {
   const [activeButton, setActiveButton] = useState(null); // Состояние для активной кнопки
 
   // Функция для обработки клика по кнопке
-  const handleButtonClick = (index) => {
+  const handleactive = (index) => {
     setActiveButton(index); // Устанавливаем индекс активной кнопки
   };
-
 
   return (
     <div class="profile">
       <div class="profile__background-container">
-        <img src={profile_background} alt="Фото" />
+        <div></div>
       </div>
       <div class="profile__card">
-        <img className="profile__avatar" src={avatarka} alt="Аватвр профиля" />
+        <img className="profile__avatar" src={avatarka} alt="Аватар профиля" />
         <div className="profile__info">
           <p className="profile__name">yaane</p>
           <p className="profile__nickname">@coemet</p>
@@ -52,38 +53,21 @@ const Profile = () => {
       <div className="profile__objects">
         <div className="profile__objects-info">
           <div className="profile__objects-leftinfo">
-            <Link to="/profile">
-              <button
-                className={`profile__objects-info-button ${activeButton === 0 ? "active" : ""
-                  }`}
-                onClick={() => handleButtonClick(0)}
-              >
-                Работы
-              </button>
+            <NavLink className={({ isActive }) => (isActive ? "profile__objects-leftinfo_works_active": "profile__objects-leftinfo_works")} to="/profile/works" >
+              <div className="profile__objects-leftinfo_works_block"><a>Работы</a></div>
+            </NavLink>
+            <NavLink className={({ isActive }) => (isActive ? "profile__objects-leftinfo_fav_active": "profile__objects-leftinfo_fav")} to="/profile/favourites">
+            <div className="profile__objects-leftinfo_fav_block"><a>Избранное</a></div>
+            </NavLink>
+            <NavLink className={({ isActive }) => (isActive ? "profile__objects-leftinfo_collections_active": "profile__objects-leftinfo_collections")} to="/profile/collection">
+            <div className="profile__objects-leftinfo_collections_block"><a>Коллекции</a></div>
+            </NavLink>
+            <Link className="profile__objects-leftinfo_reviews">
+            <div className="profile__objects-leftinfo_reviews_block"><a>Отзывы</a></div>
             </Link>
-            <Link to="/profile/collection">
-              <button
-                className={`profile__objects-info-button ${activeButton === 1 ? "active" : ""
-                  }`}
-                onClick={() => handleButtonClick(1)}
-              >
-                Коллекции
-              </button>
+            <Link className="profile__objects-leftinfo_complains">
+            <div className="profile__objects-leftinfo_complains_block"><a>Жалобы</a></div>
             </Link>
-            <button
-              className={`profile__objects-info-button ${activeButton === 2 ? "active" : ""
-                }`}
-              onClick={() => handleButtonClick(2)}
-            >
-              Отзывы
-            </button>
-            <button
-              className={`profile__objects-info-button ${activeButton === 3 ? "active" : ""
-                }`}
-              onClick={() => handleButtonClick(3)}
-            >
-              Жалобы
-            </button>
           </div>
           <div className="profile__objects-rightinfo">
             <form className="printers__form" action="" method="get">
@@ -91,7 +75,7 @@ const Profile = () => {
               <input
                 className="printers__input"
                 name="printer-search"
-                placeholder="Поиск"
+                value="Поиск"
                 type="text"
               />
             </form>
@@ -104,3 +88,4 @@ const Profile = () => {
 };
 
 export default Profile;
+
