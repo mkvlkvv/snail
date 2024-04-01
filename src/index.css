@@ -130,3 +130,5 @@
 
 @import url("./blocks/footer/__left-menu/footer__left-menu.css");
 @import url("./blocks/footer/__button-info/footer__button-info.css");
+
+@import url("./blocks/mainpage/__slider/mainpage__slider-container.css");

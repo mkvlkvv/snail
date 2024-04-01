@@ -11,6 +11,7 @@ import Footer from './Footer';
 import ProfileWorks from './ProfileWorks';
 import ProfileCollection from './ProfileCollection';
 import ProfileFav from './ProfileFavourites';
+import MainPage from './MainPage.js'
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -21,6 +22,12 @@ const CARD_OF_PRODUCT = () => (
     <SimilarModelCard />
   </div>
 );
+
+const MAIN_PAGE = () => (
+  <div>
+    <MainPage />
+  </div>
+)
 
 const USER_PROFILE = () => (
   <div>
@@ -61,6 +68,7 @@ const App = () => {
           <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
           <Route path="/profile/favourites" element={<USER_PROFILE_FAV />} />
           <Route path="/profile/works" element={<USER_PROFILE_WORKS />} />
+          <Route path="/snailweb" element={<MAIN_PAGE />} />
         </Routes>
         <Footer />
       </div>

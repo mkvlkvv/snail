@@ -1,0 +1,14 @@
+.mainpage__slider-container{
+    width: 1,847.53px;
+    height: 365px;
+    margin-left: 36.23px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap:0px;
+}
+
+.mainpage-slider_container_slide img{
+    width: 100%;
+    height: 100%;
+    border-radius: 27.04px;
+}
