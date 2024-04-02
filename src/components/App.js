@@ -15,6 +15,7 @@ import MainPageSlider from './MainPageSlider.js'
 import MainPageTags from './MainPageTags.js'
 import MainPageTop from './MainPageTop.js'
 import MainPageNew from './MainPageNew.js';
+import MainPageForYou from './MainPageForYou.js'
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -32,6 +33,7 @@ const MAIN_PAGE = () => (
     <MainPageTags />
     <MainPageTop />
     <MainPageNew />
+    <MainPageForYou />
   </div>
 )
 

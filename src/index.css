@@ -136,3 +136,5 @@
 @import url("./blocks/mainpage/__topworks/mainpage__topworks-container.css");
 @import url("./blocks/mainpage/__topworks/__cards/mainpage__topworks__card.css");
 @import url("./blocks/mainpage/__newworks/mainpage__newworks-container.css");
+
+@import url("./blocks/mainpage/__foryou/mainpage__foryou-container.css");

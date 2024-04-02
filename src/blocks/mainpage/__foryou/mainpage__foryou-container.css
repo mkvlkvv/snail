@@ -1,0 +1,27 @@
+.mainpage__foryou-container-photo{
+    width: 1,856px;
+    margin-top: 32px;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.mainpage__foryou-container{
+    width: 1,856px;
+    height: 859.38px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.mainpage__foryou-container-topic-name{
+    place-content: center;
+}
+
+.mainpage__foryou-container-topic-name a{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 28px;
+    width: 105px;
+    font-weight: bold;
+}
