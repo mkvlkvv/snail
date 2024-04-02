@@ -16,5 +16,5 @@ const Remixes = () => {
   );
 };
 
-export const remixesClass = ".reviews-container"
+export const remixesClass = ".remixes"
 export default Remixes;
