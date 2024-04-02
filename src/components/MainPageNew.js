@@ -9,8 +9,6 @@ import profile_works_card_photo4 from "../images/profile_card_4.svg";
 import profile_works_card_photo5 from "../images/profile_card_5.svg";
 import profile_works_card_photo6 from "../images/profile_card_6.svg";
 
-import profile_works_card_photo from "../images/new_work.svg";
-
 import profile_works_card_avatar1 from "../images/avatarka.png"
 import profile_works_card_avatar2 from "../images/avatar2.png"
 import save from "../images/save.png"
@@ -18,13 +16,13 @@ import like from "../images/like.png"
 import star from "../images/star.png"
 
 
-const MainPageTop = () => {
+const MainPageNew = () => {
     return(
         <div class="mainpage__topworks-container">
             <div class="mainpage__topworks-container-topic">
 
-                <div class="mainpage__topworks-container-topic-name">
-                    <a>Топ работ</a>
+                <div class="mainpage__newworks-container-topic-name">
+                    <a>Новое</a>
                     <img src={arrow}/>
                 </div>
 
@@ -41,7 +39,7 @@ const MainPageTop = () => {
                     <p>Монстр кибер железный человек</p>
                 </div>
                 <div class="mainpage__works-card-photo">
-                    <img src={profile_works_card_photo} alt='card_photo'/>
+                    <img src={profile_works_card_photo1} alt='card_photo'/>
                 </div>
                 <div class="mainpage__works-card-info">
                     <div class="mainpage__works-card-avatar">
@@ -63,7 +61,7 @@ const MainPageTop = () => {
                     <p>Монстр кибер железный человек</p>
                 </div>
                 <div class="mainpage__works-card-photo">
-                    <img src={profile_works_card_photo} alt='card_photo'/>
+                    <img src={profile_works_card_photo2} alt='card_photo'/>
                 </div>
                 <div class="mainpage__works-card-info">
                     <div class="mainpage__works-card-avatar">
@@ -85,7 +83,7 @@ const MainPageTop = () => {
                     <p>Монстр кибер железный человек</p>
                 </div>
                 <div class="mainpage__works-card-photo">
-                    <img src={profile_works_card_photo} alt='card_photo'/>
+                    <img src={profile_works_card_photo6} alt='card_photo'/>
                 </div>
                 <div class="mainpage__works-card-info">
                     <div class="mainpage__works-card-avatar">
@@ -107,7 +105,7 @@ const MainPageTop = () => {
                     <p>Монстр кибер железный человек</p>
                 </div>
                 <div class="mainpage__works-card-photo">
-                    <img src={profile_works_card_photo} alt='card_photo'/>
+                    <img src={profile_works_card_photo3} alt='card_photo'/>
                 </div>
                 <div class="mainpage__works-card-info">
                     <div class="mainpage__works-card-avatar">
@@ -129,7 +127,7 @@ const MainPageTop = () => {
                     <p>Монстр кибер железный человек</p>
                 </div>
                 <div class="mainpage__works-card-photo">
-                    <img src={profile_works_card_photo} alt='card_photo'/>
+                    <img src={profile_works_card_photo5} alt='card_photo'/>
                 </div>
                 <div class="mainpage__works-card-info">
                     <div class="mainpage__works-card-avatar">
@@ -151,7 +149,7 @@ const MainPageTop = () => {
                     <p>Монстр кибер железный человек</p>
                 </div>
                 <div class="mainpage__works-card-photo">
-                    <img src={profile_works_card_photo} alt='card_photo'/>
+                    <img src={profile_works_card_photo4} alt='card_photo'/>
                 </div>
                 <div class="mainpage__works-card-info">
                     <div class="mainpage__works-card-avatar">
@@ -173,4 +171,4 @@ const MainPageTop = () => {
     )
 }
 
-export default MainPageTop;
+export default MainPageNew;

@@ -1,0 +1,49 @@
+.mainpage__topworks-container{
+    width: 1,856px;
+    height: 458.38px;
+    gap: 20px;
+    margin-left: 32px;
+    margin-top: 32px;
+    
+}
+
+.mainpage__topworks-container-topic{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 1593px;
+}
+
+.mainpage__topworks-container-topic-name{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    place-content: center;
+    width: 179px;
+}
+
+.mainpage__topworks-container-topic-name img{
+    width: 40px;
+    height: 40px;
+}
+
+.mainpage__topworks-container-topic-bound{
+    margin-top: 3px; 
+}
+
+
+.mainpage__topworks-container-topic-name a{
+    margin-top: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    width: 131px;
+    font-weight: bold;
+}
+
+.mainpage__topworks-container-cards{
+    width: 1,948.19px;
+    height: 398.38px;
+    gap: 28px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 6fr);
+}
+

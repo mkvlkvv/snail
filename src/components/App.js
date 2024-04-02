@@ -13,6 +13,8 @@ import ProfileCollection from './ProfileCollection';
 import ProfileFav from './ProfileFavourites';
 import MainPageSlider from './MainPageSlider.js'
 import MainPageTags from './MainPageTags.js'
+import MainPageTop from './MainPageTop.js'
+import MainPageNew from './MainPageNew.js';
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -28,6 +30,8 @@ const MAIN_PAGE = () => (
   <div>
     <MainPageSlider />
     <MainPageTags />
+    <MainPageTop />
+    <MainPageNew />
   </div>
 )
 
