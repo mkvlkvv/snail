@@ -9,11 +9,12 @@ const Remixes = () => {
             <img src="/images/remix.jpg" alt="licence" />
           </div>
           <div className="remix-text">
-            <p className="remix-description">К сожалению, ремиксов ещё нет, но их можете создать вы!</p>
+          <p className="remix-description">К сожалению, ремиксов ещё нет, но их можете загрузить вы!</p>
           </div>
         </div>
     </div>
   );
 };
 
+export const remixesClass = ".reviews-container"
 export default Remixes;

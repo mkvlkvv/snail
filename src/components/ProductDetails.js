@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {reviewsClass} from './Rewiews';
+import {remixesClass} from './Remixes';
+import {similarModelClass} from "./SimilarModelCard";
 
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState("description");
@@ -7,30 +10,48 @@ const ProductDetails = () => {
     setActiveTab(tab);
   };
 
+  function scrollToElement(elementId) {
+    const id = document.querySelector(elementId);
+    if (id) {
+      id.scrollIntoView({ behavior: "smooth", block: "center"});
+    }
+  }
+
   return (
     <div className="product-details">
       <div className="product-detail">
         <div className="tabs">
           <button
-            onClick={() => handleTabChange("description")}
+            onClick={() => {
+              handleTabChange("description");
+            }}
             className={activeTab === "description" ? "active" : ""}
           >
             Описание
           </button>
           <button
-            onClick={() => handleTabChange("reviews")}
+            onClick={() => {
+              handleTabChange("reviews");
+              scrollToElement(reviewsClass);
+            }}
             className={activeTab === "reviews" ? "active" : ""}
           >
             Отзывы
           </button>
           <button
-            onClick={() => handleTabChange("remixes")}
+            onClick={() => {
+              handleTabChange("remixes");
+              scrollToElement(remixesClass);
+            }}
             className={activeTab === "remixes" ? "active" : ""}
           >
             Ремиксы
           </button>
           <button
-            onClick={() => handleTabChange("similarModels")}
+            onClick={() => {
+              handleTabChange("remixes");
+              scrollToElement(similarModelClass);
+            }}
             className={activeTab === "similarModels" ? "active" : ""}
           >
             Похожие модели
@@ -62,20 +83,14 @@ const ProductDetails = () => {
           )}
           {activeTab === "reviews" && (
             <p>
-              Отзывы о товаре: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit...
             </p>
           )}
           {activeTab === "remixes" && (
             <p>
-              Ремиксы товара: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit...
             </p>
           )}
           {activeTab === "similarModels" && (
             <p>
-              Похожие модели: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit...
             </p>
           )}
         </div>

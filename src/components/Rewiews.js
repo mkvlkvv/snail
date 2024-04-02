@@ -200,7 +200,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="review">
+          <div className="review" id='no_photo'>
             <div class="maininfo">
               <div class="info">
                 <div class="left-info">
@@ -225,8 +225,8 @@ const Reviews = () => {
               <div class="text">
                 <p>Были проблемы</p>
                 <div class='rewiew_likes' id='no_photo'>
-                  <img src={like} alt='like'></img>
-                  <div class='count_likes'>1</div>
+                <img src={like} alt='like' id='no_photo1'></img>
+                  <div class='count_likes' id='no_photo2'>1</div>
                 </div>
               </div>
             </div>
@@ -237,4 +237,5 @@ const Reviews = () => {
   );
 };
 
+export const reviewsClass = ".review"
 export default Reviews;

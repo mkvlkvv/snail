@@ -1,6 +1,11 @@
 .printers__list {
     height: 301px;
     overflow-y: scroll;
-    scrollbar-width: 8px;
-    scrollbar-color: #1D1C1C;
+    /*scrollbar-width: 8px;
+    scrollbar-color: #1D1C1C;*/
+}
+
+.printer__list::-webkit-scrollbar {
+    width: 8px;
+    background-color: #1D1C1C;
 }

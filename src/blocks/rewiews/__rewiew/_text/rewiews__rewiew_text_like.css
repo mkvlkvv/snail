@@ -17,5 +17,14 @@
 
 #no_photo {
     margin-right: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    height: 140px;
+}
+
+#no_photo1 {
+    margin-bottom: 97px;
+}
+
+#no_photo2 {
+    margin-bottom: 95px;
 }

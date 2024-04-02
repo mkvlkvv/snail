@@ -13,7 +13,7 @@ const MainPage = () => {
                 <img src={slide2}/>
             </div>
             <div class="mainpage-slider_container_slide_bound">
-                <img
+                <img src={slide2}/>
             </div>
 
         </div>

@@ -228,4 +228,5 @@ const SimilarModelCard = ({
   );
 };
 
+export const similarModelClass = ".similarmodellist"
 export default SimilarModelCard;
