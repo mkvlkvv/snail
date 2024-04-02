@@ -11,7 +11,8 @@ import Footer from './Footer';
 import ProfileWorks from './ProfileWorks';
 import ProfileCollection from './ProfileCollection';
 import ProfileFav from './ProfileFavourites';
-import MainPage from './MainPage.js'
+import MainPageSlider from './MainPageSlider.js'
+import MainPageTags from './MainPageTags.js'
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -25,7 +26,8 @@ const CARD_OF_PRODUCT = () => (
 
 const MAIN_PAGE = () => (
   <div>
-    <MainPage />
+    <MainPageSlider />
+    <MainPageTags />
   </div>
 )
 

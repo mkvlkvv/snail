@@ -2,13 +2,27 @@
     width: 1,847.53px;
     height: 365px;
     margin-left: 36.23px;
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    gap:0px;
 }
 
 .mainpage-slider_container_slide img{
     width: 100%;
     height: 100%;
     border-radius: 27.04px;
+}
+
+.mainpage__slider-container_sliderpanel{
+    height: 337.96px;
+    width: 1,847.53px;
+    gap:4.51px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+.mainpage-slider_container_slide_bound{
+    display: grid;
+    place-content: center;
+}
+
+.mainpage-slider_container_slide_bound img{
+    margin-top: 13.52px;   
 }
