@@ -21,7 +21,11 @@
 
 .mainpage-slider_container_slide_bound{
     display: grid;
+    width: 67.59px;
+    margin-left: 889.97px;
     place-content: center;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 4.51px;
 }
 
 .mainpage-slider_container_slide_bound img{

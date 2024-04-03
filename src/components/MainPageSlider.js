@@ -7,13 +7,18 @@ import slide4 from '../images/slide3.png';
 import slide5 from '../images/slide4.png';
 import slide6 from '../images/slide5.png';
 
+import dotActive from '../images/dot_active.svg'
+import dotUnactive from '../images/dot_unactive.svg'
+
 
 
 import slider from '../images/slider.svg'
 
+
 const MainPageSlider = () => {
     const slides1 = [slide2, slide3, slide4];
     const slides2 = [slide1, slide5, slide6];
+    const bounds = [[dotActive, dotUnactive, dotUnactive], [dotUnactive, dotActive, dotUnactive], [dotUnactive, dotUnactive, dotActive]]
 
     const [currentIndex1, setCurrentIndex1] = useState(0);
     const [currentIndex2, setCurrentIndex2] = useState(0);
@@ -32,6 +37,8 @@ const MainPageSlider = () => {
             clearInterval(interval2);
         };
     },[]);
+    
+    const slider = bounds[currentIndex2].map((item) => <image src={item}/>)
 
     return (
         <div class="mainpage__slider-container">
@@ -44,7 +51,7 @@ const MainPageSlider = () => {
                 </div>
             </div>
             <div class="mainpage-slider_container_slide_bound">
-                <img src={slider}/>
+              {slider}
             </div>
 
         </div>
