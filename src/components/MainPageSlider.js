@@ -38,7 +38,7 @@ const MainPageSlider = () => {
         };
     },[]);
     
-    const slider = bounds[currentIndex2].map((item) => <image src={item}/>)
+    const slider = bounds[currentIndex2].map((item) => <img src={item}/>)
 
     return (
         <div class="mainpage__slider-container">
