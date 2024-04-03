@@ -16,6 +16,7 @@ import MainPageTags from './MainPageTags.js'
 import MainPageTop from './MainPageTop.js'
 import MainPageNew from './MainPageNew.js';
 import MainPageForYou from './MainPageForYou.js'
+import MainPageAuthors from './MainPageAuthors.js';
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -33,6 +34,7 @@ const MAIN_PAGE = () => (
     <MainPageTags />
     <MainPageTop />
     <MainPageNew />
+    <MainPageAuthors />
     <MainPageForYou />
   </div>
 )

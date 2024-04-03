@@ -6,6 +6,7 @@ const MainPageTags = () => {
     return(
         <div class="mainpage__tags-container">
             {tags}
+            {tags}
         </div>
     )
 }

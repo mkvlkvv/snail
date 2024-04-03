@@ -17,6 +17,7 @@
     flex: 0 0 calc(16.666% - 10px);
     border: 1.13px solid #EB572F;
     font-family: 'Roboto', sans-serif;
+    font-size: 22.54px;
 }
 
 .mainpage__tags-container span:hover{

@@ -1,0 +1,78 @@
+.mainpage__authors-container{
+    margin-top: 32px;
+    margin-left: 32px;
+    width: 1,856px;
+    height: 222px;
+}
+
+.mainpage__authors-container-topic-name{
+    place-content: center;
+}
+
+.mainpage__authors-container-topic-name a{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 28px;
+    width: 105px;
+    font-weight: bold;
+}
+
+.mainpage__authors-author{
+    height: 178px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(13,1fr);
+    gap: 20px;
+}
+
+.mainpage__authors-author-container{
+    width: 130px;
+    height: 178px;
+    padding: 0px, 8px, 0px, 8px;
+    gap: 8px;
+
+}
+
+.mainpage__authors-author-container img{
+    width: 114px;
+    height: 114px;
+    margin-left: 8px;
+    margin-right: 8%;
+}
+
+.mainpage__authors-author-container a{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 28px;
+
+}
+
+.mainpage__authors-author-info{
+    width: 76px;
+    height: 56px;
+    margin-left: 27px;
+    margin-right: 27px;
+}
+
+.mainpage__authors-author-container-count{
+    height: 24px;
+    width: 60px;
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+.mainpage__authors-author-container-count img{
+    margin-left: 8px;
+    width: 22px;
+    height: 18px;
+    margin-right: 3px;
+}
+
+.mainpage__authors-author-container-count a{
+    font-weight:unset;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 16px;
+}

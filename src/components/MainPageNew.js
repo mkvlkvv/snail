@@ -41,14 +41,17 @@ const MainPageNew = () => {
                 <div class="mainpage__works-card-photo">
                     <img src={profile_works_card_photo1} alt='card_photo'/>
                 </div>
-                <div class="mainpage__works-card-info">
-                    <div class="mainpage__works-card-avatar">
-                        <img src={profile_works_card_avatar1} alt='card_avatar'/>
-                        <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                <div class="mainpage__foryou-card-info">
+                <div class="mainpage__foryou-card-authors">
+                        <div class="mainpage__foryou-card-avatar">
+                            <img src={profile_works_card_avatar1} alt='card_avatar'/>
+                            <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                        </div>
+                        <a>yaane</a>
                     </div>
                     
-                    <div class="mainpage__works-card-info-count">
-                        <div class="mainpage__works-card-info-likes">
+                    <div class="mainpage__foryou-card-info-count">
+                        <div class="mainpage__foryou-card-info-likes">
                             <img src={like} alt='like'/>
                             <p>6</p>
                         </div>
@@ -63,14 +66,17 @@ const MainPageNew = () => {
                 <div class="mainpage__works-card-photo">
                     <img src={profile_works_card_photo2} alt='card_photo'/>
                 </div>
-                <div class="mainpage__works-card-info">
-                    <div class="mainpage__works-card-avatar">
-                        <img src={profile_works_card_avatar1} alt='card_avatar'/>
-                        <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                <div class="mainpage__foryou-card-info">
+                <div class="mainpage__foryou-card-authors">
+                        <div class="mainpage__foryou-card-avatar">
+                            <img src={profile_works_card_avatar1} alt='card_avatar'/>
+                            <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                        </div>
+                        <a>yaane</a>
                     </div>
                     
-                    <div class="mainpage__works-card-info-count">
-                        <div class="mainpage__works-card-info-likes">
+                    <div class="mainpage__foryou-card-info-count">
+                        <div class="mainpage__foryou-card-info-likes">
                             <img src={like} alt='like'/>
                             <p>6</p>
                         </div>
@@ -85,14 +91,17 @@ const MainPageNew = () => {
                 <div class="mainpage__works-card-photo">
                     <img src={profile_works_card_photo6} alt='card_photo'/>
                 </div>
-                <div class="mainpage__works-card-info">
-                    <div class="mainpage__works-card-avatar">
-                        <img src={profile_works_card_avatar1} alt='card_avatar'/>
-                        <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                <div class="mainpage__foryou-card-info">
+                <div class="mainpage__foryou-card-authors">
+                        <div class="mainpage__foryou-card-avatar">
+                            <img src={profile_works_card_avatar1} alt='card_avatar'/>
+                            <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                        </div>
+                        <a>yaane</a>
                     </div>
                     
-                    <div class="mainpage__works-card-info-count">
-                        <div class="mainpage__works-card-info-likes">
+                    <div class="mainpage__foryou-card-info-count">
+                        <div class="mainpage__foryou-card-info-likes">
                             <img src={like} alt='like'/>
                             <p>6</p>
                         </div>
@@ -107,14 +116,17 @@ const MainPageNew = () => {
                 <div class="mainpage__works-card-photo">
                     <img src={profile_works_card_photo3} alt='card_photo'/>
                 </div>
-                <div class="mainpage__works-card-info">
-                    <div class="mainpage__works-card-avatar">
-                        <img src={profile_works_card_avatar1} alt='card_avatar'/>
-                        <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                <div class="mainpage__foryou-card-info">
+                <div class="mainpage__foryou-card-authors">
+                        <div class="mainpage__foryou-card-avatar">
+                            <img src={profile_works_card_avatar1} alt='card_avatar'/>
+                            <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                        </div>
+                        <a>yaane</a>
                     </div>
                     
-                    <div class="mainpage__works-card-info-count">
-                        <div class="mainpage__works-card-info-likes">
+                    <div class="mainpage__foryou-card-info-count">
+                        <div class="mainpage__foryou-card-info-likes">
                             <img src={like} alt='like'/>
                             <p>6</p>
                         </div>
@@ -129,14 +141,17 @@ const MainPageNew = () => {
                 <div class="mainpage__works-card-photo">
                     <img src={profile_works_card_photo5} alt='card_photo'/>
                 </div>
-                <div class="mainpage__works-card-info">
-                    <div class="mainpage__works-card-avatar">
-                        <img src={profile_works_card_avatar1} alt='card_avatar'/>
-                        <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                <div class="mainpage__foryou-card-info">
+                <div class="mainpage__foryou-card-authors">
+                        <div class="mainpage__foryou-card-avatar">
+                            <img src={profile_works_card_avatar1} alt='card_avatar'/>
+                            <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                        </div>
+                        <a>yaane</a>
                     </div>
                     
-                    <div class="mainpage__works-card-info-count">
-                        <div class="mainpage__works-card-info-likes">
+                    <div class="mainpage__foryou-card-info-count">
+                        <div class="mainpage__foryou-card-info-likes">
                             <img src={like} alt='like'/>
                             <p>6</p>
                         </div>
@@ -151,14 +166,17 @@ const MainPageNew = () => {
                 <div class="mainpage__works-card-photo">
                     <img src={profile_works_card_photo4} alt='card_photo'/>
                 </div>
-                <div class="mainpage__works-card-info">
-                    <div class="mainpage__works-card-avatar">
-                        <img src={profile_works_card_avatar1} alt='card_avatar'/>
-                        <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                <div class="mainpage__foryou-card-info">
+                <div class="mainpage__foryou-card-authors">
+                        <div class="mainpage__foryou-card-avatar">
+                            <img src={profile_works_card_avatar1} alt='card_avatar'/>
+                            <img src={profile_works_card_avatar2} alt='card_avatar'/>
+                        </div>
+                        <a>yaane</a>
                     </div>
                     
-                    <div class="mainpage__works-card-info-count">
-                        <div class="mainpage__works-card-info-likes">
+                    <div class="mainpage__foryou-card-info-count">
+                        <div class="mainpage__foryou-card-info-likes">
                             <img src={like} alt='like'/>
                             <p>6</p>
                         </div>
