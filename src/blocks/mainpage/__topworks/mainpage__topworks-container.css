@@ -10,7 +10,7 @@
 .mainpage__topworks-container-topic{
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    gap: 1593px;
+    gap: 1510px;
 }
 
 .mainpage__topworks-container-topic-name{
@@ -26,7 +26,12 @@
 }
 
 .mainpage__topworks-container-topic-bound{
-    margin-top: 3px; 
+    margin-top: 3px;
+    margin-right: 40px; 
+}
+
+.mainpage__topworks-container-topic-bound img{
+    margin-right: 5px; 
 }
 
 
@@ -39,11 +44,13 @@
 }
 
 .mainpage__topworks-container-cards{
-    width: 1,948.19px;
+    width: 1888px;
     height: 398.38px;
     gap: 28px;
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(6, 6fr);
+    display: flex;
+    /*grid-template-columns: repeat(6, 6fr);*/
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import slider from '../images/slider.svg'
 import arrow from '../images/arrow.svg'
+import dotActive from "../images/dot_active.svg";
+import dotUnactive from "../images/dot_unactive.svg";
+
 
 import profile_works_card_photo1 from "../images/profile_card_1.svg";
 import profile_works_card_photo2 from "../images/profile_card_2.svg";
@@ -17,6 +20,61 @@ import star from "../images/star.png"
 
 
 const MainPageNew = () => {
+    const containerRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
+
+  useEffect(() => {
+    const updateTotalItems = () => {
+      const container = containerRef.current;
+      if (container) {
+        const cards = container.querySelectorAll(".mainpage__works-card");
+        setTotalItems(cards.length);
+      }
+    };
+
+    updateTotalItems();
+
+    // Добавляем прослушиватель событий на изменение размеров окна, чтобы обновлять количество элементов при изменении размера экрана
+    window.addEventListener("resize", updateTotalItems);
+
+    // Очищаем прослушиватель событий при размонтировании компонента
+    return () => {
+      window.removeEventListener("resize", updateTotalItems);
+    };
+  }, []);
+
+  // Вычисление количества точек
+  const visibleItems = 5;
+  const totalDots = Math.ceil((totalItems - visibleItems) / visibleItems) + 1;
+  const itemsPerScroll = 5;
+
+// Функция для прокрутки контейнера вправо на ширину 5 элементов или до конца, если осталось меньше
+const scrollRight = () => {
+    const container = containerRef.current;
+    if (container) {
+        // Вычисляем ширину контейнера и ширину одного элемента
+        const containerWidth = container.clientWidth;
+        const itemWidth = container.scrollWidth / totalItems;
+        // Вычисляем количество элементов, на которое нужно прокрутить
+        const itemsToScroll = Math.min(Math.ceil(containerWidth / itemWidth), totalItems - visibleItems);
+        // Прокручиваем контейнер на необходимое количество элементов
+        container.scrollBy({ left: itemWidth * itemsToScroll, behavior: 'smooth' });
+    }
+};
+
+  // Генерация точек
+  const renderDots = () => {
+    const dots = [];
+    for (let i = 0; i < totalDots; i++) {
+      if (i === 0) {
+        dots.push(<img key={i} src={dotActive} onClick={scrollRight} />);
+      } else {
+        dots.push(<img key={i} src={dotUnactive} />);
+      }
+    }
+    return dots;
+  };
     return(
         <div class="mainpage__topworks-container">
             <div class="mainpage__topworks-container-topic">
@@ -26,13 +84,13 @@ const MainPageNew = () => {
                     <img src={arrow}/>
                 </div>
 
-                <div class="mainpage__topworks-container-topic-bound">
-                    <img src={slider}/>
+                <div class="mainpage__topworks-container-topic-bound" >
+                {renderDots()}
                 </div>
 
             </div>
 
-            <div class="mainpage__topworks-container-cards">
+            <div class="mainpage__topworks-container-cards" ref={containerRef}>
 
             <div class="mainpage__works-card">
                 <div class="mainpage__works-card-maininfo">

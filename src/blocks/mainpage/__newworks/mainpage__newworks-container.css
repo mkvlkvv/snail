@@ -23,12 +23,14 @@
     font-weight: bold;
 }
 
-.mainpage__newworks-container-cards{
-    width: 1,948.19px;
+.mainpage__topworks-container-cards{
+    width: 1888px;
     height: 398.38px;
     gap: 28px;
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(6, 6fr);
+    display: flex;
+    /*grid-template-columns: repeat(6, 6fr);*/
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
