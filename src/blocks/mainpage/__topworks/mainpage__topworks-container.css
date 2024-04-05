@@ -54,3 +54,6 @@
     overflow-y: hidden;
 }
 
+.mainpage__topworks-container-cards::-webkit-scrollbar {
+    display: none; 
+}
