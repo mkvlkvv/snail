@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import star from "../images/Star-white-fill.svg";
 import star_black from "../images/Star-white.svg";
 import star_yellow_fill from "../images/star.svg";
@@ -25,7 +25,7 @@ const Reviews = () => {
         name: "Пётр Петров",
         date: "14 февраля 2024",
         text: "Были проблемы",
-        rating: 5,
+        rating: 4,
         likes: 4,
         mainPhoto: "/images/photo4.jpg",
         photos: [
@@ -76,15 +76,35 @@ const Reviews = () => {
     ],
   };
 
-  const [activePhotoIndex, setActivePhotoIndex] = useState([]);
-  if (data.reviews && data.reviews.photos) {
-    setActivePhotoIndex(Array(data.reviews.photos.length).fill(0));
-  }
-  const [mainPhoto, setMainPhoto] = useState(data.reviews.mainPhoto);
+  const [reviewState, setReviewState] = useState({});
 
-  const handlePhotoClick = (photoIndex) => {
-    setMainPhoto(data.reviews.photos[photoIndex]);
-    setActivePhotoIndex(photoIndex);
+  useEffect(() => {
+    if (data.reviews) {
+      const initialState = {};
+      data.reviews.forEach((review, index) => {
+        initialState[index] = {
+          mainPhoto: review.mainPhoto,
+          activePhotoIndex: Array(review.photos.length).fill(0),
+        };
+      });
+      setReviewState(initialState);
+    }
+  }, []);
+
+  const handlePhotoClickGenerator = (reviewIndex, photoIndex) => {
+    return () => {
+      setReviewState((prevState) => {
+        const newState = { ...prevState };
+        newState[reviewIndex] = {
+          ...prevState[reviewIndex],
+          mainPhoto: data.reviews[reviewIndex].photos[photoIndex],
+          activePhotoIndex: Array(data.reviews[reviewIndex].photos.length).fill(
+            0
+          ),
+        };
+        return newState;
+      });
+    };
   };
 
   const handleReviewClick = (event) => {
@@ -141,10 +161,10 @@ const Reviews = () => {
           </div>
         </div>
         <div className="review-list">
-          {data.reviews.map((review, index) => (
+          {data.reviews.map((review, reviewIndex) => (
             <div
               className="review"
-              key={index}
+              key={reviewIndex}
               id={review.id === "no_photo" ? "no_photo" : undefined}
             >
               <div className="maininfo">
@@ -159,9 +179,18 @@ const Reviews = () => {
                     </div>
                   </div>
                   <div className="rating">
-                    {Array.from({ length: review.rating }, (_, i) => (
-                      <img src={star} alt="star" key={i} />
-                    ))}
+                    {[
+                      ...Array.from({ length: review.rating }, (_, i) => (
+                        <img src={star} alt="star" key={`star-${i}`} />
+                      )),
+                      ...Array.from({ length: 5 - review.rating }, (_, i) => (
+                        <img
+                          src={star_black}
+                          alt="empty-star"
+                          key={`empty-star-${i}`}
+                        />
+                      )),
+                    ]}
                   </div>
                 </div>
                 <div className="text">
@@ -186,22 +215,34 @@ const Reviews = () => {
               </div>
               {review.id !== "no_photo" && (
                 <div className="rewiew_photo">
-                  {review.mainPhoto && (
-                    <img src={mainPhoto} alt="Фото" />
-                  )}
-                  {review.photos.map((photo, setIndex) => (
-            <div className="small-photos">
-            {review.photos.map((photo, photoIndex) => (
-              <img
-                src={photo}
-                alt={`Маленькое фото ${photoIndex + 1}`}
-                onClick={() => handlePhotoClick(photoIndex)}
-                className={activePhotoIndex === photoIndex ? "active" : ""}
-                key={photoIndex}
-              />
-            ))}
-          </div>
-          ))}
+                  {reviewState[reviewIndex] &&
+                    reviewState[reviewIndex].mainPhoto && (
+                      <img
+                        src={reviewState[reviewIndex].mainPhoto}
+                        alt="Фото"
+                      />
+                    )}
+                  <div className="small-photos">
+                    {review.photos.map((photo, photoIndex) => (
+                      <img
+                        src={photo}
+                        alt={`Маленькое фото ${photoIndex + 1}`}
+                        onClick={handlePhotoClickGenerator(
+                          reviewIndex,
+                          photoIndex
+                        )}
+                        className={
+                          reviewState[reviewIndex] &&
+                          reviewState[reviewIndex].activePhotoIndex[
+                            photoIndex
+                          ] === photoIndex
+                            ? "active"
+                            : ""
+                        }
+                        key={photoIndex}
+                      />
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
