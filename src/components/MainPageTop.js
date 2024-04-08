@@ -18,6 +18,8 @@ import profile_works_card_avatar2 from "../images/avatar2.png";
 import save from "../images/save.png";
 import like from "../images/like.png";
 import star from "../images/star.png";
+import left from "../images/left.svg";
+import right from "../images/right.svg";
 
 const MainPageTop = () => {
   const containerRef = useRef(null);
@@ -115,6 +117,16 @@ const MainPageTop = () => {
         <div class="mainpage__topworks-container-topic-bound">
           {renderDots()}
         </div>
+      </div>
+
+      <div class="mainpage__topworks-container-keyboard">
+        <img src={left} alt="left" onClick={() => scrollLeft()}></img>
+        <img
+          src={right}
+          alt="right"
+          class="right-image"
+          onClick={() => scrollRight()}
+        />
       </div>
 
       <div class="mainpage__topworks-container-cards" ref={containerRef}>

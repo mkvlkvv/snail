@@ -161,4 +161,6 @@
     padding: 14px, 0px, 14px, 0px; 
     box-sizing: border-box;
     gap: 16px;
+    position: relative; /* Позиционирование должно быть отличным от static */
+    z-index: 1;
 }

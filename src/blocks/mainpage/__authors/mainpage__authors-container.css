@@ -82,3 +82,11 @@
     text-align: center;
     font-size: 16px;
 }
+
+.small-right-image {
+    margin-left: 1790px;
+}
+
+.small-right-image, .small-left-image {
+    margin-top: -150px;
+}
