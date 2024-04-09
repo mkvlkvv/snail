@@ -24,6 +24,7 @@ const MainPageNew = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [activeDotIndex, setActiveDotIndex] = useState(0);
+  const [firstClick, setFirstClick] = useState(false);
 
   useEffect(() => {
     const updateTotalItems = () => {
@@ -50,31 +51,30 @@ const MainPageNew = () => {
   const totalDots = Math.ceil((totalItems - visibleItems) / visibleItems) + 1;
   const itemsPerScroll = 5;
 
-  // Функция для прокрутки контейнера вправо на ширину 5 элементов или до конца, если осталось меньше
   const scrollRight = () => {
     const container = containerRef.current;
-    if (container) {
-      // Вычисляем ширину контейнера и ширину одного элемента
-      const containerWidth = container.clientWidth;
-      const itemWidth = container.scrollWidth / totalItems;
-      // Вычисляем количество элементов, на которое нужно прокрутить
-      const itemsToScroll = Math.min(
-        Math.ceil(containerWidth / itemWidth),
-        totalItems - visibleItems
-      );
-      // Прокручиваем контейнер на необходимое количество элементов
-      container.scrollBy({
-        left: itemWidth * itemsToScroll,
-        behavior: "smooth",
-      });
-    }
+    if (!container) return;
+
+    const itemWidth = container.scrollWidth / totalItems;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const nextScrollLeft = Math.min(
+      container.scrollLeft + itemWidth * itemsPerScroll,
+      maxScrollLeft
+    );
+    container.scrollTo({
+      left: nextScrollLeft,
+      behavior: "smooth",
+    });
   };
 
   const scrollLeft = () => {
     const container = containerRef.current;
-    if (container) {
-      container.scrollTo({ left: 0, behavior: "smooth" }); // Скроллим влево до самого начала
-    }
+    if (!container) return;
+
+    container.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   // Генерация точек
@@ -83,11 +83,11 @@ const MainPageNew = () => {
     for (let i = 0; i < totalDots; i++) {
       if (i === activeDotIndex) {
         dots.push(
-          <img key={i} src={dotActive} onClick={() => handleClick(i)} />
+          <img key={i} src={dotActive} />
         );
       } else {
         dots.push(
-          <img key={i} src={dotUnactive} onClick={() => handleClick(i)} />
+          <img key={i} src={dotUnactive}/>
         );
       }
     }
@@ -95,14 +95,83 @@ const MainPageNew = () => {
   };
 
   const handleClick = (index) => {
-    if (index === totalDots - 1) {
-      scrollLeft(); // Скроллим влево, если последняя точка
-      setActiveDotIndex(0); // Устанавливаем первую точку активной
+    if (!firstClick) {
+      setFirstClick(true);
+    }
+    setActiveDotIndex(index);
+    updateButtonActivity(index);
+    // Вычисляем индекс следующей точки
+    let nextIndex = activeDotIndex + 1;
+
+    // Если следующий индекс больше или равен общему количеству точек, устанавливаем индекс первой точки
+    if (nextIndex >= totalDots) {
+      nextIndex = 0;
+      scrollLeft(); // Скроллим влево до самого начала
     } else {
-      setActiveDotIndex(index + 1); // Следующая точка становится активной
-      scrollRight(); // Скроллим вправо, если не последняя точка
+      // Иначе, скроллируем вправо, если не последняя точка
+      scrollRight();
+    }
+
+    // Устанавливаем следующую точку активной
+    setActiveDotIndex(nextIndex);
+
+    // Если следующий индекс является последним, делаем кнопку "следующая точка" неактивной
+    if (nextIndex === totalDots - 1) {
+      document.querySelector(".right-image-new").setAttribute("disabled", true);
+    } else {
+      document.querySelector(".right-image-new").removeAttribute("disabled");
+    }
+
+    // Если следующий индекс является первым, делаем кнопку "предыдущая точка" неактивной
+    if (nextIndex === 0) {
+      document.querySelector(".left-image-new").setAttribute("disabled", true);
+    } else {
+      document.querySelector(".left-image-new").removeAttribute("disabled");
     }
   };
+
+  const updateButtonActivity = (nextIndex) => {
+    const leftButton = document.querySelector(".left-image-new");
+    const rightButton = document.querySelector(".right-image-new");
+    const container = containerRef.current;
+
+    if (firstClick) {
+      leftButton.style.visibility = "visible";
+    }
+  
+    if (!container) return;
+  
+    const firstCardVisible = container.scrollLeft === 0;
+    const lastCardVisible = container.scrollLeft + container.clientWidth === container.scrollWidth;
+
+    // Если обе кнопки видны или если это последняя точка, скрываем правую кнопку
+  if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
+    rightButton.style.visibility = "hidden";
+  } else {
+    rightButton.style.visibility = "visible";
+  }
+
+  // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
+  if (nextIndex === 0 && !firstCardVisible) {
+    leftButton.style.visibility = "hidden";
+  } else {
+    leftButton.style.visibility = "visible";
+  }
+  };
+
+  const handleRightClick = () => {
+    const nextIndex = activeDotIndex + 1;
+    setActiveDotIndex(nextIndex);
+    updateButtonActivity(nextIndex);
+    scrollRight();
+  };
+
+  const handleLeftClick = () => {
+    setActiveDotIndex(0);
+    updateButtonActivity(0);
+    scrollLeft();
+  };
+
   return (
     <div class="mainpage__topworks-container">
       <div class="mainpage__topworks-container-topic">
@@ -115,24 +184,161 @@ const MainPageNew = () => {
           {renderDots()}
         </div>
       </div>
-      
+
       <div class="mainpage__topworks-container-keyboard">
-        <img src={left} alt="left" onClick={() => scrollLeft()}></img>
+        <img
+          src={left}
+          alt="left"
+          class="left-image-new"
+          onClick={handleLeftClick}
+        ></img>
         <img
           src={right}
           alt="right"
-          class="right-image"
-          onClick={() => scrollRight()}
-        />
+          class="right-image-new"
+          onClick={handleRightClick}
+        ></img>
       </div>
 
       <div class="mainpage__topworks-container-cards" ref={containerRef}>
-        <div class="mainpage__works-card">
+        <div class="mainpage__works-card" id="new">
           <div class="mainpage__works-card-maininfo">
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
             <img src={profile_works_card_photo1} alt="card_photo" />
+          </div>
+          <div class="mainpage__works-card-info">
+            <div class="mainpage__works-card-avatar">
+              <img src={profile_works_card_avatar1} alt="card_avatar" />
+              <img src={profile_works_card_avatar2} alt="card_avatar" />
+            </div>
+
+            <div class="mainpage__works-card-info-count">
+              <div class="mainpage__works-card-info-likes">
+                <img src={like} alt="like" />
+                <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mainpage__works-card">
+          <div class="mainpage__works-card-maininfo">
+            <p>Монстр кибер железный человек</p>
+          </div>
+          <div class="mainpage__works-card-photo">
+            <img src={profile_works_card_photo2} alt="card_photo" />
+          </div>
+          <div class="mainpage__works-card-info">
+            <div class="mainpage__works-card-avatar">
+              <img src={profile_works_card_avatar1} alt="card_avatar" />
+              <img src={profile_works_card_avatar2} alt="card_avatar" />
+            </div>
+
+            <div class="mainpage__works-card-info-count">
+              <div class="mainpage__works-card-info-likes">
+                <img src={like} alt="like" />
+                <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mainpage__works-card">
+          <div class="mainpage__works-card-maininfo">
+            <p>Монстр кибер железный человек</p>
+          </div>
+          <div class="mainpage__works-card-photo">
+            <img src={profile_works_card_photo2} alt="card_photo" />
+          </div>
+          <div class="mainpage__works-card-info">
+            <div class="mainpage__works-card-avatar">
+              <img src={profile_works_card_avatar1} alt="card_avatar" />
+              <img src={profile_works_card_avatar2} alt="card_avatar" />
+            </div>
+
+            <div class="mainpage__works-card-info-count">
+              <div class="mainpage__works-card-info-likes">
+                <img src={like} alt="like" />
+                <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mainpage__works-card">
+          <div class="mainpage__works-card-maininfo">
+            <p>Монстр кибер железный человек</p>
+          </div>
+          <div class="mainpage__works-card-photo">
+            <img src={profile_works_card_photo2} alt="card_photo" />
+          </div>
+          <div class="mainpage__works-card-info">
+            <div class="mainpage__works-card-avatar">
+              <img src={profile_works_card_avatar1} alt="card_avatar" />
+              <img src={profile_works_card_avatar2} alt="card_avatar" />
+            </div>
+
+            <div class="mainpage__works-card-info-count">
+              <div class="mainpage__works-card-info-likes">
+                <img src={like} alt="like" />
+                <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mainpage__works-card">
+          <div class="mainpage__works-card-maininfo">
+            <p>Монстр кибер железный человек</p>
+          </div>
+          <div class="mainpage__works-card-photo">
+            <img src={profile_works_card_photo2} alt="card_photo" />
+          </div>
+          <div class="mainpage__works-card-info">
+            <div class="mainpage__works-card-avatar">
+              <img src={profile_works_card_avatar1} alt="card_avatar" />
+              <img src={profile_works_card_avatar2} alt="card_avatar" />
+            </div>
+
+            <div class="mainpage__works-card-info-count">
+              <div class="mainpage__works-card-info-likes">
+                <img src={like} alt="like" />
+                <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mainpage__works-card">
+          <div class="mainpage__works-card-maininfo">
+            <p>Монстр кибер железный человек</p>
+          </div>
+          <div class="mainpage__works-card-photo">
+            <img src={profile_works_card_photo2} alt="card_photo" />
+          </div>
+          <div class="mainpage__works-card-info">
+            <div class="mainpage__works-card-avatar">
+              <img src={profile_works_card_avatar1} alt="card_avatar" />
+              <img src={profile_works_card_avatar2} alt="card_avatar" />
+            </div>
+
+            <div class="mainpage__works-card-info-count">
+              <div class="mainpage__works-card-info-likes">
+                <img src={like} alt="like" />
+                <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mainpage__works-card">
+          <div class="mainpage__works-card-maininfo">
+            <p>Монстр кибер железный человек</p>
+          </div>
+          <div class="mainpage__works-card-photo">
+            <img src={profile_works_card_photo2} alt="card_photo" />
           </div>
           <div class="mainpage__works-card-info">
             <div class="mainpage__works-card-avatar">
