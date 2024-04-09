@@ -11,9 +11,11 @@
 }
 
 .profile__works-card-info-count {
-    display: flex; 
+    display: grid;
+    grid-template-columns: repeat(3, 3fr); 
     align-items: center;
     margin-top: 28px;
+    gap: 8px;
     margin-right: 16px;
 }
 
@@ -46,13 +48,15 @@
 }
 
 .profile__works-card-info-saves{
-    margin-right: 8px;
 }
 
 .profile__works-card-info-likes {
-    margin-right: 4px;
+
 }
 
+.profile__works-card-info-stars{
+
+}
 .profile__works-card-avatar {
     position: relative;
     margin-left: 16px;

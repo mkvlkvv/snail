@@ -1,72 +1,74 @@
 import React from "react";
-import photo from "../images/photo3.jpeg";
+import save from "../images/save.png"
+import like from "../images/like.png"
+import star from "../images/star.png"
 
 const SimilarModelCard = ({ model = [
   {
     title: "Crocs",
-    imageUrl: "/images/photo3.jpeg",
+    imageUrl: '/images/profile_card_1.svg',
     author: {
-      name: "John Doe",
+      name: "eelliizzaf",
       avatar: '../images/ava.svg'
     },
-    likes: 48,
-    comments: 12,
-    rating: 4.8
+    likes: 2,
+    comments: 6,
+    rating: 2
   },
   {
     title: "Nike Air Max",
-    imageUrl: "/images/collection_4.png",
+    imageUrl: "/images/profile_card_2.svg",
     author: {
-      name: "Jane Smith",
+      name: "eelliizzaf",
       avatar: '../images/ava.svg'
     },
-    likes: 32,
-    comments: 8,
-    rating: 4.5
+    likes: 2,
+    comments: 6,
+    rating: 2
   },
   {
     title: "Adidas Superstar",
-    imageUrl: "../images/photo2.jpeg",
+    imageUrl: "/images/profile_card_3.svg",
     author: {
-      name: "Alex Johnson",
+      name: "eelliizzaf",
       avatar: '../images/ava.svg'
     },
-    likes: 56,
-    comments: 20,
-    rating: 4.9
+    likes: 2,
+    comments: 6,
+    rating: 2
   },
   {
     title: "Puma Suede",
-    imageUrl: "../images/collection_4.png",
+    imageUrl: "/images/profile_card_4.svg",
     author: {
-      name: "Emily Wilson",
+      name: "eelliizzaf",
       avatar: '../images/ava.svg'
     },
-    likes: 40,
-    comments: 15,
-    rating: 4.7
+    likes: 2,
+    comments: 6,
+    rating: 2
   },
   {
     title: "Vans Old Skool",
-    imageUrl: "../images/photo4.jpg",
+    imageUrl: "/images/profile_card_5.svg",
     author: {
-      name: "Michael Brow",
+      name: "eelliizzaf",
       avatar: '../images/ava.svg'
     },
-    likes: 65,
-    comments: 25,
-    rating: 4.6
+    likes: 2,
+    comments: 6,
+    rating: 2
   },
   {
     title: "Nike Air Max",
-    imageUrl: "/images/photo4.jpg",
+    imageUrl: "/images/profile_card_6.svg",
     author: {
-      name: "Jane Smith",
+      name: "eelliizzaf",
       avatar: '../images/ava.svg'
     },
-    likes: 32,
-    comments: 8,
-    rating: 4.5
+    likes: 2,
+    comments: 6,
+    rating: 2
   }
 ] }) => {
   return (
@@ -74,33 +76,36 @@ const SimilarModelCard = ({ model = [
       <div className="similar-text">Похожие модели</div>
       <div className="similar-model-container">
         {model.map((model, index) => (
-          <div className="similar-model-card" key={index}>
-            <div className="namesimilarcard">
-              <p className="similar-main-text">{model.title}</p>
+          <div className="profile__works-card" key={index}>
+            <div className="profile__works-card-maininfo">
+              <p>{model.title}</p>
             </div>
-            <div className="photo">
+            <div className="profile__works-card-photo">
               <img src={model.imageUrl} alt="logo" />
             </div>
-            <div className="card-content">
-              <div className="author">
-                <div className="similar-card-avatar">
+            <div className="similarmodels-card-info">
+              <div className="similarmodels-card-authors">
+                <div className="similarmodels-card-avatar">
                   <img src={model.author.avatar} alt="Аватар" />
                 </div>
-                <p>{model.author.name}</p>
+                <a>{model.author.name}</a>
               </div>
-              <div className="details">
-                <div className="similar-card-info">
-                  <img src="/images/save.png" alt="save" />
+              <div className="profile__works-card-info-count">
+                <div className="profile__works-card-info-saves">
+                  <img src={save} alt="save" />
+                  <p>{model.likes}</p>
                 </div>
-                <p>{model.likes}</p>
-                <div className="similar-card-info">
-                  <img src="/images/like.png" alt="like" />
+                
+                <div className="profile__works-card-info-likes">
+                  <img src={like} alt="like" />
+                  <p>{model.comments}</p>
                 </div>
-                <p>{model.comments}</p>
-                <div className="similar-card-info">
-                  <img src="/images/star.png" alt="star" />
+                
+                <div className="profile__works-card-info-stars">
+                  <img src={star} alt="star" />
+                  <p>{model.rating}</p>
                 </div>
-                <p>{model.rating}</p>
+                
               </div>
             </div>
           </div>

@@ -15,9 +15,10 @@
 }
 
 .similar-model-container {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    /*width: 85%;*/
+    margin-left: 140px;
+    width: 1,640px;
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    gap: 16px;
 }
