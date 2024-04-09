@@ -7,6 +7,7 @@
     top: 70%; 
     left: 10%; 
     z-index: 2; 
+    margin-right: 10px;
 }
 
 .small-photos img {
@@ -22,6 +23,6 @@
     object-fit: cover; 
 }
 
-.active {
+.rewiew_photo .small-photos > img.active {
     border: 2px solid blue;
-}
+  }

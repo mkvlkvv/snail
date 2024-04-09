@@ -104,6 +104,20 @@ const Reviews = () => {
         };
         return newState;
       });
+
+      // Удаляем класс "active" у всех изображений
+      const images = document.querySelectorAll(".small-photos img");
+      images.forEach((img) => {
+        img.classList.remove("active");
+      });
+
+      // Добавляем класс "active" к выбранному изображению
+      const selectedImage = document.querySelector(
+        `.small-photos img:nth-child(${photoIndex + 1})`
+      );
+      if (selectedImage) {
+        selectedImage.classList.add("active");
+      }
     };
   };
 
@@ -163,7 +177,9 @@ const Reviews = () => {
         <div className="review-list">
           {data.reviews.map((review, reviewIndex) => (
             <div
-              className="review"
+              className={
+                review.id === "no_photo" ? "review no_photo" : "review"
+              }
               key={reviewIndex}
               id={review.id === "no_photo" ? "no_photo" : undefined}
             >
@@ -239,6 +255,7 @@ const Reviews = () => {
                             ? "active"
                             : ""
                         }
+                        id={`reviewPhoto-${reviewIndex}-${photoIndex}`} // Уникальный идентификатор для маленького фото
                         key={photoIndex}
                       />
                     ))}
