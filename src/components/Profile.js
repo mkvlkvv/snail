@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import profile_background from "../images/profile_background.jpeg";
 import avatarka from '../images/avatarka.png';
-import like from '../images/like-button.svg';
+import favorite from '../images/favorite.svg';
 import follow from '../images/follow.svg';
-import save from '../images/save.svg';
+import download from '../images/download.svg';
 import { Link } from "react-router-dom";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
@@ -29,13 +28,13 @@ const Profile = () => {
           <p className="profile__nickname">@coemet</p>
           <div className="profile__stat">
             <button className="profile__stat-item">
-              <img className="" src={follow} alt="repost button" />
+              <img className="profile__stat-img" src={follow} alt="repost button" /> 150
             </button>
             <button className="profile__stat-item">
-              <img className="" src={save} alt="save button" />
+              <img className="profile__stat-img" src={download} alt="save button" />1
             </button>
             <button className="profile__stat-item">
-              <img className="" src={like} alt="like button" />
+              <img className="profile__stat-img" src={favorite} alt="like button" />6
             </button>
           </div>
           <button className="profile__edit-button">Редактировать профиль</button>

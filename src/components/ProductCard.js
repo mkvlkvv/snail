@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import like from "../images/like-button.svg";
-import repost from "../images/repost-button.svg";
-import save from "../images/save-button.svg";
+import like from "../images/favorite.svg";
+import repost from "../images/ShareFat.svg";
+import follow from '../images/follow.svg';
+import save from "../images/ArchiveTray.svg";
 import star from "../images/star.svg";
 import star_black from "../images/Star-black.svg";
 import Printer from "./Printer";
+import add from "../images/add.svg"
 
 const ProductCard = () => {
   const data = {
@@ -93,7 +95,9 @@ const ProductCard = () => {
           <div className="avatar">
             <img className="avatar__img" src={[data.mainPhoto]} alt="Avatar" />
             <p className="avatar__name">{data.avatarName}</p>
-            <button className="avatar__button" />
+            <button className="card__button">
+              <img className="" src={follow} alt="repost button" />
+            </button>
           </div>
         </div>
         <div className="printers">
@@ -111,7 +115,9 @@ const ProductCard = () => {
                   type="text"
                 />
               </form>
-              <button className="printers__add-button" />
+              <button className="card__button card__button-add">
+              <img className="card__button-img" src={add} alt="repost button" />
+            </button>
             </div>
           </div>
           <Printer />
@@ -127,14 +133,14 @@ const ProductCard = () => {
         </div>
         <div className="card__stat">
           <div className="card__stat_left">
-            <button className="card__stat-item">
-              <img className="" src={like} alt="like button" />
+            <button className="card__button">
+              <img className="card__button-img_stat" src={like} alt="like button" /> 6
             </button>
-            <button className="card__stat-item">
-              <img className="" src={repost} alt="repost button" />
+            <button className="card__button"> 
+              <img className="card__button-img_stat" src={repost} alt="repost button" /> 5
             </button>
-            <button className="card__stat-item">
-              <img className="" src={save} alt="save button" />
+            <button className="card__button">
+              <img className="card__button-img_stat" src={save} alt="save button" /> 1
             </button>
           </div>
           <div className="card__mark-container">
