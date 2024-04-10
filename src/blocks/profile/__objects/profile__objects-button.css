@@ -166,16 +166,28 @@
     font-weight: bold;
 }
 
-.printers__form {
+.profile__printers__form {
     width: 200px;
-    height: 36px;
+    height: 44px;
+    border: 1px #6D6D6D solid;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 
 
-.printers__input {
+.profile__printers__input {
     width: 100px;
     height: 36px;
     font-size: 20px;
     border-radius: 50px;
+    border: none;
+    background-color: #1d1d1d;
+    outline: none;
+    /*margin: 8px 50px 8px 0;*/
+    margin-right: 50px;
+    padding: 0;
+    color: #6D6D6D;
 }

@@ -69,10 +69,10 @@ const Profile = () => {
             </Link>
           </div>
           <div className="profile__objects-rightinfo">
-            <form className="printers__form" action="" method="get">
+            <form className="profile__printers__form" action="" method="get">
               <button className="search-button" type="submit" />
               <input
-                className="printers__input"
+                className="profile__printers__input"
                 name="printer-search"
                 value="Поиск"
                 type="text"

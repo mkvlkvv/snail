@@ -30,8 +30,6 @@ const MainPageSlider = () => {
         const interval2 = setInterval(() => {
                 setCurrentIndex2((prevIndex) => (prevIndex + 1)%slides2.length);}, 5000);
 
-        /*const interval2 = setInterval(() => {
-                    setCurrentIndex2((prevIndex) => (prevIndex + 1)%slides2.length);}, 5000);*/
 
         return () => {clearInterval(interval1);
             clearInterval(interval2);
