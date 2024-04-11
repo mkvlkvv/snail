@@ -1,25 +1,27 @@
 import React, { useState } from "react";
 import like from "../images/favorite.svg";
 import repost from "../images/ShareFat.svg";
-import follow from '../images/follow.svg';
+import follow from "../images/follow.svg";
 import save from "../images/ArchiveTray.svg";
 import star from "../images/star.svg";
 import star_black from "../images/Star-black.svg";
 import Printer from "./Printer";
-import add from "../images/add.svg"
+import add from "../images/add.svg";
 
 const ProductCard = () => {
   const data = {
-    mainPhoto: "/images/main-photo.png",
-    photo2: "../images/photo2.jpeg",
-    photo3: "../images/photo3.jpeg",
+    images: [
+      "/images/main-photo.png",
+      "../images/photo2.jpeg",
+      "../images/photo3.jpeg",
+    ],
     name: "cross",
     avatar: "avatar.jpg",
     avatarName: "anlnv",
     description: "3D/Обувь",
     rating_data: "4",
     likes: "6",
-    repost: "5", 
+    repost: "5",
     save: "1",
     printers: [
       {
@@ -53,7 +55,7 @@ const ProductCard = () => {
     ],
   };
 
-  const slides = [[data.mainPhoto], [data.photo2], [data.photo3]]; // Массив со всеми изображениями
+  const slides = data.images; // Массив со всеми изображениями
   const [slideIndex, setSlideIndex] = useState(0); // Индекс текущего активного слайда
 
   // Обработчик нажатия кнопки "Назад"
@@ -70,6 +72,23 @@ const ProductCard = () => {
     }
   };
 
+  // Находим все изображения внутри slider__photo
+  const sliderPhotos = document.querySelectorAll(".slider__photo");
+
+  // Добавляем обработчик клика для каждого изображения
+  sliderPhotos.forEach((photo) => {
+    photo.addEventListener("click", function () {
+      // Получаем src изображения, на которое кликнули
+      const newImageSrc = this.getAttribute("src");
+
+      // Находим элемент card__img
+      const cardImg = document.querySelector(".card__img");
+
+      // Обновляем его src атрибут
+      cardImg.setAttribute("src", newImageSrc);
+    });
+  });
+
   return (
     <div className="card">
       <div className="slider">
@@ -83,9 +102,14 @@ const ProductCard = () => {
           <button className="slider__button_next" onClick={handleNext} />
         </div>
         <div className="slider__photo-set">
-          <img className="slider__photo" src={[data.mainPhoto]} alt="фото1" />
-          <img className="slider__photo" src={[data.photo2]} alt="фото2" />
-          <img className="slider__photo" src={[data.photo3]} alt="фото3" />
+          {data.images.map((imageSrc, index) => (
+            <img
+              key={index}
+              className="slider__photo"
+              src={imageSrc}
+              alt={`фото${index + 1}`}
+            />
+          ))}
         </div>
       </div>
       <div className="card__info">
@@ -116,8 +140,12 @@ const ProductCard = () => {
                 />
               </form>
               <button className="card__button card__button-add">
-              <img className="card__button-img" src={add} alt="repost button" />
-            </button>
+                <img
+                  className="card__button-img"
+                  src={add}
+                  alt="repost button"
+                />
+              </button>
             </div>
           </div>
           <Printer />
@@ -134,13 +162,28 @@ const ProductCard = () => {
         <div className="card__stat">
           <div className="card__stat_left">
             <button className="card__button">
-              <img className="card__button-img_stat" src={like} alt="like button" /> 6
-            </button>
-            <button className="card__button"> 
-              <img className="card__button-img_stat" src={repost} alt="repost button" /> 5
+              <img
+                className="card__button-img_stat"
+                src={like}
+                alt="like button"
+              />{" "}
+              6
             </button>
             <button className="card__button">
-              <img className="card__button-img_stat" src={save} alt="save button" /> 1
+              <img
+                className="card__button-img_stat"
+                src={repost}
+                alt="repost button"
+              />{" "}
+              5
+            </button>
+            <button className="card__button">
+              <img
+                className="card__button-img_stat"
+                src={save}
+                alt="save button"
+              />{" "}
+              1
             </button>
           </div>
           <div className="card__mark-container">

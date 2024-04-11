@@ -73,6 +73,20 @@ const Reviews = () => {
         mainPhoto: "/images/photo4.jpg",
         photos: [],
       },
+      {
+        name: "Пётр Петров",
+        date: "14 февраля 2024",
+        text: "Были проблемы",
+        rating: 4,
+        likes: 4,
+        mainPhoto: "/images/photo4.jpg",
+        photos: [
+          "/images/photo4.jpg",
+          "/images/photo2.jpeg",
+          "/images/photo3.jpeg",
+          "/images/photo1.jpeg",
+        ],
+      }
     ],
   };
 
@@ -85,6 +99,7 @@ const Reviews = () => {
         initialState[index] = {
           mainPhoto: review.mainPhoto,
           activePhotoIndex: Array(review.photos.length).fill(0),
+          smallPhotos: Array(review.photos.length).fill(false),
         };
       });
       setReviewState(initialState);
@@ -98,26 +113,10 @@ const Reviews = () => {
         newState[reviewIndex] = {
           ...prevState[reviewIndex],
           mainPhoto: data.reviews[reviewIndex].photos[photoIndex],
-          activePhotoIndex: Array(data.reviews[reviewIndex].photos.length).fill(
-            0
-          ),
+          activePhotoIndex: Array(data.reviews[reviewIndex].photos.length).fill(-1).map((_, idx) => idx === photoIndex ? idx : -1),
         };
         return newState;
       });
-
-      // Удаляем класс "active" у всех изображений
-      const images = document.querySelectorAll(".small-photos img");
-      images.forEach((img) => {
-        img.classList.remove("active");
-      });
-
-      // Добавляем класс "active" к выбранному изображению
-      const selectedImage = document.querySelector(
-        `.small-photos img:nth-child(${photoIndex + 1})`
-      );
-      if (selectedImage) {
-        selectedImage.classList.add("active");
-      }
     };
   };
 
@@ -142,7 +141,7 @@ const Reviews = () => {
             <img src={star_yellow_fill} alt="star"></img>
             <img src={star_yellow} alt="star"></img>
           </div>
-          <h2>(3)</h2>
+          <h2>({data.reviews.length})</h2>
           <div class="rating-up">
             <img src="/images/up.png" alt="up" />
           </div>
@@ -255,7 +254,7 @@ const Reviews = () => {
                             ? "active"
                             : ""
                         }
-                        id={`reviewPhoto-${reviewIndex}-${photoIndex}`} // Уникальный идентификатор для маленького фото
+                        id={`reviewPhoto-${reviewIndex}-${photoIndex}`}
                         key={photoIndex}
                       />
                     ))}
