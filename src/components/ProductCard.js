@@ -14,6 +14,7 @@ const ProductCard = () => {
       "/images/main-photo.png",
       "../images/photo2.jpeg",
       "../images/photo3.jpeg",
+      "../images/photo1.jpeg"
     ],
     name: "cross",
     avatar: "avatar.jpg",
@@ -117,7 +118,7 @@ const ProductCard = () => {
           <p className="bio__description">{data.description}</p>
           <p className="card__name">{data.name}</p>
           <div className="avatar">
-            <img className="avatar__img" src={[data.mainPhoto]} alt="Avatar" />
+            <img className="avatar__img" src={[data.images[0]]} alt="Avatar" />
             <p className="avatar__name">{data.avatarName}</p>
             <button className="card__button">
               <img className="" src={follow} alt="repost button" />
