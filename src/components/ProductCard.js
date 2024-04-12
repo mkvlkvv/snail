@@ -14,7 +14,7 @@ const ProductCard = () => {
       "/images/main-photo.png",
       "../images/photo2.jpeg",
       "../images/photo3.jpeg",
-      "../images/photo1.jpeg"
+      "../images/photo1.jpeg",
     ],
     name: "cross",
     avatar: "avatar.jpg",
@@ -54,6 +54,12 @@ const ProductCard = () => {
         rating: "3,0",
       },
     ],
+  };
+
+  const [activeIndex, setActiveIndex] = useState(null); // Используем null чтобы ни одно изображение не было активным изначально
+
+  const handleClick = (index) => {
+    setActiveIndex(index === activeIndex ? null : index); // Если текущий индекс равен активному, сбросить активный индекс, иначе установить новый
   };
 
   const slides = data.images; // Массив со всеми изображениями
@@ -106,9 +112,12 @@ const ProductCard = () => {
           {data.images.map((imageSrc, index) => (
             <img
               key={index}
-              className="slider__photo"
+              className={`slider__photo ${
+                index === activeIndex ? "active_photo" : ""
+              }`}
               src={imageSrc}
               alt={`фото${index + 1}`}
+              onClick={() => handleClick(index)}
             />
           ))}
         </div>
@@ -120,7 +129,7 @@ const ProductCard = () => {
           <div className="avatar">
             <img className="avatar__img" src={[data.images[0]]} alt="Avatar" />
             <p className="avatar__name">{data.avatarName}</p>
-            <button className="card__button">
+            <button className="card__button" id="follow">
               <img className="" src={follow} alt="repost button" />
             </button>
           </div>
