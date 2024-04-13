@@ -84,52 +84,12 @@ const MainPageTop = () => {
     const dots = [];
     for (let i = 0; i < totalDots; i++) {
       if (i === activeDotIndex) {
-        dots.push(
-          <img key={i} src={dotActive} />
-        );
+        dots.push(<img key={i} src={dotActive} />);
       } else {
-        dots.push(
-          <img key={i} src={dotUnactive}/>
-        );
+        dots.push(<img key={i} src={dotUnactive} />);
       }
     }
     return dots;
-  };
-
-  const handleClick = (index) => {
-    if (!firstClick) {
-      setFirstClick(true);
-    }
-    setActiveDotIndex(index);
-    updateButtonActivity(index);
-    // Вычисляем индекс следующей точки
-    let nextIndex = activeDotIndex + 1;
-
-    // Если следующий индекс больше или равен общему количеству точек, устанавливаем индекс первой точки
-    if (nextIndex >= totalDots) {
-      nextIndex = 0;
-      scrollLeft(); // Скроллим влево до самого начала
-    } else {
-      // Иначе, скроллируем вправо, если не последняя точка
-      scrollRight();
-    }
-
-    // Устанавливаем следующую точку активной
-    setActiveDotIndex(nextIndex);
-
-    // Если следующий индекс является последним, делаем кнопку "следующая точка" неактивной
-    if (nextIndex === totalDots - 1) {
-      document.querySelector(".right-image").setAttribute("disabled", true);
-    } else {
-      document.querySelector(".right-image").removeAttribute("disabled");
-    }
-
-    // Если следующий индекс является первым, делаем кнопку "предыдущая точка" неактивной
-    if (nextIndex === 0) {
-      document.querySelector(".left-image").setAttribute("disabled", true);
-    } else {
-      document.querySelector(".left-image").removeAttribute("disabled");
-    }
   };
 
   const updateButtonActivity = (nextIndex) => {
@@ -140,25 +100,26 @@ const MainPageTop = () => {
     if (firstClick) {
       leftButton.style.visibility = "visible";
     }
-  
+
     if (!container) return;
-  
+
     const firstCardVisible = container.scrollLeft === 0;
-    const lastCardVisible = container.scrollLeft + container.clientWidth === container.scrollWidth;
+    const lastCardVisible =
+      container.scrollLeft + container.clientWidth === container.scrollWidth;
 
     // Если обе кнопки видны или если это последняя точка, скрываем правую кнопку
-  if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
-    rightButton.style.visibility = "hidden";
-  } else {
-    rightButton.style.visibility = "visible";
-  }
+    if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
+      rightButton.style.visibility = "hidden";
+    } else {
+      rightButton.style.visibility = "visible";
+    }
 
-  // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
-  if (nextIndex === 0 && !firstCardVisible) {
-    leftButton.style.visibility = "hidden";
-  } else {
-    leftButton.style.visibility = "visible";
-  }
+    // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
+    if (nextIndex === 0 && !firstCardVisible) {
+      leftButton.style.visibility = "hidden";
+    } else {
+      leftButton.style.visibility = "visible";
+    }
   };
 
   const handleRightClick = () => {
@@ -174,6 +135,8 @@ const MainPageTop = () => {
     scrollLeft();
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div class="mainpage__topworks-container">
       <div class="mainpage__topworks-container-topic">
@@ -187,7 +150,11 @@ const MainPageTop = () => {
         </div>
       </div>
 
-      <div class="mainpage__topworks-container-keyboard">
+      <div
+        className={`mainpage__topworks-container-keyboard ${
+          isHovered ? "show" : "hide"
+        }`}
+      >
         <img
           src={left}
           alt="left"
@@ -202,7 +169,12 @@ const MainPageTop = () => {
         ></img>
       </div>
 
-      <div class="mainpage__topworks-container-cards" ref={containerRef}>
+      <div
+        class="mainpage__topworks-container-cards"
+        ref={containerRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div class="mainpage__works-card">
           <div class="mainpage__works-card-maininfo">
             <p>Монстр кибер железный человек</p>

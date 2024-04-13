@@ -61,12 +61,24 @@
 }
 
 .mainpage__topworks-container-keyboard {
-    display: flex;
     position: absolute;
     z-index: 2;
     align-items: center;
     margin-top: 175px;
 }
+
+.mainpage__topworks-container-keyboard {
+    /* Стили вашего дочернего элемента */
+    display: none;
+  }
+  
+  .mainpage__topworks-container-keyboard.show {
+    display: flex; /* или любой другой способ показа */
+  }
+  
+  .mainpage__topworks-container-keyboard.hide {
+    display: none;
+  }
 
 .right-image {
     margin-left: 1655px; 

@@ -82,13 +82,9 @@ const MainPageNew = () => {
     const dots = [];
     for (let i = 0; i < totalDots; i++) {
       if (i === activeDotIndex) {
-        dots.push(
-          <img key={i} src={dotActive} />
-        );
+        dots.push(<img key={i} src={dotActive} />);
       } else {
-        dots.push(
-          <img key={i} src={dotUnactive}/>
-        );
+        dots.push(<img key={i} src={dotUnactive} />);
       }
     }
     return dots;
@@ -138,25 +134,26 @@ const MainPageNew = () => {
     if (firstClick) {
       leftButton.style.visibility = "visible";
     }
-  
+
     if (!container) return;
-  
+
     const firstCardVisible = container.scrollLeft === 0;
-    const lastCardVisible = container.scrollLeft + container.clientWidth === container.scrollWidth;
+    const lastCardVisible =
+      container.scrollLeft + container.clientWidth === container.scrollWidth;
 
     // Если обе кнопки видны или если это последняя точка, скрываем правую кнопку
-  if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
-    rightButton.style.visibility = "hidden";
-  } else {
-    rightButton.style.visibility = "visible";
-  }
+    if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
+      rightButton.style.visibility = "hidden";
+    } else {
+      rightButton.style.visibility = "visible";
+    }
 
-  // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
-  if (nextIndex === 0 && !firstCardVisible) {
-    leftButton.style.visibility = "hidden";
-  } else {
-    leftButton.style.visibility = "visible";
-  }
+    // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
+    if (nextIndex === 0 && !firstCardVisible) {
+      leftButton.style.visibility = "hidden";
+    } else {
+      leftButton.style.visibility = "visible";
+    }
   };
 
   const handleRightClick = () => {
@@ -172,6 +169,8 @@ const MainPageNew = () => {
     scrollLeft();
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div class="mainpage__topworks-container">
       <div class="mainpage__topworks-container-topic">
@@ -185,7 +184,11 @@ const MainPageNew = () => {
         </div>
       </div>
 
-      <div class="mainpage__topworks-container-keyboard">
+      <div
+        className={`mainpage__topworks-container-keyboard ${
+          isHovered ? "show" : "hide"
+        }`}
+      >
         <img
           src={left}
           alt="left"
@@ -200,7 +203,12 @@ const MainPageNew = () => {
         ></img>
       </div>
 
-      <div class="mainpage__topworks-container-cards" ref={containerRef}>
+      <div
+        class="mainpage__topworks-container-cards"
+        ref={containerRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div class="mainpage__works-card" id="new">
           <div class="mainpage__works-card-maininfo">
             <p>Монстр кибер железный человек</p>
