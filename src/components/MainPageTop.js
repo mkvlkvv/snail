@@ -95,10 +95,14 @@ const MainPageTop = () => {
   const updateButtonActivity = (nextIndex) => {
     const leftButton = document.querySelector(".left-image");
     const rightButton = document.querySelector(".right-image");
+    const leftGradient = document.querySelector(".left-gradient");
+    const rightGradient = document.querySelector(".right-gradient");
+
     const container = containerRef.current;
 
     if (firstClick) {
       leftButton.style.visibility = "visible";
+      leftGradient.style.visibility = "visible";
     }
 
     if (!container) return;
@@ -110,15 +114,19 @@ const MainPageTop = () => {
     // Если обе кнопки видны или если это последняя точка, скрываем правую кнопку
     if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
       rightButton.style.visibility = "hidden";
+      rightGradient.style.visibility = "hidden";
     } else {
       rightButton.style.visibility = "visible";
+      rightGradient.style.visibility = "visible";
     }
 
     // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
     if (nextIndex === 0 && !firstCardVisible) {
       leftButton.style.visibility = "hidden";
+      leftGradient.style.visibility = "hidden";
     } else {
       leftButton.style.visibility = "visible";
+      leftGradient.style.visibility = "visible";
     }
   };
 
@@ -148,6 +156,21 @@ const MainPageTop = () => {
         <div class="mainpage__topworks-container-topic-bound">
           {renderDots()}
         </div>
+      </div>
+
+      <div
+        className={`mainpage__topworks-container-keyboard ${
+          isHovered ? "show" : "hide"
+        }`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div class = {`left-gradient ${
+          isHovered ? "show" : "hide"
+        }`} onClick={handleLeftClick}></div>
+        <div class = {`right-gradient ${
+          isHovered ? "show" : "hide"
+        }`} onClick={handleRightClick}></div>
       </div>
 
       <div
