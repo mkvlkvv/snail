@@ -62,21 +62,32 @@
 
 .mainpage__topworks-container-keyboard {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     align-items: center;
     margin-top: 175px;
 }
 
 .mainpage__topworks-container-keyboard {
-    /* Стили вашего дочернего элемента */
     display: none;
   }
   
   .mainpage__topworks-container-keyboard.show {
-    display: flex; /* или любой другой способ показа */
+    display: flex; 
   }
   
   .mainpage__topworks-container-keyboard.hide {
+    display: none;
+  }
+
+  .left-gradient {
+    display: none;
+  }
+  
+  .left-gradient.show {
+    display: flex; 
+  }
+  
+  .left-gradient.hide {
     display: none;
   }
 
@@ -86,4 +97,29 @@
 
 .right-image-new {
     margin-left: 1655px; 
+}
+
+.left-gradient {
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
+    height: 120px;
+    width: 100px;
+    opacity: 0.5;
+    margin-top: 100px;
+    z-index: 2;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.right-gradient {
+    background: linear-gradient(to left, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
+    height: 120px;
+    width: 100px;
+    opacity: 0.5;
+    margin-top: 100px;
+    z-index: 2;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 1755px; 
 }
