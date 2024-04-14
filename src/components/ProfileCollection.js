@@ -22,167 +22,103 @@ import collection_png3 from "../images/col.png"
 
 
 const ProfileCollection = () => {
+
+
+    const collection = [
+        {
+            name: "Imagine",
+            number: 6,
+            like: "6",
+            images: [
+                "/images/col1.png",
+                "/images/col1.png",
+                "/images/col1.png",
+                "/images/col1.png",
+                "/images/col1.png",
+                "/images/col1.png",
+            ]
+        },
+        {
+            name: "Imagine",
+            number: 1,
+            like: "6",
+            images: [
+                "/images/col1.png",
+            ]
+        },
+        {
+            name: "Imagine",
+            number: 3,
+            like: "6",
+            images: [
+                "/images/col1.png",
+                "/images/col1.png",
+                "/images/col1.png",
+            ]
+        },
+        {
+            name: "Imagine",
+            number: 2,
+            like: "6",
+            images: [
+                "/images/col1.png",
+                "/images/col1.png",
+            ]
+        },
+        {
+            name: "Imagine",
+            number: 1,
+            like: "6",
+            images: [
+                "/images/col1.png",
+            ]
+        },
+    ]
+
+
     return (
         <div class="collection">
-            <div className="collection__card-container">
-                <div className="collection__background" />
-                <div class="collection__card">
-                    <div class="profile__works-card-maininfo">
-                        <p>Imagine</p>
-                        <div class="profile__works-card-buttons">
-                            <button className="profile__button profile__button_eye" />
-                            <button className="profile__button profile__button_choose" />
-                        </div>
-                    </div>
-                    <div className="collection__photo-container4">
-                        <img className="collection__photo4" src={collection1} alt='card_photo' />
-                        <img className="collection__photo4"src={collection2} alt='card_photo' />
-                        <img className="collection__photo4"src={collection3} alt='card_photo' />
-                        <img className="collection__photo4" src={collection4} alt='card_photo' />
-                    </div>
-                    <div class="profile__works-card-info">
-                        <div class="profile__works-card-avatar">
-                            4 модели
-                        </div>
-                        <div class="collection__card-info-count">
-                            <div class="collection__card-card-info-likes">
-                                <img src={like} alt='like'/>
-                                <p>6</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-
-                
-            </div>
-
-
-            <div className="collection__card-container">
-                <div className="collection__background" />
-                <div class="collection__card">
-                    <div class="profile__works-card-maininfo">
-                        <p>Imagine</p>
-                        <div class="profile__works-card-buttons">
-                            <button className="profile__button profile__button_eye" />
-                            <button className="profile__button profile__button_choose" />
-                        </div>
-                    </div>
-                    <div className="collection__photo-container1">
-                    
-                        <img className="collection__photo1"src={collection5} alt='card_photo' />
-                    </div>
-                    <div class="profile__works-card-info">
-                        <div class="profile__works-card-avatar">
-                            1 модель
-                        </div>
-                        <div class="collection__card-info-count">
-                            <div class="collection__card-card-info-likes">
-                                <img src={like} alt='like'/>
-                                <p>6</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                {collection.map(col => (
+                      <div className="collection__card-container">
+                      <div className="collection__background" />
+                      <div class="collection__card">
+                          <div class="profile__works-card-maininfo">
+                              <p>{col.name}</p>
+                              <div class="profile__works-card-buttons">
+                                  <button className="profile__button profile__button_eye" />
+                                  <button className="profile__button profile__button_choose" />
+                              </div>
+                          </div>
+                          <div className={`collection__photo-container${col.number >= 3 ? "4" : col.number}`}>
+                          {Array.from({ length: col.number>=4 ? 4 : col.number}).map((_, index) => (
+                            <img
+                                key={index}
+                                className={`collection__photo${col.number >= 3 ? "4" : col.number}`}
+                                src={col.images[index]}
+                                alt='card_photo'
+                            />
+                        ))}
+                          </div>
+                          <div class="profile__works-card-info">
+                              <div class="profile__works-card-avatar">
+                                  {`${col.number}${col.number === 1 ? " модель" : " модели"}`}
+                              </div>
+                              <div class="collection__card-info-count">
+                                  <div class="collection__card-card-info-likes">
+                                      <img src={like} alt='like' />
+                                      <p>{col.like}</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+      
+      
+      
+                  </div>
+                ))}
 
                 
-            </div>
-            <div className="collection__card-container">
-                <div className="collection__background" />
-                <div class="collection__card">
-                    <div class="profile__works-card-maininfo">
-                        <p>Imagine</p>
-                        <div class="profile__works-card-buttons">
-                            <button className="profile__button profile__button_eye" />
-                            <button className="profile__button profile__button_choose" />
-                        </div>
-                    </div>
-                    <div className="collection__photo-container4">
-                        <img className="collection__photo3"src={collection6} alt='card_photo' />
-                        <img className="collection__photo3" src={collection_png1} alt='card_photo' />
-                        <img className="collection__photo3"src={collection7} alt='card_photo' />
-                    </div>
-                    <div class="profile__works-card-info">
-                        <div class="profile__works-card-avatar">
-                            3 модели
-                        </div>
-                        <div class="collection__card-info-count">
-                            <div class="collection__card-card-info-likes">
-                                <img src={like} alt='like'/>
-                                <p>6</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                
-            </div>
-
-            <div className="collection__card-container">
-                <div className="collection__background" />
-                <div class="collection__card">
-                    <div class="profile__works-card-maininfo">
-                        <p>Imagine</p>
-                        <div class="profile__works-card-buttons">
-                            <button className="profile__button profile__button_eye" />
-                            <button className="profile__button profile__button_choose" />
-                        </div>
-                    </div>
-                    <div className="collection__photo-container2">
-                    
-                        <img className="collection__photo2" src={collection_png2} alt='card_photo' />
-                        <img className="collection__photo2"src={collection_png3} alt='card_photo' />
-
-                    </div>
-                    <div class="profile__works-card-info">
-                        <div class="profile__works-card-avatar">
-                            2 модели
-                        </div>
-                        <div class="collection__card-info-count">
-                            <div class="collection__card-card-info-likes">
-                                <img src={like} alt='like'/>
-                                <p>6</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                
-            </div>
-
-            <div className="collection__card-container">
-                <div className="collection__background" />
-                <div class="collection__card">
-                    <div class="profile__works-card-maininfo">
-                        <p>Imagine</p>
-                        <div class="profile__works-card-buttons">
-                            <button className="profile__button profile__button_eye" />
-                            <button className="profile__button profile__button_choose" />
-                        </div>
-                    </div>
-                    <div className="collection__photo-container1">
-                    
-                        <img className="collection__photo1" src={collection8} alt='card_photo' />
-                    </div>
-                    <div class="profile__works-card-info">
-                        <div class="profile__works-card-avatar">
-                            1 модель
-                        </div>
-                        <div class="collection__card-info-count">
-                            <div class="collection__card-card-info-likes">
-                                <img src={like} alt='like'/>
-                                <p>6</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                
-            </div>
 
         </div>
     );

@@ -13,7 +13,7 @@ import profile_works_card_photo6 from "../images/profile_card_6.svg";
 
 import profile_works_card_photo from "../images/new_work.svg";
 
-import profile_works_card_avatar1 from "../images/avatarka.png";
+import profile_works_card_avatar1 from "../images/avatarka.jpg";
 import profile_works_card_avatar2 from "../images/avatar2.png";
 import save from "../images/save.png";
 import like from "../images/like.png";

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import avatarka from '../images/avatarka.png';
 import favorite from '../images/favorite.svg';
 import follow from '../images/follow.svg';
 import download from '../images/download.svg';
@@ -9,6 +8,18 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 
 const Profile = () => {
+
+
+  const data = {
+    name: "yaane",
+    avatarSrc: "/images/profile.png",
+    nickname: "@coemet",
+    followers: "150",
+    saved: "1",
+    like: "6",
+    bio: "Привет! Сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня!",
+  };
+
   const [activeButton, setActiveButton] = useState(null); // Состояние для активной кнопки
 
   // Функция для обработки клика по кнопке
@@ -22,25 +33,25 @@ const Profile = () => {
         <div></div>
       </div>
       <div class="profile__card">
-        <img className="profile__avatar" src={avatarka} alt="Аватар профиля" />
+        <img className="profile__avatar" src={data.avatarSrc} alt="Аватар профиля" />
         <div className="profile__info">
-          <p className="profile__name">yaane</p>
-          <p className="profile__nickname">@coemet</p>
+          <p className="profile__name">{data.name}</p>
+          <p className="profile__nickname">{data.nickname}</p>
           <div className="profile__stat">
             <button className="profile__stat-item">
-              <img className="profile__stat-img" src={follow} alt="repost button" /> 150
+              <img className="profile__stat-img" src={follow} alt="repost button" /> {data.followers}
             </button>
             <button className="profile__stat-item">
-              <img className="profile__stat-img" src={download} alt="save button" />1
+              <img className="profile__stat-img" src={download} alt="save button" />{data.saved}
             </button>
             <button className="profile__stat-item">
-              <img className="profile__stat-img" src={favorite} alt="like button" />6
+              <img className="profile__stat-img" src={favorite} alt="like button" />{data.like}
             </button>
           </div>
           <button className="profile__edit-button">Редактировать профиль</button>
           <div className="profile__bio">
             <h1 className="profile__bio-name">Bio</h1>
-            <p className="profile__bio-description">Привет! Сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня!</p>
+            <p className="profile__bio-description">{data.bio}</p>
           </div>
           <div className='social_media_buttons'>
             <button className="footer__button footer__button_exit1" />
