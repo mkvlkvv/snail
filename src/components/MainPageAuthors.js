@@ -85,14 +85,18 @@ const MainPageAuthors = () => {
 
     // Если следующий индекс является последним, делаем кнопку "следующая точка" неактивной
     if (nextIndex === totalDots - 1) {
-      document.querySelector(".small-right-image").setAttribute("disabled", true);
+      document
+        .querySelector(".small-right-image")
+        .setAttribute("disabled", true);
     } else {
       document.querySelector(".small-right-image").removeAttribute("disabled");
     }
 
     // Если следующий индекс является первым, делаем кнопку "предыдущая точка" неактивной
     if (nextIndex === 0) {
-      document.querySelector(".small-left-image").setAttribute("disabled", true);
+      document
+        .querySelector(".small-left-image")
+        .setAttribute("disabled", true);
     } else {
       document.querySelector(".small-left-image").removeAttribute("disabled");
     }
@@ -106,25 +110,25 @@ const MainPageAuthors = () => {
     if (firstClick) {
       leftButton.style.visibility = "visible";
     }
-  
+
     if (!container) return;
-  
+
     const firstCardVisible = container.scrollLeft === 0;
     const lastCardVisible = container.scrollWidth;
 
     // Если обе кнопки видны или если это последняя точка, скрываем правую кнопку
-  if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
-    rightButton.style.visibility = "hidden";
-  } else {
-    rightButton.style.visibility = "visible";
-  }
+    if ((firstCardVisible && lastCardVisible) || nextIndex === totalDots - 1) {
+      rightButton.style.visibility = "hidden";
+    } else {
+      rightButton.style.visibility = "visible";
+    }
 
-  // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
-  if (nextIndex === 0 && !firstCardVisible) {
-    leftButton.style.visibility = "hidden";
-  } else {
-    leftButton.style.visibility = "visible";
-  }
+    // Если это первая точка и не обе кнопки видны, скрываем левую кнопку
+    if (nextIndex === 0 && !firstCardVisible) {
+      leftButton.style.visibility = "hidden";
+    } else {
+      leftButton.style.visibility = "visible";
+    }
   };
 
   const handleRightClick = () => {
@@ -140,13 +144,21 @@ const MainPageAuthors = () => {
     scrollLeft();
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div class="mainpage__authors-container">
       <div class="mainpage__authors-container-topic-name">
         <a>Топ авторов</a>
       </div>
 
-      <div class="mainpage__topworks-container-keyboard">
+      <div
+        className={`mainpage__topworks-container-keyboard ${
+          isHovered ? "show" : "hide"
+        }`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <img
           src={smallLeft}
           alt="left"
@@ -161,7 +173,12 @@ const MainPageAuthors = () => {
         />
       </div>
 
-      <div class="mainpage__authors-author" ref={containerRef}>
+      <div
+        class="mainpage__authors-author"
+        ref={containerRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div class="mainpage__authors-author-container">
           <img src={author} />
           <div class="mainpage__authors-author-info">

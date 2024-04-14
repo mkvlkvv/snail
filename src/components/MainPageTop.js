@@ -154,6 +154,8 @@ const MainPageTop = () => {
         className={`mainpage__topworks-container-keyboard ${
           isHovered ? "show" : "hide"
         }`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <img
           src={left}
