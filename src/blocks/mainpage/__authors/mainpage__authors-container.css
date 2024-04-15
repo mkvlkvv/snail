@@ -90,3 +90,40 @@
 .small-right-image, .small-left-image {
     margin-top: -180px;
 }
+
+.small-left-gradient {
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
+    height: 120px;
+    width: 100px;
+    opacity: 0.5;
+    margin-top: -180px;
+    z-index: 2;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.small-right-gradient{
+    background: linear-gradient(to left, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
+    height: 120px;
+    width: 100px;
+    opacity: 0.5;
+    margin-top: -180px;
+    z-index: 2;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 1800px; 
+}
+
+.small-left-gradient {
+    display: none;
+  }
+  
+  .small-left-gradient.show {
+    display: flex; 
+  }
+  
+  .small-left-gradient.hide {
+    display: none;
+  }

@@ -21,7 +21,6 @@ import right from "../images/right.svg";
 
 const MainPageNew = () => {
   const containerRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [activeDotIndex, setActiveDotIndex] = useState(0);
   const [firstClick, setFirstClick] = useState(false);
@@ -90,47 +89,11 @@ const MainPageNew = () => {
     return dots;
   };
 
-  const handleClick = (index) => {
-    if (!firstClick) {
-      setFirstClick(true);
-    }
-    setActiveDotIndex(index);
-    updateButtonActivity(index);
-    // Вычисляем индекс следующей точки
-    let nextIndex = activeDotIndex + 1;
-
-    // Если следующий индекс больше или равен общему количеству точек, устанавливаем индекс первой точки
-    if (nextIndex >= totalDots) {
-      nextIndex = 0;
-      scrollLeft(); // Скроллим влево до самого начала
-    } else {
-      // Иначе, скроллируем вправо, если не последняя точка
-      scrollRight();
-    }
-
-    // Устанавливаем следующую точку активной
-    setActiveDotIndex(nextIndex);
-
-    // Если следующий индекс является последним, делаем кнопку "следующая точка" неактивной
-    if (nextIndex === totalDots - 1) {
-      document.querySelector(".right-image-new").setAttribute("disabled", true);
-    } else {
-      document.querySelector(".right-image-new").removeAttribute("disabled");
-    }
-
-    // Если следующий индекс является первым, делаем кнопку "предыдущая точка" неактивной
-    if (nextIndex === 0) {
-      document.querySelector(".left-image-new").setAttribute("disabled", true);
-    } else {
-      document.querySelector(".left-image-new").removeAttribute("disabled");
-    }
-  };
-
   const updateButtonActivity = (nextIndex) => {
     const leftButton = document.querySelector(".left-image-new");
     const rightButton = document.querySelector(".right-image-new");
-    const leftGradient = document.querySelector(".left-gradient");
-    const rightGradient = document.querySelector(".right-gradient");
+    const leftGradient = document.querySelector(".left-gradient-new");
+    const rightGradient = document.querySelector(".right-gradient-new");
     const container = containerRef.current;
 
     if (firstClick) {
@@ -198,10 +161,10 @@ const MainPageNew = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div class = {`left-gradient ${
+        <div class = {`left-gradient-new ${
           isHovered ? "show" : "hide"
         }`} onClick={handleLeftClick}></div>
-        <div class = {`right-gradient ${
+        <div class = {`right-gradient-new ${
           isHovered ? "show" : "hide"
         }`} onClick={handleRightClick}></div>
       </div>
