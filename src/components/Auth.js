@@ -3,6 +3,7 @@ import east from "../images/east.svg"
 import telegram from "../images/telegram.svg"
 import gmail from "../images/gmail.svg"
 import instagram from "../images/instagram.svg"
+import Footer from './Footer.js'
 
 const AuthModal = ({ show, onCloseButtonClick }) => {
     const [username, setUsername] = useState('');
@@ -41,6 +42,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
     };
     
     return(
+        <div class="auth-background">
         <div class="auth___form-container">
            <div class="auth__login">
                 <div class="auth__login__vhod">
@@ -59,7 +61,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                         <input
                             className="auth__login__form__input__login"
                             name="form_login"
-                            value="Почта"
+                            placeholder="Почта"
                             type="text"
                         />
                         <div class="auth__login__form__up" id="form1">
@@ -70,7 +72,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                     <input
                             className="auth__login__form__input__password"
                             name="form_login"
-                            value="Пароль"
+                            placeholder="Пароль"
                             type="text"
                         />
                         <div class="auth__login__form__down" id="form1">
@@ -88,6 +90,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                     <img src={east}/>                
                 </div>
            </div>
+        </div>
         </div>
     )
 }

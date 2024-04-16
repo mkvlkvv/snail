@@ -10,6 +10,7 @@ const Header = () => {
   
       function toggle() {
           setIsShowing(!isShowing);
+          document.body.style.overflow = 'hidden';
       }
   
       return [
