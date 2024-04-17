@@ -6,7 +6,7 @@ import instagram from "../images/instagram.svg"
 import west from "../images/west.svg"
 import west_dark from "../images/west_dark.svg"
 
-const AuthModal = ({ show, onCloseButtonClick, ref}) => {
+const AuthModal = ({ show, onCloseButtonClick}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLogin, setIsLogin] = useState(true);
@@ -38,6 +38,12 @@ const AuthModal = ({ show, onCloseButtonClick, ref}) => {
 
     const switchToStep3 = () => {
         setIsStep2(!isStep2)
+    }
+
+    const Exit = () => {
+        [isLogin, setIsLogin] = useState(true);
+        [isStep1, setIsStep1] = useState(false);
+        [isStep2, setIsStep2] = useState(false);
     }
 
 
@@ -256,7 +262,7 @@ const AuthModal = ({ show, onCloseButtonClick, ref}) => {
                 <div class="auth__login__button_back" onClick={switchToStep3}>
                     <img src={west_dark}/>
                 </div>
-                <div class="auth__login__button_next_3" onClick={onCloseButtonClick}>
+                <div class="auth__login__button_next_3" onClick={switchToRegistration}>
                     <p>Завершить</p>
                 </div>
             </div>

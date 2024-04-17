@@ -57,7 +57,7 @@ const Header = () => {
           <a className="header__button">Печать</a>
         </div>
       </div>
-      <AuthModal show={isShowingModal} onCloseButtonClick={closeModal} ref={modalRef}>
+      <AuthModal show={isShowingModal} onCloseButtonClick={closeModal}>
         
       </AuthModal>
       <button className="header__button header__button_exit" onClick={toggleModal}>
