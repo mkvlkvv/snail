@@ -9,8 +9,10 @@
     transition: background-color 0.3s ease;
     font-size: 20px;
     line-height: 23.44px;
+    z-index: 999;
 }
 
 .header__button:hover {
     color: #ffffff;
 }
+

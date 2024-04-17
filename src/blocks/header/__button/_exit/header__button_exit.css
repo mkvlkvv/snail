@@ -5,8 +5,10 @@
     border: none;
     height: 36px;
     width: 50px;
+    z-index: 999;
 }
 
 .header__button_exit:hover {
     background-color: #333333;
 }
+

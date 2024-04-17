@@ -1,25 +1,50 @@
 import React from "react";
 import logo from '../images/logo.svg'
 import AuthModal from "./Auth";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef} from 'react';
 
-const Header = () => {
- 
-    const useModal = () => {
-      const [isShowing, setIsShowing] = useState(false);
-  
-      function toggle() {
-          setIsShowing(!isShowing);
-          document.body.style.overflow = 'hidden';
-      }
-  
-      return [
-          isShowing,
-          toggle
-      ];
+const useModal = () => {
+  const [isShowing, setIsShowing] = useState(false);
+
+  function toggle() {
+    setIsShowing(!isShowing);
+    if (!isShowing){
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   }
 
-  const [isShowingModal, toggleModal] = useModal();
+  function closeModal() {
+    setIsShowing(false);
+    document.body.style.overflow = 'auto';
+  }
+
+  
+  return [
+    isShowing,
+    toggle,
+    closeModal
+  ];
+}
+
+const Header = () => {
+
+  const [isShowingModal, toggleModal, closeModal] = useModal();
+
+  const modalRef = useRef();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [modalRef, closeModal]);
 
 
   return (
@@ -32,7 +57,7 @@ const Header = () => {
           <a className="header__button">Печать</a>
         </div>
       </div>
-      <AuthModal show={isShowingModal} onCloseButtonClick={toggleModal}>
+      <AuthModal show={isShowingModal} onCloseButtonClick={closeModal} ref={modalRef}>
         
       </AuthModal>
       <button className="header__button header__button_exit" onClick={toggleModal}>

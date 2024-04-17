@@ -143,3 +143,6 @@
 @import url("./blocks/mainpage/__foryou/mainpage__foryou-container.css");
 @import url("./blocks/mainpage/__authors/mainpage__authors-container.css");
 @import url("./blocks/auth/auth__form-container.css");
+@import url("./blocks/auth/auth__form-container_step1.css");
+@import url("./blocks/auth/auth__form-container_step2.css");
+@import url("./blocks/auth/auth__form-container_step3.css");
