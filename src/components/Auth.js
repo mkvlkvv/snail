@@ -46,6 +46,12 @@ const AuthModal = ({ show, onCloseButtonClick}) => {
         [isStep2, setIsStep2] = useState(false);
     }
 
+    const resetState = () => {
+        setIsLogin(true);
+        setIsStep1(false);
+        setIsStep2(false);
+    }
+
 
     const handleLogin = () => {
         fetch('api/login', {
@@ -120,10 +126,13 @@ const AuthModal = ({ show, onCloseButtonClick}) => {
             </div>
        </div>
        <div class="auth__back">
-            <button onClick={onCloseButtonClick}></button>
+            <button onClick={() => {
+                onCloseButtonClick();
+                resetState();
+            }}></button>
             <div class="auth__back__reg" onClick={switchToRegistration}>
                 <p>Регистрация</p>
-                <img src={east}/>                
+                <img src={east}/>              
             </div>
        </div>
        </div>
@@ -138,7 +147,10 @@ const AuthModal = ({ show, onCloseButtonClick}) => {
             </div>
 
             <div class="auth__login_2">
-            <button onClick={onCloseButtonClick}></button>
+            <button onClick={() => {
+                onCloseButtonClick();
+                resetState();
+            }}></button>
             <div class="auth__login__vhod_2">
                 <p>Регистрация</p>
             </div>
@@ -181,7 +193,10 @@ const AuthModal = ({ show, onCloseButtonClick}) => {
                 </div>              
             </div>
             <div class="auth__login_2">
-            <button onClick={onCloseButtonClick}></button>
+            <button onClick={() => {
+                onCloseButtonClick();
+                resetState();
+            }}></button>
             <div class="auth__login__vhod_2">
                 <p>Регистрация</p>
             </div>
@@ -244,7 +259,10 @@ const AuthModal = ({ show, onCloseButtonClick}) => {
                 </div>
             </div>
             <div class="auth__login_3">
-                <button onClick={onCloseButtonClick}></button>
+            <button onClick={() => {
+                onCloseButtonClick();
+                resetState();
+            }}></button>
                 <div class="auth__login__vhod_3">
                     <p>Подтверждение</p>
                 </div>              
@@ -262,7 +280,10 @@ const AuthModal = ({ show, onCloseButtonClick}) => {
                 <div class="auth__login__button_back" onClick={switchToStep3}>
                     <img src={west_dark}/>
                 </div>
-                <div class="auth__login__button_next_3" onClick={switchToRegistration}>
+                <div class="auth__login__button_next_3" onClick={() => {
+                onCloseButtonClick();
+                resetState();
+            }}>
                     <p>Завершить</p>
                 </div>
             </div>
