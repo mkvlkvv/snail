@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import like from "../images/favorite.svg";
 import repost from "../images/ShareFat.svg";
 import follow from "../images/follow.svg";
@@ -55,6 +55,77 @@ const ProductCard = () => {
       },
     ],
   };
+
+  const [users, setUsers] = useState([]);
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/token/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            alias: 'radmilaradmila',
+            password: 'radmila05122004'
+          })
+        });
+  
+        if (!response.ok) {
+          console.error('Ошибка при запросе:', response.statusText);
+          return;
+        }
+  
+        const data = await response.json();
+        setToken(data.access);
+        console.log('Успешный ответ:', data);
+      } catch (error) {
+        console.error('Произошла ошибка:', error);
+      }
+    };
+  
+    fetchToken();
+  }, []);
+
+  useEffect(() => {
+    console.log(token); 
+  }, [token]);
+  
+
+  useEffect(() => {
+    const getApiData = async () => {
+      if (token) { 
+        try {
+          const response = await fetch(
+            "http://127.0.0.1:8000/api/publications/1/",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }
+          );
+  
+          if (!response.ok) {
+            console.error('Ошибка при запросе:', response.statusText);
+            return;
+          }
+  
+          const responseData = await response.json();
+          console.log(responseData);
+          setUsers(responseData);
+        } catch (error) {
+          console.error('Произошла ошибка:', error);
+        }
+      }
+    };
+  
+    getApiData(); // Вызываем функцию при инициализации компонента
+  
+  }, [token]);
+  
+
 
   const [activeIndex, setActiveIndex] = useState(null); // Используем null чтобы ни одно изображение не было активным изначально
 
