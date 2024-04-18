@@ -35,11 +35,13 @@
 }
 
 .left-gradient-new {
-    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
-    height: 120px;
-    width: 100px;
+    background-color: #34343433;
+    backdrop-filter: blur(5px);                          
+    height: 400px;
+    width: 110px;
     opacity: 0.5;
-    margin-top: 100px;
+    margin-top: 90px;
+    margin-left: -11px;
     z-index: 2;
     position: absolute;
     border-top-left-radius: 5px;
@@ -47,9 +49,10 @@
 }
 
 .right-gradient-new {
-    background: linear-gradient(to left, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
-    height: 120px;
-    width: 100px;
+    background-color: #34343433;
+    backdrop-filter: blur(5px);                            
+    height: 400px;
+    width: 110px;
     opacity: 0.5;
     margin-top: 100px;
     z-index: 2;

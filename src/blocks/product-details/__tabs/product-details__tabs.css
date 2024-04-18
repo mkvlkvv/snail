@@ -11,7 +11,13 @@
     margin-right: 20px;
     border: none;
     font-family: 'Roboto', sans-serif;
+    transition: all 0.6s;
   }
+
+.tabs button.hover {
+    border: 1px solid #FFB831;
+    font-weight: bold;
+}
   
 .tabs button.active {
     font-weight: bold;

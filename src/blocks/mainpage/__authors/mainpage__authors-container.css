@@ -92,11 +92,13 @@
 }
 
 .small-left-gradient {
-    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
-    height: 120px;
-    width: 100px;
+    background-color: #34343433;
+    backdrop-filter: blur(5px);                            
+    height: 190px;
+    width: 125px;
     opacity: 0.5;
-    margin-top: -180px;
+    margin-top: -130px;
+    margin-right: 5px;
     z-index: 2;
     position: absolute;
     border-top-left-radius: 5px;
@@ -104,7 +106,10 @@
 }
 
 .small-right-gradient{
-    background: linear-gradient(to left, rgba(0,0,0,0.7), rgba(255,255,255,0.7));                          
+    background-color: #34343433;
+    backdrop-filter: blur(5px);                            
+    height: 190px;
+    width: 125px;                        
     height: 120px;
     width: 100px;
     opacity: 0.5;

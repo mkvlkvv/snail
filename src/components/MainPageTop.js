@@ -165,12 +165,14 @@ const MainPageTop = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div class = {`left-gradient ${
-          isHovered ? "show" : "hide"
-        }`} onClick={handleLeftClick}></div>
-        <div class = {`right-gradient ${
-          isHovered ? "show" : "hide"
-        }`} onClick={handleRightClick}></div>
+        <div
+          class={`left-gradient ${isHovered ? "show" : "hide"}`}
+          onClick={handleLeftClick}
+        ></div>
+        <div
+          class={`right-gradient ${isHovered ? "show" : "hide"}`}
+          onClick={handleRightClick}
+        ></div>
       </div>
 
       <div
@@ -193,6 +195,8 @@ const MainPageTop = () => {
           onClick={handleRightClick}
         ></img>
       </div>
+
+
 
       <div
         class="mainpage__topworks-container-cards"
