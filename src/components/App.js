@@ -17,6 +17,7 @@ import MainPageTop from './MainPageTop.js'
 import MainPageNew from './MainPageNew.js';
 import MainPageForYou from './MainPageForYou.js'
 import MainPageAuthors from './MainPageAuthors.js';
+import ProfileReports from './ProfileReports.js';
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -67,6 +68,15 @@ const USER_PROFILE_FAV = () => (
   </div>
 )
 
+const USER_PROFILE_REP = () => (
+  <div>
+    <Profile />
+    <ProfileReports />
+  </div>
+)
+
+
+
 const App = () => {
   return (
     <Router>
@@ -78,6 +88,7 @@ const App = () => {
           <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
           <Route path="/profile/favourites" element={<USER_PROFILE_FAV />} />
           <Route path="/profile/works" element={<USER_PROFILE_WORKS />} />
+          <Route path="/profile/reports" element={<USER_PROFILE_REP />} />
           <Route path="/snailweb" element={<MAIN_PAGE />} />
         </Routes>
         <Footer />

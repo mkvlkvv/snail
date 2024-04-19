@@ -146,3 +146,5 @@
 @import url("./blocks/auth/auth__form-container_step1.css");
 @import url("./blocks/auth/auth__form-container_step2.css");
 @import url("./blocks/auth/auth__form-container_step3.css");
+@import url("./blocks/profile/__reports/profile__reports.css");
+@import url("./blocks/profile/__reports/__report/profile__reports__report.css");
