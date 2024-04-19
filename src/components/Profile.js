@@ -75,7 +75,7 @@ const Profile = () => {
             <NavLink className="profile__objects-leftinfo_reviews">
             <div className="profile__objects-leftinfo_reviews_block"><a>Отзывы</a></div>
             </NavLink>
-            <NavLink className="profile__objects-leftinfo_complains" to="/profile/reports">
+            <NavLink className="profile__objects-leftinfo_complains">
             <div className="profile__objects-leftinfo_complains_block"><a>Жалобы</a></div>
             </NavLink>
           </div>
