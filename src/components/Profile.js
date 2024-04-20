@@ -72,12 +72,12 @@ const Profile = () => {
             <NavLink className={({ isActive }) => (isActive ? "profile__objects-leftinfo_collections_active": "profile__objects-leftinfo_collections")} to="/profile/collection">
             <div className="profile__objects-leftinfo_collections_block"><a>Коллекции</a></div>
             </NavLink>
-            <Link className="profile__objects-leftinfo_reviews">
+            <NavLink className="profile__objects-leftinfo_reviews">
             <div className="profile__objects-leftinfo_reviews_block"><a>Отзывы</a></div>
-            </Link>
-            <Link className="profile__objects-leftinfo_complains">
+            </NavLink>
+            <NavLink className="profile__objects-leftinfo_complains">
             <div className="profile__objects-leftinfo_complains_block"><a>Жалобы</a></div>
-            </Link>
+            </NavLink>
           </div>
           <div className="profile__objects-rightinfo">
             <form className="profile__printers__form" action="" method="get">

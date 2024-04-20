@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header.js';
 import ProductCard from './ProductCard.js';
@@ -17,6 +17,7 @@ import MainPageTop from './MainPageTop.js'
 import MainPageNew from './MainPageNew.js';
 import MainPageForYou from './MainPageForYou.js'
 import MainPageAuthors from './MainPageAuthors.js';
+import ProfileReports from './ProfileReports.js';
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -67,23 +68,32 @@ const USER_PROFILE_FAV = () => (
   </div>
 )
 
+const USER_PROFILE_REP = () => (
+  <div>
+    <Profile />
+    <ProfileReports />
+  </div>
+)
+
+
 
 const App = () => {
   return (
     <Router>
       <div className='page'>
+        <Header />
         <Routes>
-          <Route path="/" element={<MAIN_PAGE />} />
-          <Route path="profile" element={<USER_PROFILE />} />
-          <Route path="profile/collection" element={<USER_PROFILE_COLLECTION />} />
-          <Route path="profile/favourites" element={<USER_PROFILE_FAV />} />
-          <Route path="profile/works" element={<USER_PROFILE_WORKS />} />
-          <Route path="/snailweb" element={<CARD_OF_PRODUCT />}/>
+          <Route path="/" element={<CARD_OF_PRODUCT />} />
+          <Route path="/profile" element={<USER_PROFILE />} />
+          <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
+          <Route path="/profile/favourites" element={<USER_PROFILE_FAV />} />
+          <Route path="/profile/works" element={<USER_PROFILE_WORKS />} />
+          <Route path="/profile/reports" element={<USER_PROFILE_REP />} />
+          <Route path="/snailweb" element={<MAIN_PAGE />} />
         </Routes>
         <Footer />
       </div>
     </Router>
   );
 };
-
 export default App;
