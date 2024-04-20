@@ -87,29 +87,27 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
         },
         body: JSON.stringify({ alias, password }),
       });
-      console.log(response.text());
   
       if (!response.ok) {
         throw new Error('Ошибка при аутентификации');
       }
-      
-      const data = await response.json();
-      const { access_token, refresh_token } = data;
+      const auth_data = JSON.stringify(await response.json());
+      const data = JSON.parse(auth_data);
+      console.log(data);
+      const token = data.refresh;
   
       // Сохранение access и refresh токенов в состоянии приложения
       // Например, можно использовать useState для сохранения токенов
   
       // Для проверки валидности access токена
-      const verifyResponse = await fetch('http://79.174.92.231/api/token/verify/', {
+      const verifyResponse = await fetch("http://79.174.92.231/api/token/verify/", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token: access_token }),
+        body: JSON.stringify({token}),
       });
 
-      console.log(verifyResponse.text());
-  
       if (!verifyResponse.ok) {
         throw new Error('Ошибка при проверке валидности access токена');
       }
