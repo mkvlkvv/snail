@@ -6,7 +6,10 @@ import instagram from "../images/instagram.svg";
 import west from "../images/west.svg";
 import west_dark from "../images/west_dark.svg";
 
-const AuthModal = ({ show, onCloseButtonClick }) => {
+const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
+
+  const [profileURL, setProfileURL] = useState('');
+
   const [isLogin, setIsLogin] = useState(true);
   const [isStep1, setIsStep1] = useState(false);
   const [isStep2, setIsStep2] = useState(false);
@@ -187,7 +190,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
               handleLogin()}}>
               <p>Войти</p>
             </div>
-          </div>
+          </div>        
           <div class="auth__back">
             <button
               onClick={() => {
@@ -369,5 +372,6 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
     </div>
   );
 };
+
 
 export default AuthModal;

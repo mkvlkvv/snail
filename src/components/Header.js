@@ -1,34 +1,30 @@
 import React from "react";
-import logo from '../images/logo.svg'
+import logo from "../images/logo.svg";
 import AuthModal from "./Auth";
-import { useState, useEffect, useRef} from 'react';
+import { useState, useEffect, useRef } from "react";
 
 const useModal = () => {
   const [isShowing, setIsShowing] = useState(false);
 
   function toggle() {
     setIsShowing(!isShowing);
-    if (!isShowing){
-      document.body.style.overflow = 'hidden';
+    if (!isShowing) {
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }
 
   function closeModal() {
     setIsShowing(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   }
 
-  
-  return [
-    isShowing,
-    toggle,
-    closeModal
-  ];
-}
+  return [isShowing, toggle, closeModal];
+};
 
-const Header = () => {
+const Header = ({ isAuthenticated, onLogout }) => {
+  const [headerClass, setHeaderClass] = useState("header");
 
   const [isShowingModal, toggleModal, closeModal] = useModal();
 
@@ -46,9 +42,8 @@ const Header = () => {
     };
   }, [modalRef, closeModal]);
 
-
   return (
-    <div className="header">
+    <div className={headerClass}>
       <div className="header__menu">
         <img src={logo} alt="Логотип" className="logo" />
         <div className="left-menu-container">
@@ -57,15 +52,17 @@ const Header = () => {
           <a className="header__button">Печать</a>
         </div>
       </div>
-      <AuthModal show={isShowingModal} onCloseButtonClick={closeModal}>
-        
-      </AuthModal>
-      <button className="header__button header__button_exit" onClick={toggleModal}>
-      </button>
-      
+      <AuthModal
+        show={isShowingModal}
+        onCloseButtonClick={closeModal}
+      ></AuthModal>
+      <button
+        className="header__button header__button_exit"
+        onClick={toggleModal}
+      ></button>
+      {isAuthenticated && <button>Кнопка</button>}
     </div>
   );
 };
 
 export default Header;
-

@@ -88,10 +88,6 @@ const ProductCard = () => {
   
     fetchToken();
   }, []);
-
-  useEffect(() => {
-    console.log(token); 
-  }, [token]);
   
 
   useEffect(() => {
