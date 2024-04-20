@@ -11,6 +11,26 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
   const [isStep1, setIsStep1] = useState(false);
   const [isStep2, setIsStep2] = useState(false);
 
+  const [inputValue1, setInputValue1] = useState('');
+  const [inputValue2, setInputValue2] = useState('');
+  const [inputValue3, setInputValue3] = useState('');
+  const [savedValue1, setSavedValue1] = useState('');
+  const [savedValue2, setSavedValue2] = useState('');
+  const [savedValue3, setSavedValue3] = useState('');
+
+  const handleSaveValues = () => {
+    if (inputValue1){
+      setSavedValue1(inputValue1);
+    };
+    if (inputValue2){
+      setSavedValue2(inputValue2);
+    };
+    if (inputValue3){
+      setSavedValue3(inputValue3);
+    }
+  };
+
+
   if (!show) {
     return null;
   }
@@ -50,38 +70,78 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
     setIsStep2(false);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async() => {
+    //http://79.174.92.231/api/schema/swagger-ui/
+    const username = inputValue1;
+    const password = inputValue2;
+    console.log(username, password);
 
-    const username = document.querySelector('.auth__login__form__input__login').value;
-    const password = document.querySelector('.auth__login__form__input__password').value;
-
-    const requestData = {
-        "alias": username,
-        "password": password
-    };
-
-    fetch("http://127.0.0.1:8000/api/token/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    })
-      .then((Response) => {
-        if (!Response.ok) {
-          throw new Error("Ошибка авторизации");
-        }
-        return Response.json();
-      })
-      .then((data) => {
-        const token = data.token;
-        //Сохраняем в локальном хранилище или в cookie?
-        //Закрыть модал
-      })
-      .catch((Error) => {
-        console.error("Ошибка авторизации", Error);
+    try {
+      const response = await fetch('http://79.174.92.231/api/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
       });
+  
+      if (!response.ok) {
+        throw new Error('Ошибка при аутентификации');
+      }
+  
+      const data = await response.json();
+      const { access_token, refresh_token } = data;
+  
+      // Сохранение access и refresh токенов в состоянии приложения
+      // Например, можно использовать useState для сохранения токенов
+  
+      // Для проверки валидности access токена
+      const verifyResponse = await fetch('http://79.174.92.231/api/token/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token: access_token }),
+      });
+  
+      if (!verifyResponse.ok) {
+        throw new Error('Ошибка при проверке валидности access токена');
+      }
+  
+      // Дальнейшие действия при успешной авторизации
+  
+    } catch (error) {
+      console.error('Произошла ошибка:', error.message);
+      // Дополнительная логика обработки ошибок, например, показ сообщения пользователю
+    }
   };
+
+  const handleReg = async() =>{
+    //
+    const email = inputValue1;
+    const password = inputValue2;
+    const alias = inputValue3;
+    console.log(email, password, alias);
+
+    try {
+      const response = await fetch('http://79.174.92.231/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, alias, password }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Ошибка при регистрации пользователя');
+      }
+  
+      //переход на страницу
+      
+    } catch (error) {
+      console.error('Произошла ошибка при регистрации:', error.message);
+    }
+  }
 
   return (
     <div class="auth-background">
@@ -105,6 +165,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                   className="auth__login__form__input__login"
                   placeholder="Почта"
                   type="text"
+                  onBlur={(e) => setInputValue1(e.target.value)}
                 />
                 <div class="auth__login__form__up" id="form1">
                   <p>Почта</p>
@@ -115,13 +176,15 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                   className="auth__login__form__input__password"
                   placeholder="Пароль"
                   type="password"
+                  onBlur={(e) => setInputValue2(e.target.value)}
                 />
                 <div class="auth__login__form__down" id="form1">
                   <p>Пароль</p>
                 </div>
               </form>
             </div>
-            <div class="auth__login__enter" onClick={handleLogin}>
+            <div class="auth__login__enter" onClick={() => {handleSaveValues();
+              handleLogin()}}>
               <p>Войти</p>
             </div>
           </div>
@@ -172,13 +235,14 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                   name="form_login"
                   placeholder="Почта"
                   type="text"
+                  onBlur={(e) => setInputValue1(e.target.value)}
                 />
                 <div class="auth__login__form__up_2" id="form1">
                   <p>Почта</p>
                 </div>
               </form>
             </div>
-            <div class="auth__login__enter_2" onClick={switchToStep2}>
+            <div class="auth__login__enter_2" onClick={() => {switchToStep2(); handleSaveValues()}}>
               <p>Продолжить</p>
             </div>
             <div class="auth__login__text_2">
@@ -214,6 +278,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                   name="form_login"
                   placeholder="Придумайте алиас"
                   type="text"
+                  onBlur={(e) => setInputValue2(e.target.value)}
                 />
                 <div class="auth__login__form__up_3" id="form1">
                   <p>Алиас</p>
@@ -225,6 +290,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                   name="form_login"
                   placeholder="Придумайте пароль"
                   type="text"
+                  onBlur={(e) => setInputValue3(e.target.value)}
                 />
                 <div class="auth__login__form__medium_3" id="form1">
                   <p>Пароль</p>
@@ -247,7 +313,7 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
               <div class="auth__login__button_back" onClick={switchToStep2}>
                 <img src={west_dark} />
               </div>
-              <div class="auth__login__button_next" onClick={switchToStep3}>
+              <div class="auth__login__button_next" onClick={() => {switchToStep3(); handleSaveValues();}}>
                 <p>Продолжить</p>
               </div>
             </div>
@@ -288,8 +354,9 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
               <div
                 class="auth__login__button_next_3"
                 onClick={() => {
-                  onCloseButtonClick();
+                  handleReg();
                   resetState();
+                  
                 }}
               >
                 <p>Завершить</p>
