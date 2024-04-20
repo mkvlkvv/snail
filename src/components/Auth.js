@@ -75,23 +75,24 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
 
   const handleLogin = async() => {
     //http://79.174.92.231/api/schema/swagger-ui/
-    const username = inputValue1;
+    const alias = inputValue1;
     const password = inputValue2;
-    console.log(username, password);
+    console.log(alias, password);
 
     try {
-      const response = await fetch('http://79.174.92.231/api/token/', {
+      const response = await fetch("http://79.174.92.231/api/token/", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ alias, password }),
       });
+      console.log(response.text());
   
       if (!response.ok) {
         throw new Error('Ошибка при аутентификации');
       }
-  
+      
       const data = await response.json();
       const { access_token, refresh_token } = data;
   
@@ -106,6 +107,8 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
         },
         body: JSON.stringify({ token: access_token }),
       });
+
+      console.log(verifyResponse.text());
   
       if (!verifyResponse.ok) {
         throw new Error('Ошибка при проверке валидности access токена');
@@ -139,9 +142,9 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: body,
+        body: JSON.stringify({alias, email, password}),
       });
-  
+      console.log(response.text());
       //переход на страницу
       
     } catch (error) {
