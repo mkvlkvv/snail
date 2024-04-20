@@ -80,7 +80,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
     console.log(username, password);
 
     try {
-      const response = await fetch('http://79.174.92.231/api/token', {
+      const response = await fetch('http://79.174.92.231/api/token/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
       // Например, можно использовать useState для сохранения токенов
   
       // Для проверки валидности access токена
-      const verifyResponse = await fetch('http://79.174.92.231/api/token/verify', {
+      const verifyResponse = await fetch('http://79.174.92.231/api/token/verify/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -125,19 +125,22 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
     const password = inputValue2;
     const alias = inputValue3;
     console.log(email, password, alias);
+    const body={
+      alias: {alias},
+      email: {email},
+      password: {password}
+    }
+    console.log(body)
 
     try {
-      const response = await fetch('http://79.174.92.231/api/users/register', {
+      console.log(JSON.stringify({ alias, email, password }));
+      const response = await fetch("http://79.174.92.231/api/users/register/", {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, alias, password }),
+        body: body,
       });
-  
-      if (!response.ok) {
-        throw new Error('Ошибка при регистрации пользователя');
-      }
   
       //переход на страницу
       
