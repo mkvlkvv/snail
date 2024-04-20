@@ -6,7 +6,10 @@ import instagram from "../images/instagram.svg";
 import west from "../images/west.svg";
 import west_dark from "../images/west_dark.svg";
 
-const AuthModal = ({ show, onCloseButtonClick }) => {
+const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
+
+  const [profileURL, setProfileURL] = useState('');
+
   const [isLogin, setIsLogin] = useState(true);
   const [isStep1, setIsStep1] = useState(false);
   const [isStep2, setIsStep2] = useState(false);
@@ -50,16 +53,17 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
     setIsStep2(false);
   };
 
-  const handleLogin = () => {
+  
 
+  const handleLogin = () => {
     const username = document.querySelector('.auth__login__form__input__login').value;
     const password = document.querySelector('.auth__login__form__input__password').value;
-
+  
     const requestData = {
-        "alias": username,
-        "password": password
+      "alias": username,
+      "password": password
     };
-
+  
     fetch("http://127.0.0.1:8000/api/token/", {
       method: "POST",
       headers: {
@@ -67,22 +71,47 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
       },
       body: JSON.stringify(requestData),
     })
-      .then((Response) => {
-        if (!Response.ok) {
-          throw new Error("Ошибка авторизации");
-        }
-        return Response.json();
-      })
-      .then((data) => {
-        const token = data.token;
-        //Сохраняем в локальном хранилище или в cookie?
-        //Закрыть модал
-      })
-      .catch((Error) => {
-        console.error("Ошибка авторизации", Error);
-      });
-  };
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Ошибка авторизации");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const accessToken = data.access;
+      const refreshToken = data.refresh;
+      if (accessToken && refreshToken) {
+        // Сохраняем токены в локальном хранилище или в cookie
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
+      
+        // Формируем ссылку на страницу профиля с userID
+        const profileURL = `\\${username}`;
+        
+        setProfileURL(profileURL);
+        
+        // Перенаправляем на страницу профиля
+        window.location.href = 'profile';
 
+        //window.location.href = {profileURL};
+
+        return profileURL;
+      } else {
+        console.error("Ошибка авторизации: отсутствует токен");
+      }
+    })
+    .catch((error) => {
+      console.error("Ошибка авторизации", error);
+      // Обработка ошибки истечения срока действия токена
+      if (error.message === "Ошибка авторизации" ) {
+        console.error("Токен истек или недействителен. Пожалуйста, войдите снова.");
+        // Очищаем старые токены из локального хранилища
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+      }
+    });
+  };
+  
   return (
     <div class="auth-background">
       {isLogin ? (
@@ -121,10 +150,12 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
                 </div>
               </form>
             </div>
-            <div class="auth__login__enter" onClick={handleLogin}>
+            <div class="auth__login__enter" onClick={() => {
+                handleLogin();
+              }}>
               <p>Войти</p>
             </div>
-          </div>
+          </div>        
           <div class="auth__back">
             <button
               onClick={() => {
@@ -302,5 +333,6 @@ const AuthModal = ({ show, onCloseButtonClick }) => {
     </div>
   );
 };
+
 
 export default AuthModal;

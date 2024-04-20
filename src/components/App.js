@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header.js';
 import ProductCard from './ProductCard.js';
@@ -67,22 +67,23 @@ const USER_PROFILE_FAV = () => (
   </div>
 )
 
+
 const App = () => {
   return (
     <Router>
       <div className='page'>
-        <Header />
         <Routes>
-          <Route path="/" element={<CARD_OF_PRODUCT />} />
-          <Route path="/profile" element={<USER_PROFILE />} />
-          <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
-          <Route path="/profile/favourites" element={<USER_PROFILE_FAV />} />
-          <Route path="/profile/works" element={<USER_PROFILE_WORKS />} />
-          <Route path="/snailweb" element={<MAIN_PAGE />} />
+          <Route path="/" element={<MAIN_PAGE />} />
+          <Route path="profile" element={<USER_PROFILE />} />
+          <Route path="profile/collection" element={<USER_PROFILE_COLLECTION />} />
+          <Route path="profile/favourites" element={<USER_PROFILE_FAV />} />
+          <Route path="profile/works" element={<USER_PROFILE_WORKS />} />
+          <Route path="/snailweb" element={<CARD_OF_PRODUCT />}/>
         </Routes>
         <Footer />
       </div>
     </Router>
   );
 };
+
 export default App;
