@@ -6,6 +6,17 @@ import instagram from "../images/instagram.svg";
 import west from "../images/west.svg";
 import west_dark from "../images/west_dark.svg";
 
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+  const data = JSON.parse(jsonPayload);
+  console.log(data.user_id);
+  return data.user_id;
+};
+
 const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
 
   const [profileURL, setProfileURL] = useState('');
@@ -20,6 +31,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
   const [savedValue1, setSavedValue1] = useState('');
   const [savedValue2, setSavedValue2] = useState('');
   const [savedValue3, setSavedValue3] = useState('');
+
 
   const handleSaveValues = () => {
     if (inputValue1){
@@ -96,10 +108,8 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
       console.log(data);
       const token = data.refresh;
   
-      // Сохранение access и refresh токенов в состоянии приложения
-      // Например, можно использовать useState для сохранения токенов
-  
-      // Для проверки валидности access токена
+      const user_id = parseJwt(token);
+
       const verifyResponse = await fetch("http://79.174.92.231/api/token/verify/", {
         method: 'POST',
         headers: {
