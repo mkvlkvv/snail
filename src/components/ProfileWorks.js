@@ -1,4 +1,7 @@
 import React, { useState, useEffect} from "react";
+import { connect } from 'react-redux';
+import { saveCardId } from './actions';
+import { selectSavedCardId } from './selectors';
 
 import profile_works_card_photo1 from "../images/profile_card_1.svg";
 import profile_works_card_photo2 from "../images/profile_card_2.svg";
@@ -13,7 +16,7 @@ import save from "../images/save.png";
 import like from "../images/like.png";
 import star from "../images/star.png";
 
-const ProfileWorks = ({ onDataReceived }) => {
+const ProfileWorks = ({ onDataReceived, saveCardId, savedCardId }) => {
   const works = [
     {
       name: "Crocs",
@@ -114,6 +117,7 @@ const ProfileWorks = ({ onDataReceived }) => {
       const responseData = await dataResponse.json(); // Используем другое имя для переменной данных
       console.log(responseData);
       setResponseDataState(responseData[index]);
+      saveCardId(index);
       console.log("Успешный ответ (Данные):", responseData[index]);
     } catch (error) {
       console.error("Произошла ошибка:", error);
@@ -126,6 +130,10 @@ const ProfileWorks = ({ onDataReceived }) => {
       onDataReceived(responseDataState);
     }
   }, [responseDataState, onDataReceived]);
+
+  useEffect(() => {
+    console.log("Saved Card ID:", savedCardId+1);
+  }, [savedCardId]);
 
   return (
     <div class="profile__works">
@@ -172,4 +180,14 @@ const ProfileWorks = ({ onDataReceived }) => {
   );
 };
 
-export default ProfileWorks;
+const mapStateToProps = (state) => {
+  return {
+    savedCardId: selectSavedCardId(state),
+  };
+};
+
+const mapDispatchToProps = {
+  saveCardId: saveCardId,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileWorks);
