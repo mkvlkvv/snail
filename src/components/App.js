@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header.js';
 import ProductCard from './ProductCard.js';
@@ -19,13 +19,13 @@ import MainPageForYou from './MainPageForYou.js'
 import MainPageAuthors from './MainPageAuthors.js';
 import ProfileReports from './ProfileReports.js';
 
-const CARD_OF_PRODUCT = () => (
+const CARD_OF_PRODUCT = ({ onDataReceived }) => (
   <div>
-    <ProductCard />
-    <ProductDetails />
-    <Rewiews />
-    <Remixes />
-    <SimilarModelCard />
+    <ProductCard onDataReceived={onDataReceived}/>
+    <ProductDetails onDataReceived={onDataReceived}/>
+    <Rewiews onDataReceived={onDataReceived}/>
+    <Remixes onDataReceived={onDataReceived}/>
+    <SimilarModelCard onDataReceived={onDataReceived}/>
   </div>
 );
 
@@ -40,17 +40,17 @@ const MAIN_PAGE = () => (
   </div>
 )
 
-const USER_PROFILE = () => (
+const USER_PROFILE = ({ onDataReceived }) => (
   <div>
     <Profile />
-    <ProfileWorks />
+    <ProfileWorks  onDataReceived={onDataReceived} />
   </div>
 )
 
-const USER_PROFILE_WORKS = () => (
+const USER_PROFILE_WORKS = () => ({ onDataReceived }) => (
   <div>
     <Profile />
-    <ProfileWorks />
+    <ProfileWorks  onDataReceived={onDataReceived} />
   </div>
 )
 
@@ -75,19 +75,21 @@ const USER_PROFILE_REP = () => (
   </div>
 )
 
-
-
 const App = () => {
+  const [responseData, setResponseData] = useState(null);
+  const onDataReceived = (data) => {
+    console.log('Данные получены:', data);
+  }
   return (
     <Router>
       <div className='page'>
         <Header />
         <Routes>
-          <Route path="/" element={<CARD_OF_PRODUCT />} />
-          <Route path="/profile" element={<USER_PROFILE />} />
+          <Route path="/" element={<CARD_OF_PRODUCT onDataReceived={onDataReceived}/>} />
+          <Route path="/profile" element={<USER_PROFILE onDataReceived={onDataReceived}/>} />
           <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
           <Route path="/profile/favourites" element={<USER_PROFILE_FAV />} />
-          <Route path="/profile/works" element={<USER_PROFILE_WORKS />} />
+          <Route path="/profile/works" element={<USER_PROFILE_WORKS/>}/>
           <Route path="/profile/reports" element={<USER_PROFILE_REP />} />
           <Route path="/snailweb" element={<MAIN_PAGE />} />
         </Routes>
