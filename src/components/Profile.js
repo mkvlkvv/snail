@@ -9,7 +9,6 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 const Profile = () => {
 
-
   const data = {
     name: "yaane",
     avatarSrc: "/images/profile.png",

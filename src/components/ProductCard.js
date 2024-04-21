@@ -7,8 +7,9 @@ import star from "../images/star.svg";
 import star_black from "../images/Star-black.svg";
 import Printer from "./Printer";
 import add from "../images/add.svg";
+import { useParams } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({ onDataReceived }) => {
   const data = {
     images: [
       "/images/main-photo.png",
@@ -58,6 +59,10 @@ const ProductCard = () => {
 
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState('');
+  const [product, setProduct] = useState(null);
+  const { id } = useParams();
+
+  console.log('ПОЛУЧЕНО', onDataReceived)
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -90,37 +95,36 @@ const ProductCard = () => {
   }, []);
   
 
+  const [date, setData] = useState(null);
+
   useEffect(() => {
-    const getApiData = async () => {
-      if (token) { 
+    const fetchData = async () => {
+      if (token) {
         try {
           const response = await fetch(
-            "http://127.0.0.1:8000/api/publications/1/",
+            `http://127.0.0.1:8000/api/publications/1/`,
             {
               headers: {
                 Authorization: `Bearer ${token}`
               }
             }
           );
-  
+
           if (!response.ok) {
-            console.error('Ошибка при запросе:', response.statusText);
-            return;
+            throw new Error('Ошибка при запросе:', response.statusText);
           }
-  
+
           const responseData = await response.json();
-          console.log(responseData);
-          setUsers(responseData);
+          setData(responseData);
+          console.log(responseData[0])
         } catch (error) {
           console.error('Произошла ошибка:', error);
         }
       }
     };
-  
-    getApiData(); // Вызываем функцию при инициализации компонента
-  
-  }, [token]);
-  
+
+    fetchData(); // Вызываем функцию при изменении id или токена
+  }, [token]); // Зависимости: id и token
 
 
   const [activeIndex, setActiveIndex] = useState(null); // Используем null чтобы ни одно изображение не было активным изначально
