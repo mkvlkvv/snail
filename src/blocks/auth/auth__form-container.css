@@ -24,6 +24,7 @@
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
 }
 
 
@@ -32,6 +33,7 @@
     height: 460px;
     padding: 70px, 32px, 70px, 32px;
     gap: 24px;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .auth__login__or{
@@ -116,6 +118,7 @@
     border: 1px solid  #D9D9D9;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
+    box-sizing: border-box;
 }
 
 .auth__back button{
@@ -137,6 +140,7 @@
     line-height: 23.44px;
     margin-left: 24px;
     margin-top: 15px;
+    position: relative;
 }
 
 .auth__back__reg img{
@@ -144,6 +148,22 @@
     width: 24px;
     height: 24px;
     margin-left: 118px;
+}
+
+.auth__back__reg:hover{
+    border: 3px solid  #D9D9D9;
+}
+
+.auth__back__reg:hover p{
+    margin-left: 21px;
+    margin-top: 13px;
+    font-weight: 900;
+}
+
+.auth__back__reg:hover img{
+    margin-top: 13px;
+    width: 24px;
+    height: 24px;
 }
 
 .auth__login__forms{
@@ -177,6 +197,10 @@
     background-color: #EB572F;
     border-radius: 50px;
     place-content: center;
+}
+
+.auth__login__enter:hover{
+    background-color: #f87a03;
 }
 
 .auth__login__enter p{
@@ -265,11 +289,29 @@
 .auth__login__form__input__login:focus ~ .auth__login__form__up{
     transition: 1s;
     display: block;
+    border: 1px solid #D9D9D9;
+}
+
+.auth__login__form__input__login:focus ~ .auth__login__form__up p{
+    color: #D9D9D9;
+}
+
+.auth__login__form_login:has(> .auth__login__form__input__login:focus){
+    border: 1px solid #D9D9D9;
 }
 
 .auth__login__form__input__password:focus ~ .auth__login__form__down{
     transition: 1s;
     display: block;
+    border: 1px solid #D9D9D9;
 } 
+
+.auth__login__form__input__password:focus ~ .auth__login__form__down p{
+    color: #D9D9D9;
+}
+
+.auth__login__form_password:has(> .auth__login__form__input__password:focus){
+    border: 1px solid #D9D9D9;
+}
 
 

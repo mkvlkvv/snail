@@ -18,6 +18,8 @@ import MainPageNew from './MainPageNew.js';
 import MainPageForYou from './MainPageForYou.js'
 import MainPageAuthors from './MainPageAuthors.js';
 import ProfileReports from './ProfileReports.js';
+import NewCard from './NewCard.js';
+import NotFound from './NotFound.js';
 
 const CARD_OF_PRODUCT = ({ onDataReceived }) => (
   <div>
@@ -26,6 +28,12 @@ const CARD_OF_PRODUCT = ({ onDataReceived }) => (
     <Rewiews onDataReceived={onDataReceived}/>
     <Remixes onDataReceived={onDataReceived}/>
     <SimilarModelCard onDataReceived={onDataReceived}/>
+  </div>
+);
+
+const NEW_CARD = () => (
+  <div>
+    <NewCard />
   </div>
 );
 
@@ -75,23 +83,71 @@ const USER_PROFILE_REP = () => (
   </div>
 )
 
+const NOT_FOUND = () =>(
+  <div>
+    <NotFound />
+  </div>
+)
+
 const App = () => {
   const [responseData, setResponseData] = useState(null);
   const onDataReceived = (data) => {
     console.log('Данные получены:', data);
   }
+  const urls = {
+    card: {
+      path: '/',
+      element: <CARD_OF_PRODUCT onDataReceived={onDataReceived}/>
+    },
+    profile: {
+      path: '/profile',
+      element: <USER_PROFILE onDataReceived={onDataReceived}/>
+    },
+    profile_collections: {
+      path: '/profile/collection',
+      element: <USER_PROFILE_COLLECTION />
+    },
+    profile_favourites: {
+      path: '/profile/favourites',
+      element: <USER_PROFILE_FAV />
+    },
+    profile_works: {
+      path: '/profile/works',
+      element: <USER_PROFILE_WORKS/>
+    },
+    profile_reports: {
+      path: '/profile/reports',
+      element: <USER_PROFILE_REP />
+    },
+    main_page: {
+      path: '/snailweb',
+      element: <MAIN_PAGE />
+    },
+    new_card: {
+      path: '/new_card',
+      element: <NEW_CARD />
+    },
+    not_found: {
+      element: <NOT_FOUND />
+    }
+
+  };
+
+
   return (
     <Router>
       <div className='page'>
         <Header />
         <Routes>
-          <Route path="/" element={<CARD_OF_PRODUCT onDataReceived={onDataReceived}/>} />
-          <Route path="/profile" element={<USER_PROFILE onDataReceived={onDataReceived}/>} />
-          <Route path="/profile/collection" element={<USER_PROFILE_COLLECTION />} />
-          <Route path="/profile/favourites" element={<USER_PROFILE_FAV />} />
-          <Route path="/profile/works" element={<USER_PROFILE_WORKS/>}/>
-          <Route path="/profile/reports" element={<USER_PROFILE_REP />} />
-          <Route path="/snailweb" element={<MAIN_PAGE />} />
+          <Route path={urls.card.path} element={urls.card.element} />
+          <Route path={urls.profile.path} element={urls.profile.element} />
+          <Route path={urls.profile_collections.path} element={urls.profile_collections.element} />
+          <Route path={urls.profile_favourites.path} element={urls.profile_favourites.element} />
+          <Route path={urls.profile_works.path} element={urls.profile_works.element}/>
+          <Route path={urls.profile_reports.path} element={urls.profile_reports.element} />
+          <Route path={urls.main_page.path} element={urls.main_page.element} />
+          <Route path={urls.new_card.path} element={urls.new_card.element}/>
+          <Route path="*" element={urls.not_found.element} />
         </Routes>
         <Footer />
       </div>
