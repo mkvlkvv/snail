@@ -1,0 +1,74 @@
+.newcard__toolbar{
+    width: 429px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 120px;
+    margin-left: 336px;
+}
+
+.newcard__toolbar_load{
+    width: 152px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 16px;
+    place-items: center;
+}
+
+.newcard__toolbar_load p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    color: #D9D9D9;
+}
+
+.newcard__toolbar_1{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #EB572F;
+    place-content: center;
+    
+}
+
+.newcard__toolbar_1 p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    color: #D9D9D9;
+    margin-left: 19px;
+}
+
+.newcard__toolbar_desc{
+    width: 157px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 16px;
+    place-items: center;
+}
+
+.newcard__toolbar_desc p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    color: #D9D9D9;
+}
+
+.newcard__toolbar_2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #D9D9D9;
+    place-content: center;
+    
+}
+
+.newcard__toolbar_2 p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    color: #D9D9D9;
+    margin-left: 19px;
+}

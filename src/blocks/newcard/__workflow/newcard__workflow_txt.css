@@ -1,0 +1,49 @@
+.newcard__workflow_txt_1{
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 900;
+    color: #d9d9d9;
+    margin: 0;
+}
+
+.newcard__workflow_txt_2{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #6d6d6d;
+    text-align: center;
+    margin-top: 11px;
+    margin-bottom: 16px;
+}
+
+.newcard__workflow_txt_3{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #d9d9d9;
+    text-align: center;
+}
+
+.newcard__workflow_txt_overview{
+    margin-top: 23px;
+    width: 107px;
+    height: 48px;
+    background-color: #EB572F;
+    border-radius: 50px;
+    margin-left: 105px;
+    place-content: center;
+}
+
+.newcard__workflow_txt_overview p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    color: #d9d9d9;
+    text-align: center;
+}
+
+.newcard__workflow_txt{
+    width: 317px;
+    height: 173px;
+    margin-left: 391px;
+}

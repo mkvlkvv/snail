@@ -149,3 +149,7 @@
 @import url("./blocks/profile/__reports/profile__reports.css");
 @import url("./blocks/profile/__reports/__report/profile__reports__report.css");
 @import url("./blocks/not_found/not_found__container.css");
+@import url("./blocks/newcard/newcard_container.css");
+@import url("./blocks/newcard/__toolbar/newcard__toolbar.css");
+@import url("./blocks/newcard/__workflow/newcard__workflow.css");
+@import url("./blocks/newcard/__workflow/newcard__workflow_txt.css");
