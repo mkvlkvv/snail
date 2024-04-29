@@ -153,3 +153,5 @@
 @import url("./blocks/newcard/__toolbar/newcard__toolbar.css");
 @import url("./blocks/newcard/__workflow/newcard__workflow.css");
 @import url("./blocks/newcard/__workflow/newcard__workflow_txt.css");
+@import url("./blocks/newcard/__step2/card__conteiner.css");
+@import url("./blocks/newcard/__step2/newcard__desc-area.css");

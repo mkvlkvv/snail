@@ -1,0 +1,12 @@
+.card__conteiner{
+    width: 291px;
+    height: 307px;
+    margin-top: 60px;
+    margin-left: -19px;
+}
+
+.card__desc{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 48px;
+}
