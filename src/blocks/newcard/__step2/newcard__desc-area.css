@@ -24,20 +24,22 @@
 
 
 .newcard__desc-maininfo{
-    height: 324px;
+    height: auto;
     width: 916px;
     border-radius: 40px;
     background-color: #292929;
     margin-bottom: 20px;
+    display: grid;
     
 }
 
 .newcard__desc-images{
-    height: 265px;
+    height: auto;
     width: 916px;
     border-radius: 40px;
     background-color: #292929;
     margin-bottom: 20px;
+    display: grid;
 }
 
 .newcard__desc-privacy{
@@ -57,18 +59,15 @@
     margin-bottom: 20px;
 }
 
-.newcard__desc-privacy div{
-    margin-top: 32px;
-    margin-left: 32px;
-}
 
 .newcard__desc-privacy-check{
+    margin-top: 32px;
+    margin-left: 32px;
     width: 249px !important;
     height: 54px !important;
     border-radius: 0px !important;
     display: grid;
     grid-template-rows: repeat(2, 2fr);
-    border: 1px solid #EB572F;
 }
 
 .newcard__desc-privacy-check p{
@@ -77,7 +76,7 @@
     font-family: Roboto;
     font-size: 20px;
     font-weight: 900;
-    line-height: 23.44px;
+    line-height: 14px;
     margin-bottom: 0px !important;
 }
 
@@ -96,30 +95,33 @@
     height: 24px;
     margin-top: 0px !important;
     margin-left: 0px !important;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 12px;
 
 }
 
 .newcard__desk-privacy-checkbox-public p{
     width: 122px;
     height: 24px;
-    margin-top: 0px !important;
-    margin-left: 0px !important;
+    font-family: Roboto;
+    font-weight: 400 !important;
+    font-size: 16px;
+    margin-top: 7px;
 }
 
 .newcard__desk-privacy-checkbox-krug{
-    width: 24px;
-    height: 24px;
-    margin-top: 0px !important;
-    margin-left: 0px !important;
+    width: 23px;
+    height: 23px;
     border: 1px solid #EB572F;
     border-radius: 50%;
+    display: grid;
+    place-items: center;
 }
 
 .newcard__desk-privacy-checkbox-krug div{
     width: 20px;
     height: 20px;
-    margin-top: 2px !important;
-    margin-left: 2px !important;
     background-color: #EB572F;
     border-radius: 50%;
 }
@@ -129,30 +131,230 @@
     height: 24px;
     margin-top: 0px !important;
     margin-left: 0px !important;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 12px;
 
 }
 
 .newcard__desk-privacy-checkbox-private p{
     width: 122px;
     height: 24px;
-    margin-top: 0px !important;
-    margin-left: 0px !important;
+    font-family: Roboto;
+    font-weight: 400 !important;
+    font-size: 16px;
+    margin-top: 7px;
 }
 
 .newcard__desk-privacy-checkbox-krug_2{
-    width: 24px;
-    height: 24px;
-    margin-top: 0px !important;
-    margin-left: 0px !important;
+    width: 23px;
+    height: 23px;
     border: 1px solid #d9d9d9;
     border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
 }
 
 .newcard__desk-privacy-checkbox-krug_2 div{
     width: 20px;
     height: 20px;
-    margin-top: 2px !important;
-    margin-left: 2px !important;
     background-color: #EB572F;
     border-radius: 50%;
+}
+
+
+.newcard__desk-privacy-desk{
+    width: 849px;
+    height: 169px;
+    margin-top: 20px;
+}
+
+.newcard__desk-privacy-desk-inputform{
+    width: 849px;
+    height: 139px;
+    border-radius: 20px;
+    background-color: #222222;
+    margin-top: 16px;
+    border: 1px solid #454545
+}
+
+.newcard__desk-privacy-desk-inputform textarea{
+    width: 836px;
+    height: 128px;
+    margin-top: 6px;
+    margin-left: 8px;
+    background-color: #222222;
+    font-size: 16px;
+    border-radius: 0px !important;
+    color: #d9d9d9;
+
+}
+
+.newcard__desk-privacy-desk-inputform textarea::placeholder{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #6d6d6d;
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    text-align: start;
+}
+
+.newcard__desc-maininfo-name{
+    width: 849px;
+    height: 78px;
+    margin-top: 32px !important;
+    margin-left: 32px;
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+}
+
+.newcard__desc-maininfo-name p{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.newcard__desc-maininfo-nameinputform{
+    margin-top: 10px;
+    width: 849px;
+    height: 43px;
+    border-radius: 50px;
+    background-color: #222222 !important;
+    border: 1px solid #454545;
+}
+
+.newcard__desc-maininfo-nameinputform input{
+    width: 825px;
+    height: 32px;
+    margin-left: 9px;
+    margin-top: 5px;
+    background-color: #222222;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #d9d9d9;
+    border: none !important;
+    outline: none;
+}
+
+.newcard__desc-maininfo-nameinputform input::placeholder{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #6d6d6d;
+}
+
+.newcard__desc-maininfo-nameinputform input{
+    width: 825px;
+    height: 32px;
+    margin-left: 9px;
+    margin-top: 5px;
+    background-color: #222222;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #d9d9d9;
+    border: none !important;
+    outline: none;
+}
+
+.newcard__desc-maininfo-nameinputform input::placeholder{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #6d6d6d;
+}
+
+.newcard__desc-maininfo-category{
+    width: 849px;
+    height: 78px;
+    margin-top: 20px !important;
+    margin-left: 32px;
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+}
+
+.newcard__desc-maininfo-tags{
+    width: 849px;
+    height: 78px;
+    margin-top: 20px !important;
+    margin-left: 32px;
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+    margin-bottom: 32px;
+}
+
+.newcard__desc-maininfo-category p{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.newcard__desc-maininfo-tags p{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.newcard__desc-images p{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    color: #d9d9d9;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-bottom: 0px;
+}
+
+.newcard__desc-images-workcontainer{
+    width: 533px;
+    height: 171px;
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 10px;
+}
+
+.newcard__desc-images-workcontainer__newphoto{
+    height: 171px;
+    width: 171px;
+    background-color: #292929;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%236D6D6DFF' stroke-width='3' stroke-dasharray='9%2c 16' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.newcard__desc-images-workcontainer__newphoto img{
+    width: 24px;
+    height: 24px;
+}
+
+.newcard__desc-images-workcontainer__slider{
+    width: 352px;
+    height: 171px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 10px
+}
+
+.newcard__desc-images-workcontainer__slider img{
+    width: 171px;
+    height: 171px;
+    border-radius: 20px;
+}
+
+.newcard__desc-images-workcontainer__slider img:nth-child(1){
+    border: 1px solid #EB572F;
 }

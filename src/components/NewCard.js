@@ -1,28 +1,41 @@
 import React, {useState} from "react";
 
+import data from "./categories"
+
 import save from "../images/save.png";
 import like from "../images/like.png";
 import star from "../images/star.png";
 import photo from "../images/untitled image.png";
-import avatar from "../images/avatar.png"
+import avatar from "../images/avatar.png";
+import plus_photo from "../images/plus_photo.svg";
+import pic1 from "../images/pic1.svg";
+import pic2 from "../images/pic2.svg";
 
 const NewCard = () =>{
     const [isStep1, setIsStep1] = useState(true);
     const [isdiv1, setdiv1] = useState(true);
     const [isdiv2, setdiv2] = useState(false);
-    const [iskrug, setkrug] = useState(true);
+    const [isPublic, setPublic] = useState(true);
+    const [isPrivate, setPrivate] = useState(false);
     const switchToStep2 = () => {
         setIsStep1(!isStep1);
         setdiv1(!isdiv1);
         setdiv2(!isdiv2);
       };
+
+    const switchPublic = () => {
+        setPrivate(!isPrivate);
+        setPublic (!isPublic)
+    }
+
+
     
     return(
         <div className="newcard__container">
 
             <div className="newcard__toolbar">
                 <div className="newcard__toolbar_load">
-                    {isdiv1 ? (<div className="newcard__toolbar_1" onClick={switchToStep2}>
+                    {isdiv1 ? (<div className="newcard__toolbar_1">
                         <p>1</p>
                     </div>):(
                     <div className="newcard__toolbar_2" onClick={switchToStep2}>
@@ -31,7 +44,7 @@ const NewCard = () =>{
                     <p>Загрузка</p>
                 </div>
                 <div className="newcard__toolbar_desc">
-                    {isdiv2 ? (<div className="newcard__toolbar_1" onClick={switchToStep2}>
+                    {isdiv2 ? (<div className="newcard__toolbar_1">
                         <p>2</p>
                     </div>):(<div className="newcard__toolbar_2" onClick={switchToStep2}>
                         <p>2</p>
@@ -85,10 +98,48 @@ const NewCard = () =>{
 
                 <div className="newcard__desc-area">
                     <div className="newcard__desc-maininfo">
+                        <div className="newcard__desc-maininfo-name">
+                            <p>Название</p>
+
+                            <form className="newcard__desc-maininfo-nameinputform">
+                                <input
+                                    placeholder="Назовите свою модель" 
+                                />
+                            </form>
+                        </div>
+
+                        <div className="newcard__desc-maininfo-category">
+                            <p>Категория</p>
+
+                            <form className="newcard__desc-maininfo-nameinputform">
+                                
+                            </form>
+                        </div>
+
+                        <div className="newcard__desc-maininfo-tags">
+                            <p>Теги</p>
+
+                            <form className="newcard__desc-maininfo-nameinputform">
+                            <input
+                                    placeholder="Добавьте теги" 
+                                />
+                            </form>
+                        </div>
 
                     </div>
 
                     <div className="newcard__desc-images">
+                        <p>Изображения</p>
+
+                        <div className="newcard__desc-images-workcontainer">
+                            <div className="newcard__desc-images-workcontainer__newphoto">
+                                <img src={plus_photo} />
+                            </div>
+                            <div className="newcard__desc-images-workcontainer__slider">
+                                <img src={pic1} />
+                                <img src={pic2} />
+                            </div>
+                        </div>
 
                     </div>
 
@@ -97,19 +148,44 @@ const NewCard = () =>{
                             <p>Доступ</p>
                             <div className="newcard__desc-privacy-checkbox">
                                 <div className="newcard__desk-privacy-checkbox-public">
-                                    <div className="newcard__desk-privacy-checkbox-krug">
+                                    {isPublic ? (<div className="newcard__desk-privacy-checkbox-krug">
                                         <div>
                                             
                                         </div>
-                                    </div>  
+                                    </div>):(
+                                        <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchPublic}>
+                            
+                                        </div>
+                                    )}
+
+                                    <p>Публичный</p>  
                                 </div> 
                                 <div className="newcard__desk-privacy-checkbox-private">
-                                    <div className="newcard__desk-privacy-checkbox-krug_2">
+                                    {isPrivate ? (
+                                        <div className="newcard__desk-privacy-checkbox-krug">
                                         <div>
                                             
                                         </div>
                                     </div>
+
+                                    ):(
+                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchPublic}>
+                            
+                                    </div>)}
+                                    <p>Личный</p>
                                 </div> 
+                            </div>
+
+                            <div className="newcard__desk-privacy-desk">
+                                <p>Описание</p>
+
+                                <form className="newcard__desk-privacy-desk-inputform">
+                                    <textarea
+                                    type="text"
+                                    placeholder="Добавить описание"
+                                    ></textarea>
+
+                                </form>
                             </div>
 
                         </div>
@@ -117,7 +193,9 @@ const NewCard = () =>{
                     </div>
 
                     <div className="newcard__desc-licenze">
+                        <div className="">
 
+                        </div>
                     </div>
 
                     <div className="newcard__desc-button">
