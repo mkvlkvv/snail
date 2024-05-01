@@ -52,11 +52,12 @@
 }
 
 .newcard__desc-licenze{
-    height: 420px;
+    height: auto;
     width: 916px;
     border-radius: 40px;
     background-color: #292929;
     margin-bottom: 20px;
+    display: grid;
 }
 
 
@@ -358,3 +359,40 @@
 .newcard__desc-images-workcontainer__slider img:nth-child(1){
     border: 1px solid #EB572F;
 }
+
+.newcard__desc-licenze-q1{
+    width: 553px;
+    height: 54px;
+    margin-top: 32px;
+    margin-left: 32px;
+    border: 1px solid #d9d9d9;
+}
+
+.newcard__desc-licenze-q2{
+    width: 543px;
+    height: 54px;
+    margin-top: 20px;
+    margin-left: 32px;
+    border: 1px solid #d9d9d9;
+}
+
+.newcard__desc-licenze-q3{
+    width: 443px;
+    height: 54px;
+    margin-top: 20px;
+    margin-left: 32px;
+    border: 1px solid #d9d9d9;
+}
+
+.newcard__desc-licenze-type{
+    width: 670px;
+    height: 111px;
+    margin-top: 20px;
+    margin-left: 32px;
+    background-color: #222222;
+    border-radius: 20px;
+    margin-bottom: 32px;
+}
+
+
+
