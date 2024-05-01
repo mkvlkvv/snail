@@ -193,7 +193,19 @@ const NewCard = () =>{
                     </div>
 
                     <div className="newcard__desc-licenze">
-                        <div className="">
+                        <div className="newcard__desc-licenze-q1">
+
+                        </div>
+
+                        <div className="newcard__desc-licenze-q2">
+
+                        </div>
+
+                        <div className="newcard__desc-licenze-q3">
+
+                        </div>
+
+                        <div className="newcard__desc-licenze-type">
 
                         </div>
                     </div>

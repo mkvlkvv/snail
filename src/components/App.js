@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { selectSavedCardId } from './selectors.js'; 
@@ -92,16 +92,19 @@ const NOT_FOUND = () =>(
 )
 
 const App = ({ savedCardId }) => {
-  const [responseData, setResponseData] = useState(null);
   const onDataReceived = (data) => {
     console.log('Данные получены:', data);
-    console.log("Clicked on card, Path:", urls.card.path);
   }
+  const [cardPath, setCardPath] = useState(null);
+
+  useEffect(() => {
+    if (savedCardId !== null) {
+      const newCardPath = `/${savedCardId}`;
+      setCardPath(newCardPath);
+    }
+  }, [savedCardId]);
+
   const urls = {
-    card: {
-      path: `/${savedCardId}`,
-      element: <CARD_OF_PRODUCT  />
-    },
     profile: {
       path: '/profile',
       element: <USER_PROFILE onDataReceived={onDataReceived}/>
@@ -145,6 +148,8 @@ const App = ({ savedCardId }) => {
         {Object.entries(urls).map(([key, { path, element }]) => (
             <Route key={key} path={path} element={element} />
           ))}
+          <Route path="/card/:savedCardId" element={<CARD_OF_PRODUCT />} />
+          <Route path="*" element={<NOT_FOUND />} />
         </Routes>
         <Footer />
       </div>
@@ -153,10 +158,9 @@ const App = ({ savedCardId }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.savedCardId)
+  console.log(state.savedCardId);
   return {
     savedCardId: selectSavedCardId(state)
-    
   };
 };
 
