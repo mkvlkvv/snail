@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { connect } from 'react-redux'; 
+import { selectSavedCardId } from './selectors.js'; 
 import Header from './Header.js';
 import ProductCard from './ProductCard.js';
 import ProductDetails from './ProductDetails';
@@ -21,13 +23,13 @@ import ProfileReports from './ProfileReports.js';
 import NewCard from './NewCard.js';
 import NotFound from './NotFound.js';
 
-const CARD_OF_PRODUCT = ({ onDataReceived }) => (
+const CARD_OF_PRODUCT = () => (
   <div>
-    <ProductCard onDataReceived={onDataReceived}/>
-    <ProductDetails onDataReceived={onDataReceived}/>
-    <Rewiews onDataReceived={onDataReceived}/>
-    <Remixes onDataReceived={onDataReceived}/>
-    <SimilarModelCard onDataReceived={onDataReceived}/>
+    <ProductCard />
+    <ProductDetails />
+    <Rewiews />
+    <Remixes />
+    <SimilarModelCard />
   </div>
 );
 
@@ -48,10 +50,10 @@ const MAIN_PAGE = () => (
   </div>
 )
 
-const USER_PROFILE = ({ onDataReceived }) => (
+const USER_PROFILE = ({ onDataReceived, onClickCard  }) => (
   <div>
     <Profile />
-    <ProfileWorks  onDataReceived={onDataReceived} />
+    <ProfileWorks  onDataReceived={onDataReceived} onClick={onClickCard}/>
   </div>
 )
 
@@ -89,15 +91,16 @@ const NOT_FOUND = () =>(
   </div>
 )
 
-const App = () => {
+const App = ({ savedCardId }) => {
   const [responseData, setResponseData] = useState(null);
   const onDataReceived = (data) => {
     console.log('Данные получены:', data);
+    console.log("Clicked on card, Path:", urls.card.path);
   }
   const urls = {
     card: {
-      path: '/',
-      element: <CARD_OF_PRODUCT onDataReceived={onDataReceived}/>
+      path: `/${savedCardId}`,
+      element: <CARD_OF_PRODUCT  />
     },
     profile: {
       path: '/profile',
@@ -139,19 +142,22 @@ const App = () => {
       <div className='page'>
         <Header />
         <Routes>
-          <Route path={urls.card.path} element={urls.card.element} />
-          <Route path={urls.profile.path} element={urls.profile.element} />
-          <Route path={urls.profile_collections.path} element={urls.profile_collections.element} />
-          <Route path={urls.profile_favourites.path} element={urls.profile_favourites.element} />
-          <Route path={urls.profile_works.path} element={urls.profile_works.element}/>
-          <Route path={urls.profile_reports.path} element={urls.profile_reports.element} />
-          <Route path={urls.main_page.path} element={urls.main_page.element} />
-          <Route path={urls.new_card.path} element={urls.new_card.element}/>
-          <Route path="*" element={urls.not_found.element} />
+        {Object.entries(urls).map(([key, { path, element }]) => (
+            <Route key={key} path={path} element={element} />
+          ))}
         </Routes>
         <Footer />
       </div>
     </Router>
   );
 };
-export default App;
+
+const mapStateToProps = (state) => {
+  console.log(state.savedCardId)
+  return {
+    savedCardId: selectSavedCardId(state)
+    
+  };
+};
+
+export default connect(mapStateToProps)(App);
