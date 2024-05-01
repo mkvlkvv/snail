@@ -1,4 +1,4 @@
-const data_q = [
+/*const data_q = [
     {
         code: "11",
         dsc: "Разрешить делиться без указания авторства?"
@@ -16,4 +16,4 @@ export default get_q = (arr) =>{
             return qv.dsc;
         } 
     }
-}
+}*/

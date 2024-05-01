@@ -365,15 +365,16 @@
     height: 54px;
     margin-top: 32px;
     margin-left: 32px;
-    border: 1px solid #d9d9d9;
+    display: grid;
+    margin-bottom: 20px;
 }
 
 .newcard__desc-licenze-q2{
     width: 543px;
-    height: 54px;
+    height: auto;
     margin-top: 20px;
     margin-left: 32px;
-    border: 1px solid #d9d9d9;
+    display: grid;
 }
 
 .newcard__desc-licenze-q3{
@@ -381,7 +382,7 @@
     height: 54px;
     margin-top: 20px;
     margin-left: 32px;
-    border: 1px solid #d9d9d9;
+    display: grid;
 }
 
 .newcard__desc-licenze-type{
@@ -394,5 +395,104 @@
     margin-bottom: 32px;
 }
 
+.newcard__desc-licenze-q1 p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0px;
+}
+.newcard__desc-licenze-q2 p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0px;
+}
 
+.newcard__desc-licenze-q1-checkbox{
+    margin-top: 16px;
+    width: 151px;
+    height: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
 
+}
+
+.newcard__desc-licenze-q1-checkbox p{
+    font-family: Roboto;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+}
+
+.newcard__desc-licenze-q1-checkbox_1{
+    width: 57px;
+    height: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 12px;
+    place-items: center;
+}
+
+.newcard__desc-licenze-q1-checkbox_0{
+    width: 64px;
+    height: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 12px;
+    place-items: center;
+}
+
+.newcard__desc-licenze-q2-checkbox{
+    width: 543px;
+    height: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 30px;
+    margin-top: 16px;
+}
+
+.newcard__desc-licenze-q2-checkbox_1{
+    width: 57px;
+    height: 24px;
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    place-items: center;
+}
+
+.newcard__desc-licenze-q2-checkbox_0{
+    width: 64px;
+    height: 24px;
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    place-items: center;
+}
+
+.newcard__desc-licenze-q2-checkbox_2{
+    width: 362px;
+    height: 24px;
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    place-items: center;
+}
+
+.pd{
+    height: 32px;
+}
+
+.newcard__desc-licenze-q2-checkbox p {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    width: 326px;
+}
+
+.newcard__desc-licenze-q3 p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0px;
+
+}
