@@ -1,26 +1,29 @@
 import React, { useState, useRef, useEffect } from "react";
-import slider from "../images/slider.svg";
-import arrow from "../images/arrow.svg";
-import dotActive from "../images/dot_active.svg";
-import dotUnactive from "../images/dot_unactive.svg";
+import slider from "../../images/slider.svg";
+import arrow from "../../images/arrow.svg";
+import dotActive from "../../images/dot_active.svg";
+import dotUnactive from "../../images/dot_unactive.svg";
 
-import profile_works_card_photo1 from "../images/profile_card_1.svg";
-import profile_works_card_photo2 from "../images/profile_card_2.svg";
-import profile_works_card_photo3 from "../images/profile_card_3.svg";
-import profile_works_card_photo4 from "../images/profile_card_4.svg";
-import profile_works_card_photo5 from "../images/profile_card_5.svg";
-import profile_works_card_photo6 from "../images/profile_card_6.svg";
+import profile_works_card_photo1 from "../../images/profile_card_1.svg";
+import profile_works_card_photo2 from "../../images/profile_card_2.svg";
+import profile_works_card_photo3 from "../../images/profile_card_3.svg";
+import profile_works_card_photo4 from "../../images/profile_card_4.svg";
+import profile_works_card_photo5 from "../../images/profile_card_5.svg";
+import profile_works_card_photo6 from "../../images/profile_card_6.svg";
 
-import profile_works_card_avatar1 from "../images/avatarka.jpg";
-import profile_works_card_avatar2 from "../images/avatar2.png";
-import save from "../images/save.png";
-import like from "../images/like.png";
-import star from "../images/star.png";
-import left from "../images/left.svg";
-import right from "../images/right.svg";
+import profile_works_card_photo from "../../images/new_work.svg";
 
-const MainPageNew = () => {
+import profile_works_card_avatar1 from "../../images/avatarka.jpg";
+import profile_works_card_avatar2 from "../../images/avatar2.png";
+import save from "../../images/save.png";
+import like from "../../images/like.png";
+import star from "../../images/star.png";
+import left from "../../images/left.svg";
+import right from "../../images/right.svg";
+
+const MainPageTop = () => {
   const containerRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [activeDotIndex, setActiveDotIndex] = useState(0);
   const [firstClick, setFirstClick] = useState(false);
@@ -90,10 +93,11 @@ const MainPageNew = () => {
   };
 
   const updateButtonActivity = (nextIndex) => {
-    const leftButton = document.querySelector(".left-image-new");
-    const rightButton = document.querySelector(".right-image-new");
-    const leftGradient = document.querySelector(".left-gradient-new");
-    const rightGradient = document.querySelector(".right-gradient-new");
+    const leftButton = document.querySelector(".left-image");
+    const rightButton = document.querySelector(".right-image");
+    const leftGradient = document.querySelector(".left-gradient");
+    const rightGradient = document.querySelector(".right-gradient");
+
     const container = containerRef.current;
 
     if (firstClick) {
@@ -144,8 +148,8 @@ const MainPageNew = () => {
   return (
     <div class="mainpage__topworks-container">
       <div class="mainpage__topworks-container-topic">
-        <div class="mainpage__newworks-container-topic-name">
-          <a>Новое</a>
+        <div class="mainpage__topworks-container-topic-name">
+          <a>Топ работ</a>
           <img src={arrow} />
         </div>
 
@@ -161,12 +165,14 @@ const MainPageNew = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div class = {`left-gradient-new ${
-          isHovered ? "show" : "hide"
-        }`} onClick={handleLeftClick}></div>
-        <div class = {`right-gradient-new ${
-          isHovered ? "show" : "hide"
-        }`} onClick={handleRightClick}></div>
+        <div
+          class={`left-gradient ${isHovered ? "show" : "hide"}`}
+          onClick={handleLeftClick}
+        ></div>
+        <div
+          class={`right-gradient ${isHovered ? "show" : "hide"}`}
+          onClick={handleRightClick}
+        ></div>
       </div>
 
       <div
@@ -179,16 +185,18 @@ const MainPageNew = () => {
         <img
           src={left}
           alt="left"
-          class="left-image-new"
+          class="left-image"
           onClick={handleLeftClick}
         ></img>
         <img
           src={right}
           alt="right"
-          class="right-image-new"
+          class="right-image"
           onClick={handleRightClick}
         ></img>
       </div>
+
+
 
       <div
         class="mainpage__topworks-container-cards"
@@ -196,21 +204,24 @@ const MainPageNew = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div class="mainpage__works-card" id="new">
+        <div class="mainpage__works-card">
           <div class="mainpage__works-card-maininfo">
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo1} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -223,16 +234,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -245,16 +259,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -267,16 +284,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -289,16 +309,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -311,16 +334,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -333,16 +359,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -355,16 +384,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -377,16 +409,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -399,16 +434,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -421,16 +459,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo2} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
+              </div>
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -443,82 +484,19 @@ const MainPageNew = () => {
             <p>Монстр кибер железный человек</p>
           </div>
           <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo6} alt="card_photo" />
+            <img src={profile_works_card_photo} alt="card_photo" />
           </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
-            </div>
-
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
-                <img src={like} alt="like" />
-                <p>6</p>
+          <div class="mainpage__foryou-card-info">
+            <div class="mainpage__foryou-card-authors">
+              <div class="mainpage__foryou-card-avatar">
+                <img src={profile_works_card_avatar1} alt="card_avatar" />
+                <img src={profile_works_card_avatar2} alt="card_avatar" />
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mainpage__works-card">
-          <div class="mainpage__works-card-maininfo">
-            <p>Монстр кибер железный человек</p>
-          </div>
-          <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo3} alt="card_photo" />
-          </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
+              <a>yaane</a>
             </div>
 
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
-                <img src={like} alt="like" />
-                <p>6</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mainpage__works-card">
-          <div class="mainpage__works-card-maininfo">
-            <p>Монстр кибер железный человек</p>
-          </div>
-          <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo5} alt="card_photo" />
-          </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
-            </div>
-
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
-                <img src={like} alt="like" />
-                <p>6</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mainpage__works-card">
-          <div class="mainpage__works-card-maininfo">
-            <p>Монстр кибер железный человек</p>
-          </div>
-          <div class="mainpage__works-card-photo">
-            <img src={profile_works_card_photo4} alt="card_photo" />
-          </div>
-          <div class="mainpage__works-card-info">
-            <div class="mainpage__works-card-avatar">
-              <img src={profile_works_card_avatar1} alt="card_avatar" />
-              <img src={profile_works_card_avatar2} alt="card_avatar" />
-            </div>
-
-            <div class="mainpage__works-card-info-count">
-              <div class="mainpage__works-card-info-likes">
+            <div class="mainpage__foryou-card-info-count">
+              <div class="mainpage__foryou-card-info-likes">
                 <img src={like} alt="like" />
                 <p>6</p>
               </div>
@@ -530,4 +508,4 @@ const MainPageNew = () => {
   );
 };
 
-export default MainPageNew;
+export default MainPageTop;

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-import slide1 from '../images/main1.svg';
-import slide2 from '../images/main2.svg';
-import slide3 from '../images/slide2.png';
-import slide4 from '../images/slide3.png';
-import slide5 from '../images/slide4.png';
-import slide6 from '../images/slide5.png';
+import slide1 from '../../images/main1.svg';
+import slide2 from '../../images/main2.svg';
+import slide3 from '../../images/slide2.png';
+import slide4 from '../../images/slide3.png';
+import slide5 from '../../images/slide4.png';
+import slide6 from '../../images/slide5.png';
 
-import dotActive from '../images/dot_active.svg'
-import dotUnactive from '../images/dot_unactive.svg'
+import dotActive from '../../images/dot_active.svg'
+import dotUnactive from '../../images/dot_unactive.svg'
 
 
 
-import slider from '../images/slider.svg'
+import slider from '../../images/slider.svg'
 
 
 const MainPageSlider = () => {

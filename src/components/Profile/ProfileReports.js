@@ -1,6 +1,6 @@
 import React from "react";
-import rep from '../images/slide5.png'
-import avatar from '../images/avatar.png'
+import rep from '../../images/slide5.png'
+import avatar from '../../images/avatar.png'
 
 /*<p class="profile__reports__report_info_name">name</p>
                     <div class="profile__reports__report_info_user">

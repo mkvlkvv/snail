@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectSavedCardId } from "./selectors.js";
-import Header from "./Header.js";
-import ProductCard from "./ProductCard.js";
-import ProductDetails from "./ProductDetails";
-import Rewiews from "./Rewiews";
-import SimilarModelCard from "./SimilarModelCard";
-import Remixes from "./Remixes";
-import Profile from "./Profile";
-import Footer from "./Footer";
-import ProfileWorks from "./ProfileWorks";
-import ProfileCollection from "./ProfileCollection";
-import ProfileFav from "./ProfileFavourites";
-import MainPageSlider from "./MainPageSlider.js";
-import MainPageTags from "./MainPageTags.js";
-import MainPageTop from "./MainPageTop.js";
-import MainPageNew from "./MainPageNew.js";
-import MainPageForYou from "./MainPageForYou.js";
-import MainPageAuthors from "./MainPageAuthors.js";
-import ProfileReports from "./ProfileReports.js";
-import NewCard from "./NewCard.js";
-import NotFound from "./NotFound.js";
+import Header from "./Page/Header.js";
+import ProductCard from "./Card/ProductCard.js";
+import ProductDetails from "./Card/ProductDetails.js";
+import Rewiews from "./Card/Rewiews.js";
+import SimilarModelCard from "./Card/SimilarModelCard.js";
+import Remixes from "./Card/Remixes.js";
+import Profile from "./Profile/Profile.js";
+import Footer from "./Page/Footer.js";
+import ProfileWorks from "./Profile/ProfileWorks.js";
+import ProfileCollection from "./Profile/ProfileCollection.js";
+import ProfileFav from "./Profile/ProfileFavourites.js";
+import MainPageSlider from "./MainPage/MainPageSlider.js";
+import MainPageTags from "./MainPage/MainPageTags.js";
+import MainPageTop from "./MainPage/MainPageTop.js";
+import MainPageNew from "./MainPage/MainPageNew.js";
+import MainPageForYou from "./MainPage/MainPageForYou.js";
+import MainPageAuthors from "./MainPage/MainPageAuthors.js";
+import ProfileReports from "./Profile/ProfileReports.js";
+import NewCard from "./NewCard/NewCard.js";
+import NotFound from "./Page/NotFound.js";
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -132,6 +132,10 @@ const App = ({ savedCardId }) => {
     main_page: {
       path: "/snailweb",
       element: <MAIN_PAGE />,
+    },
+    new_card:{
+      path: "/new_card",
+      element: <NEW_CARD />,
     },
     not_found: {
       element: <NOT_FOUND />,

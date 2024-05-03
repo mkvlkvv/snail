@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
-import author from "../images/avatar_author.svg";
-import like from "../images/like.png";
-import smallLeft from "../images/left.svg";
-import smallRight from "../images/right.svg";
+import author from "../../images/avatar_author.svg";
+import like from "../../images/like.png";
+import smallLeft from "../../images/left.svg";
+import smallRight from "../../images/right.svg";
 
 const MainPageAuthors = () => {
   const containerRef = useRef(null);

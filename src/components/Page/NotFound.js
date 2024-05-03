@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import VideoPlayer from 'react-video-js-player';
-import poster from '../images/not_found.png'
+import poster from '../../images/not_found.png'
 //https://www.youtube.com/watch?v=8f7lRUrZY-Q&ysclid=lvgnul6deu156583303
 
 /* */

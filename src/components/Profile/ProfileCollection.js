@@ -1,24 +1,24 @@
 import React from "react";
-import profile_works_card_photo1 from "../images/photo1.jpeg";
-import profile_works_card_photo2 from "../images/photo2.jpeg";
-import profile_works_card_photo4 from "../images/profile_background.jpeg";
-import profile_works_card_avatar1 from "../images/avatar.png"
-import profile_works_card_avatar2 from "../images/avatar2.png"
-import save from "../images/save.png"
-import like from "../images/like.png"
-import star from "../images/star.png"
-import collection1 from "../images/col1.png"
-import collection2 from "../images/col1.png"
-import collection3 from "../images/col1.png"
-import collection4 from "../images/col1.png"
-import collection5 from "../images/col1.png"
-import collection6 from "../images/col1.png"
-import collection7 from "../images/col1.png"
-import collection8 from "../images/col1.png"
+import profile_works_card_photo1 from "../../images/photo1.jpeg";
+import profile_works_card_photo2 from "../../images/photo2.jpeg";
+import profile_works_card_photo4 from "../../images/profile_background.jpeg";
+import profile_works_card_avatar1 from "../../images/avatar.png"
+import profile_works_card_avatar2 from "../../images/avatar2.png"
+import save from "../../images/save.png"
+import like from "../../images/like.png"
+import star from "../../images/star.png"
+import collection1 from "../../images/col1.png"
+import collection2 from "../../images/col1.png"
+import collection3 from "../../images/col1.png"
+import collection4 from "../../images/col1.png"
+import collection5 from "../../images/col1.png"
+import collection6 from "../../images/col1.png"
+import collection7 from "../../images/col1.png"
+import collection8 from "../../images/col1.png"
 
-import collection_png1 from "../images/col.png"
-import collection_png2 from "../images/col.png"
-import collection_png3 from "../images/col.png"
+import collection_png1 from "../../images/col.png"
+import collection_png2 from "../../images/col.png"
+import collection_png3 from "../../images/col.png"
 
 
 const ProfileCollection = () => {

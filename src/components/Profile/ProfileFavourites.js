@@ -1,27 +1,27 @@
 import React from "react";
 
-import profile_works_card_photo1 from "../images/profile_card_1.svg";
-import profile_works_card_photo2 from "../images/profile_card_2.svg";
-import profile_works_card_photo3 from "../images/profile_card_3.svg";
-import profile_works_card_photo4 from "../images/profile_card_4.svg";
-import profile_works_card_photo5 from "../images/profile_card_5.svg";
-import profile_works_card_photo6 from "../images/profile_card_6.svg";
+import profile_works_card_photo1 from "../../images/profile_card_1.svg";
+import profile_works_card_photo2 from "../../images/profile_card_2.svg";
+import profile_works_card_photo3 from "../../images/profile_card_3.svg";
+import profile_works_card_photo4 from "../../images/profile_card_4.svg";
+import profile_works_card_photo5 from "../../images/profile_card_5.svg";
+import profile_works_card_photo6 from "../../images/profile_card_6.svg";
 
 
-import profile_works_card_avatar1 from "../images/avatar.png";
-import profile_works_card_avatar2 from "../images/avatar2.png";
+import profile_works_card_avatar1 from "../../images/avatar.png";
+import profile_works_card_avatar2 from "../../images/avatar2.png";
 
-import collection1 from "../images/col1.png"
-import collection2 from "../images/col1.png"
-import collection3 from "../images/col1.png"
-import collection4 from "../images/col1.png"
-import collection5 from "../images/col1.png"
+import collection1 from "../../images/col1.png"
+import collection2 from "../../images/col1.png"
+import collection3 from "../../images/col1.png"
+import collection4 from "../../images/col1.png"
+import collection5 from "../../images/col1.png"
 
 
 
-import save from "../images/save.png";
-import like from "../images/like_on.png";
-import star from "../images/star.png";
+import save from "../../images/save.png";
+import like from "../../images/like_on.png";
+import star from "../../images/star.png";
 
 const ProfileFav = () => {
 

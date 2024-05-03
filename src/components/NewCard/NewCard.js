@@ -4,14 +4,14 @@ import data from "./categories.js"
 
 import licenze from "./newcard_alg.js";
 
-import save from "../images/save.png";
-import like from "../images/like.png";
-import star from "../images/star.png";
-import photo from "../images/untitled image.png";
-import avatar from "../images/avatar.png";
-import plus_photo from "../images/plus_photo.svg";
-import pic1 from "../images/pic1.svg";
-import pic2 from "../images/pic2.svg";
+import save from "../../images/save.png";
+import like from "../../images/like.png";
+import star from "../../images/star.png";
+import photo from "../../images/untitled image.png";
+import avatar from "../../images/avatar.png";
+import plus_photo from "../../images/plus_photo.svg";
+import pic1 from "../../images/pic1.svg";
+import pic2 from "../../images/pic2.svg";
 
 const NewCard = () =>{
     const [isStep1, setIsStep1] = useState(true);

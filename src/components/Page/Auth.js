@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import east from "../images/east.svg";
-import telegram from "../images/telegram.svg";
-import gmail from "../images/gmail.svg";
-import instagram from "../images/instagram.svg";
-import west from "../images/west.svg";
-import west_dark from "../images/west_dark.svg";
+import east from "../../images/east.svg";
+import telegram from "../../images/telegram.svg";
+import gmail from "../../images/gmail.svg";
+import instagram from "../../images/instagram.svg";
+import west from "../../images/west.svg";
+import west_dark from "../../images/west_dark.svg";
 
 function parseJwt (token) {
   var base64Url = token.split('.')[1];
