@@ -49,7 +49,7 @@ const NewCardPrivacy = () => {
                                 <form className="newcard__desk-privacy-desk-inputform">
                                     <textarea
                                     type="text"
-                                    placeholder="Добавить описание"
+                                    placeholder="Расскажите другим о вашей модели"
                                     ></textarea>
 
                                 </form>
