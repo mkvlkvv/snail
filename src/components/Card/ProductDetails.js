@@ -9,74 +9,87 @@ const ProductDetails = () => {
   const [dataResponseDescription, setDataResponseDescription] = useState(null);
   const [dataResponseLicence, setDataResponseLicence] = useState(null);
   const { id } = useParams();
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
-    const fetchToken = async () => {
+    const fetchDataFirst = async () => {
+      const alias = "radmilaradmila"
+      const password = "radmila05122004"
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/token/', {
-          method: 'POST',
+        const response = await fetch("http://79.174.92.231/api/token/", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            alias: 'radmilaradmila',
-            password: 'radmila05122004'
-          })
+          body: JSON.stringify({ alias, password }),
         });
-  
+
         if (!response.ok) {
-          console.error('Ошибка при запросе:', response.statusText);
-          return;
+          throw new Error("Ошибка при аутентификации");
         }
-  
-        const data = await response.json();
-        setToken(data.access);
-        console.log('Успешный ответ:', data);
+        const authData = await response.json();
+        const token = authData.access;
+        console.log(token)
+        setToken(token);
+
+        const verifyResponse = await fetch(
+          "http://79.174.92.231/api/token/verify/",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ token }),
+          }
+        );
+
+        if (!verifyResponse.ok) {
+          throw new Error("Ошибка при проверке валидности access токена");
+        }
+
+        // Дальнейшие действия при успешной авторизации
       } catch (error) {
-        console.error('Произошла ошибка:', error);
+        console.error("Произошла ошибка:", error.message);
+        // Дополнительная логика обработки ошибок, например, показ сообщения пользователю
       }
     };
-  
-    fetchToken();
+    fetchDataFirst()
   }, []);
-  
 
   const [date, setData] = useState(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
       if (token) {
         try {
           const response = await fetch(
-            `http://127.0.0.1:8000/api/publications/1/`,
+            `http://79.174.92.231/api/publications/${id}/`,
             {
               headers: {
-                Authorization: `Bearer ${token}`
-              }
+                'Authorization': `Bearer ${token}`,
+              },
             }
           );
-  
+
           if (!response.ok) {
-            throw new Error('Failed to fetch data');
+            throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
           }
-  
+
           const responseData = await response.json();
           setData(responseData);
           console.log(id);
-          console.log(responseData[id]);
-          setDataResponseDescription(responseData[id].description)
-          setDataResponseLicence(responseData[id].licence)
-
+          console.log(responseData);
+          setDataResponseDescription(responseData.description);
+          setDataResponseLicence(responseData.licence);
         } catch (error) {
-          console.error('Error fetching data:', error);
+          console.error("Error fetching data:", error);
         }
       }
     };
-  
+
     fetchData(); // Call the function to fetch data
   }, [id, token]); // Dependencies: id and token
-
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
