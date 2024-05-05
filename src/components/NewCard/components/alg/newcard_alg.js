@@ -56,8 +56,8 @@ const licenze = (arr) =>{
         if (data_lycense[lic].code === arr){
             return data_lycense[lic];
         }else{
-            console.log(data_lycense[lic].code)
-            console.log(arr);
+            console.log('Err',data_lycense[lic].code)
+            console.log('Err',arr);
         }
     }
 

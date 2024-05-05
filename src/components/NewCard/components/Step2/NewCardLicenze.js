@@ -3,82 +3,84 @@ import React, {useState} from "react";
 import licenze from "../alg/newcard_alg.js";
 
 const NewCardLicenze = () => {
-    const [isQ3, setQ3] = useState(true);
+    const [isQ3, setQ3] = useState(false);
 
     const [isQ3_0, setQ3_0] = useState(false);
-    const [isQ3_1, setQ3_1] = useState(false);
+    const [isQ3_1, setQ3_1] = useState(true);
+    const [quest3, set3] = useState('');
 
     const [isQ1_0, setQ1_0] = useState(false);
     const [isQ1_1, setQ1_1] = useState(true);
 
     const [isQ2_0, setQ2_0] = useState(false);
-    const [isQ2_1, setQ2_1] = useState(true);
+    const [isQ2_1, setQ2_1] = useState(false);
     const [isQ2_2, setQ2_2] = useState(false);
 
-    const arr = [1, 1, 1];
+    const arr = [0, 0, 0];
 
-    const [isL, setL] = useState(true);
+    const [isL, setL] = useState(false);
+
+    const descQ3 = () =>{
+        console.log('-------------------------------');
+        console.log(isQ1_0, isQ1_1);
+        console.log(isQ2_0, isQ2_1, isQ2_2);
+        if (isQ1_0&&isQ2_0){
+            setQ3(true)
+            return('Разрешить совместное использование или распространение вашей работы или ее производных?')
+        }else{
+            if(isQ1_1&&isQ2_1){
+            setQ3(true)
+            return('Разрешить делиться без указания авторства?')
+        }else{setQ3(false)}}
+    }
 
     const switchL = () => {
         setL(!isL);
     };
 
-    const switchQ1 = () => {
-        setQ1_0(!isQ1_0);
-        setQ1_1(!isQ1_1);
-        if (isQ1_0){
-            arr[0] = 0
-        }
-        if (isQ1_1){
-            arr[0] = 1
-        }
-        console.log(licenze(arr.join('')))
+
+    const switchQ1_0 = () => {
+        setQ1_0(true); //0
+        setQ1_1(false); //1
+        descQ3();
+        
+
     };
 
-    const switchQ2_0 = () => {
-        if(isQ2_1){
-            setQ2_1(!isQ2_1)
-        };
-        if(isQ2_2){
-            setQ2_2(!isQ2_2)
-        };
-        if (isL){
-            setL(!isL);
-        };
+    const switchQ1_1 = () => {
+        setQ1_0(false); //0
+        setQ1_1(true); //1
+        descQ3();
+        
 
-        if (isQ1_0){
-            setQ3(!isQ3);
-        };
-        arr[1] = 0;
-        setQ2_0(!isQ2_0);
-        console.log(licenze(arr.join()))
+    };
+
+    const switchQ3 = () => {
+        setQ3_0(!isQ3_0);
+        setQ3_1(!isQ3_1);
+    }
+
+    const switchQ2_0 = () => {
+        setQ2_0(true);
+        setQ2_1(false);
+        setQ2_2(false);
+        descQ3();
+        
+        
     };
 
     const switchQ2_1 = () => {
-        if(isQ2_0){
-            setQ2_0(!isQ2_0)
-        };
-        if(isQ2_2){
-            setQ2_2(!isQ2_2)
-        };
-        if (isL){
-            setL(!isL);
-        };
-        arr[1] = 1;
-        setQ2_1(!isQ2_1);
-        console.log(licenze(arr.join()))
+        setQ2_1(true);
+        setQ2_0(false);
+        setQ2_2(false);
+        descQ3();
     };
 
     const switchQ2_2 = () => {
-        if(isQ2_1){
-            setQ2_1(!isQ2_1)
-        };
-        if(isQ2_0){
-            setQ2_0(!isQ2_0)
-        };
-        arr[1] = 2;
-        setQ2_2(!isQ2_2);
-        console.log(licenze(arr.join()))
+        setQ2_1(false);
+        setQ2_0(false);
+        setQ2_2(true);
+        descQ3();
     };
    
 
@@ -97,7 +99,7 @@ const NewCardLicenze = () => {
                                     </div>
 
                                     ):(
-                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ1}>
+                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ1_1}>
                             
                                     </div>)}
 
@@ -114,7 +116,7 @@ const NewCardLicenze = () => {
                                     </div>
 
                                     ):(
-                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ1}>
+                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ1_0}>
                             
                                     </div>)}
 
@@ -167,7 +169,7 @@ const NewCardLicenze = () => {
                                             
                                         </div>
                                     </div>):(
-                                        <div className="newcard__desk-privacy-checkbox-krug_2" onClick={() => {switchQ2_2(); switchL();}}>
+                                        <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ2_2}>
                             
                                         </div>
                                     )}
@@ -179,11 +181,11 @@ const NewCardLicenze = () => {
                         </div>
 
                         { isQ3 ? ( <div className="newcard__desc-licenze-q3">
-                            <p>Разрешить делиться без указания авторства?</p>
+                            <p>{}</p>
 
                             <div className="newcard__desc-licenze-q1-checkbox">
                                 <div className="newcard__desc-licenze-q1-checkbox_1">
-                                {isQ1_1 ? (
+                                {isQ3_1 ? (
                                         <div className="newcard__desk-privacy-checkbox-krug">
                                         <div>
                                             
@@ -191,7 +193,7 @@ const NewCardLicenze = () => {
                                     </div>
 
                                     ):(
-                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ1}>
+                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ3}>
                             
                                     </div>)}
 
@@ -200,7 +202,7 @@ const NewCardLicenze = () => {
 
                                 <div className="newcard__desc-licenze-q1-checkbox_0">
 
-                                {isQ1_0 ? (
+                                {isQ3_0 ? (
                                         <div className="newcard__desk-privacy-checkbox-krug">
                                         <div>
                                             
@@ -208,7 +210,7 @@ const NewCardLicenze = () => {
                                     </div>
 
                                     ):(
-                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ1}>
+                                    <div className="newcard__desk-privacy-checkbox-krug_2" onClick={switchQ3}>
                             
                                     </div>)}
 
