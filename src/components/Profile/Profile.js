@@ -88,7 +88,9 @@ const Profile = () => {
                 type="text"
               />
             </form>
+            <Link to="/new_card">
             <button class="profile__objects-newfile-button">Новый файл</button>
+            </Link>
           </div>
         </div>
       </div>

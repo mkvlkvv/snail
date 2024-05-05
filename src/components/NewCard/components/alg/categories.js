@@ -41,6 +41,28 @@ const data = [
         categories: ['Липофеймы']
     }
 
-]
+];
 
-export default data;
+const search_cat = (atr) =>{
+    let rezult = [];
+
+    data.forEach (category => {
+
+        if ((category.name.includes(atr))&&(!rezult.find(item => item.name === category.name))){
+            rezult.push({name: category.name, categories: category.categories});
+        };
+
+        category.categories.forEach(subCategory => {
+            if (subCategory.includes(atr)&&(!rezult.find(item => item.name === category.name))){
+                rezult.push({name: category.name, categories: subCategory});
+            };
+        });
+
+    });
+
+    return rezult;
+
+};
+
+
+export default search_cat;

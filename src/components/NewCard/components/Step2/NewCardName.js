@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import data from "../alg/categories.js";
+import search_cat from "../alg/categories.js";
 
 import arrow1 from "../../../../images/newcard_arrow_1.svg"
 import arrow2 from "../../../../images/newcard_arrow_2.svg"
@@ -8,13 +8,57 @@ import arrow2 from "../../../../images/newcard_arrow_2.svg"
 const NewCardName = () =>{
     const [isList, setList] = useState(false);
     const [searchCat, setCat] = useState('');
+    const [inputValue, setInput] = useState('');
+    const [choseCat, setChoose] = useState('');
+
+    const list1 = search_cat('');
 
     const switchList = () =>{
         setList(!isList);
     };
 
-    const searchValue = (atr) => {
-        setCat(atr);
+    const handleInputQuery = (e) =>{
+      setInput(e);
+    }
+
+    const chooseCat = (cats, subcat) =>{
+      const rez = cats + '/' + subcat;
+      console.log(rez);
+
+      setChoose(rez);
+      setList(!isList);
+      document.getElementById("category").value = rez;
+    }
+
+    const searchValue = () => {
+        const data = search_cat(inputValue);
+        
+        if (!data){
+          return (<p>Ничего не найдено</p>)
+        };
+        const fun = (o, n) => {
+        if ((Array.isArray(o))&&(o.length>1)){
+        const verst = o.map((cat) =>(
+            <div onClick={() => chooseCat(n, cat)}><p>{cat}</p></div>
+        ));
+        return verst;
+      } else {
+        const verst = <div onClick={() => chooseCat(n, o)}><p>{o}</p></div>;
+        return verst;
+        };
+        
+        };
+        const list0 = data.map((obj) =>(
+          <div className="rezult__list">
+          <div className="rezult__list_block">
+              <p>{obj.name}</p>
+              <div className="rezult__list_block_subcats">
+                {fun(obj.categories, obj.name)}
+              </div>
+          </div>
+        </div>
+        ));
+        return(list0);
     };
 
     const handleFocus = () => {
@@ -45,6 +89,7 @@ const NewCardName = () =>{
 
 
 
+
     return (
                     <div className="newcard__desc-maininfo">
                         <div className="newcard__desc-maininfo-name">
@@ -62,11 +107,11 @@ const NewCardName = () =>{
 
                             <form className="newcard__desc-maininfo-categoryinputform">
 
-                                <input 
+                                <input
+                                    id = "category" 
                                     placeholder="Выберите категорию"
-                                    onChange={(e) => setCat(e.target.value)}
+                                    onChange={(e) => handleInputQuery(e.target.value)}
                                     onFocus={handleFocus}
-                                    onBlur={handleBlur}
                                 />
                                 {isList ? (<img src={arrow2} onClick={switchList} />):(<img src={arrow1} onClick={switchList}/>)}      
                                 
@@ -75,7 +120,7 @@ const NewCardName = () =>{
                         </div>
                         {isList ? (<div className="newcard__desc-maininfo-category-list">
                                <div className="newcard__desc-maininfo-category-list_search-list">
-
+                                  {searchValue()}
                                </div>
                         </div>):(<v></v>)}
 
@@ -85,7 +130,7 @@ const NewCardName = () =>{
                             <form className="newcard__desc-maininfo-nameinputform">
                             <input
                                     placeholder="Введите тег"
-                                    onChange={handleInputChange}
+                                    onChange={handleInputQuery}
                                     onKeyDown={handleInputKeyDown}
                                     value={tag}
 
