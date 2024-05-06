@@ -383,7 +383,7 @@
 
 .newcard__desc-licenze-q3{
     width: 443px;
-    height: 54px;
+    height: auto;
     margin-top: 20px;
     margin-left: 32px;
     display: grid;
@@ -498,6 +498,7 @@
     font-size: 20px;
     font-weight: 900;
     margin: 0px;
+    width: 573px;
 
 }
 
