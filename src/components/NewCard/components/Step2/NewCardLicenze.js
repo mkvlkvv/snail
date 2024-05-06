@@ -10,7 +10,7 @@ const NewCardLicenze = () => {
     const [quest3, set3] = useState('');
 
     const [isQ1_0, setQ1_0] = useState(false);
-    const [isQ1_1, setQ1_1] = useState(true);
+    const [isQ1_1, setQ1_1] = useState(false);
 
     const [isQ2_0, setQ2_0] = useState(false);
     const [isQ2_1, setQ2_1] = useState(false);
@@ -32,7 +32,7 @@ const NewCardLicenze = () => {
             setQ3(true)
             return('Разрешить делиться без указания авторства?')
         }else{setQ3(false)}}
-    }
+    };
 
     const switchL = () => {
         setL(!isL);
@@ -42,15 +42,19 @@ const NewCardLicenze = () => {
     const switchQ1_0 = () => {
         setQ1_0(true); //0
         setQ1_1(false); //1
-        descQ3();
+        arr.splice(0, 1, 0);
+        console.log('1, Нет: ', isQ1_1, isQ1_0)
+        console.log('1, Нет: ', arr)
         
 
     };
 
     const switchQ1_1 = () => {
         setQ1_0(false); //0
-        setQ1_1(true); //1
-        descQ3();
+        setQ1_1(true);
+        arr.splice(0, 1, 1);
+        console.log('1, Да: ', isQ1_1, isQ1_0)
+        console.log('1, Да: ', arr)
         
 
     };
@@ -64,7 +68,9 @@ const NewCardLicenze = () => {
         setQ2_0(true);
         setQ2_1(false);
         setQ2_2(false);
-        descQ3();
+        arr.splice(1, 1, 0);
+        console.log('2, Нет: ', isQ2_1, isQ2_0, isQ2_2)
+        console.log('2, Нет: ', arr)
         
         
     };
@@ -73,14 +79,18 @@ const NewCardLicenze = () => {
         setQ2_1(true);
         setQ2_0(false);
         setQ2_2(false);
-        descQ3();
+        arr.splice(1, 1, 1);
+        console.log('2, Да: ', isQ2_1, isQ2_0, isQ2_2)
+        console.log('2, Да: ', arr)
     };
 
     const switchQ2_2 = () => {
         setQ2_1(false);
         setQ2_0(false);
         setQ2_2(true);
-        descQ3();
+        arr.splice(1, 1, 2);
+        console.log('2, Да пока: ', isQ2_1, isQ2_0, isQ2_2)
+        console.log('2, Да пока: ', arr)
     };
    
 
