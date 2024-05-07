@@ -7,7 +7,7 @@ const NewCardLicenze = () => {
 
     const [isQ3_0, setQ3_0] = useState(false);
     const [isQ3_1, setQ3_1] = useState(true);
-    const [quest3, set3] = useState('');
+
 
     const [isQ1_0, setQ1_0] = useState(false);
     const [isQ1_1, setQ1_1] = useState(true);
@@ -15,15 +15,20 @@ const NewCardLicenze = () => {
     const [isQ2_0, setQ2_0] = useState(false);
     const [isQ2_1, setQ2_1] = useState(true);
     const [isQ2_2, setQ2_2] = useState(false);
+    const arr = [1, 1, 1];
+    
 
-    const arr = [0, 0, 0];
+    const [otv1, set1] = useState('1')
+    const [otv2, set2] = useState('1')
+    const [otv3, set3] = useState('1');
+    const [licenzze, setlicenze] = useState(licenze('111'));
+
+    
 
     const [isL, setL] = useState(true);
 
     const descQ3 = () =>{
-        console.log('-------------------------------');
-        console.log(isQ1_0, isQ1_1);
-        console.log(isQ2_0, isQ2_1, isQ2_2);
+
         if (isQ1_0&&isQ2_0){
             return('Разрешить совместное использование или распространение вашей работы или ее производных?')
         }
@@ -32,9 +37,24 @@ const NewCardLicenze = () => {
         }
     };
 
-    const switchL = () => {
-        setL(!isL);
-    };
+    const renderLicense = () =>{
+        const news = licenze(otv1+otv2+otv3);
+        console.log(news.url_photo, news.url_desc, news.type)
+        return(<div className="newcard__desc-licenze-type">
+        <img src={news.url_photo}></img> 
+        <div>
+            <p>Лицензия</p>
+            <a>Эта работа под лицензией</a>
+            <a href={news.url_desc} className="desc">{news.type}</a>
+        </div>    
+    </div>)
+         
+    }
+
+    const redArr = (p, i) =>{
+        arr[i] = p;
+        console.log(arr);
+    }
 
     const switchQ1_0 = () => {
         setQ1_0(true); //0
@@ -44,6 +64,7 @@ const NewCardLicenze = () => {
         } else {
             setQ3(false);
         };
+        set1('0');
         
     };
 
@@ -55,12 +76,9 @@ const NewCardLicenze = () => {
         } else {
             setQ3(false);
         }
+        set1('1');
     };
 
-    const switchQ3 = () => {
-        setQ3_0(!isQ3_0);
-        setQ3_1(!isQ3_1);
-    }
 
     const switchQ2_0 = () => {
         setQ2_0(true);
@@ -71,6 +89,7 @@ const NewCardLicenze = () => {
         } else {
             setQ3(false);
         }
+        set2('0');
     };
 
     const switchQ2_1 = () => {
@@ -82,6 +101,8 @@ const NewCardLicenze = () => {
         } else {
             setQ3(false);
         }
+        set2('1');
+        
     };
 
     const switchQ2_2 = () => {
@@ -89,16 +110,20 @@ const NewCardLicenze = () => {
         setQ2_0(false);
         setQ2_2(true);
         setQ3(false);
+        set2('2');
+        
     };
 
     const switchQ3_0 = () => {
         setQ3_1(false);
         setQ3_0(true);
+        set3('0');
     }
 
     const switchQ3_1 = () => {
         setQ3_0(false);
         setQ3_1(true);
+        set3('1');
     }
    
 
@@ -243,10 +268,8 @@ const NewCardLicenze = () => {
 
                         }
 
-                        {isL ? (
-                            <div className="newcard__desc-licenze-type">
-                                
-                            </div>
+                        {isL ? ( renderLicense()
+                            
                         ):(<div className="pd"></div>)} 
 
                     </div>
