@@ -22,7 +22,6 @@ import MainPageAuthors from "./MainPage/MainPageAuthors.js";
 import ProfileReports from "./Profile/ProfileReports.js";
 import NewCard from "./NewCard/NewCard.js";
 import NotFound from "./Page/NotFound.js";
-import ThreeScene from "./Slicer/ThreeScene.js"
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -95,12 +94,6 @@ const NOT_FOUND = () => (
   </div>
 );
 
-const SLICER_SCENE = () => (
-  <div>
-    <ThreeScene />
-  </div>
-)
-
 const App = ({ savedCardId }) => {
   const onDataReceived = (data) => {
     console.log("Данные получены:", data);
@@ -143,10 +136,6 @@ const App = ({ savedCardId }) => {
     new_card:{
       path: "/new_card",
       element: <NEW_CARD />,
-    },
-    slicer:{
-      path: "/slicer",
-      element: <SLICER_SCENE />,
     },
     not_found: {
       element: <NOT_FOUND />,
