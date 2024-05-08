@@ -5,11 +5,22 @@ import search_cat from "../alg/categories.js";
 import arrow1 from "../../../../images/newcard_arrow_1.svg"
 import arrow2 from "../../../../images/newcard_arrow_2.svg"
 
-const NewCardName = () =>{
+const NewCardName = (props) =>{
     const [isList, setList] = useState(false);
     const [searchCat, setCat] = useState('');
     const [inputValue, setInput] = useState('');
     const [choseCat, setChoose] = useState('');
+
+    const [name, setName] = useState('');
+    
+    const sendDataToParent = (e) =>{
+      const data = e;
+      props.sendDataToParent(data);
+    }
+
+    const handleName = (e) =>{
+        setName(e);
+    }
 
     const list1 = search_cat('');
 
@@ -43,9 +54,9 @@ const NewCardName = () =>{
         ));
         return verst;
       } else {
-        const verst = <div onClick={() => chooseCat(n, o)}><p>{o}</p></div>;
-        return verst;
-        };
+          const verst = <div onClick={() => chooseCat(n, o)}><p>{o}</p></div>;
+          return verst;
+      };
         
         };
         const list0 = data.map((obj) =>(
@@ -97,7 +108,8 @@ const NewCardName = () =>{
 
                             <form className="newcard__desc-maininfo-nameinputform">
                                 <input
-                                    placeholder="Введите название" 
+                                    placeholder="Введите название"
+                                    onChange={(e) => {sendDataToParent(e.target.value)}} 
                                 />
                             </form>
                         </div>
@@ -130,10 +142,9 @@ const NewCardName = () =>{
                             <form className="newcard__desc-maininfo-nameinputform">
                             <input
                                     placeholder="Введите тег"
-                                    onChange={handleInputQuery}
+                                    onChange={handleInputChange}
                                     onKeyDown={handleInputKeyDown}
                                     value={tag}
-
                                 />
                             </form>
 

@@ -18,12 +18,22 @@ const NewCard = () =>{
     const [isdiv1, setdiv1] = useState(true);
     const [isdiv2, setdiv2] = useState(false);
 
+    const [name, setName] = useState('untitled model');
+    const [mainPhoto, setPhoto] = useState(photo);
+
     const switchToStep2 = () => {
         setIsStep1(!isStep1);
         setdiv1(!isdiv1);
         setdiv2(!isdiv2);
       };
     
+    const handleDataFromName = (data) =>{
+      setName(data);
+    }
+
+    const handleDataFromImage = (data) =>{
+      setPhoto(data);
+    }
     return(
         <div className="newcard__container">
 
@@ -53,10 +63,10 @@ const NewCard = () =>{
             <div className="card__conteiner">
             <div class="profile__works-card">
           <div class="profile__works-card-maininfo">
-            <p>untitled model</p>
+            <p>{name}</p>
           </div>
           <div class="profile__works-card-photo">
-            <img src={photo} alt="card_photo" />
+            <img src={mainPhoto} alt="card_photo" />
           </div>
           <div class="profile__works-card-info">
             <div class="profile__works-card-avatar">
@@ -81,8 +91,8 @@ const NewCard = () =>{
         </div>
 
                 <div className="newcard__desc-area">
-                    <NewCardName />
-                    <NewCardImages />
+                    <NewCardName sendDataToParent={handleDataFromName}/>
+                    <NewCardImages sendDataToParent={handleDataFromImage}/>
                     <NewCardPrivacy />
                     <NewCardLicenze />
 

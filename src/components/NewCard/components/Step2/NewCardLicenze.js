@@ -38,7 +38,12 @@ const NewCardLicenze = () => {
     };
 
     const renderLicense = () =>{
-        const news = licenze(otv1+otv2+otv3);
+        var news = ''
+        if (!isQ3){
+            news = licenze(otv1+otv2+'0');
+        }else{
+            news = licenze(otv1+otv2+otv3)};
+        
         console.log(news.url_photo, news.url_desc, news.type)
         return(<div className="newcard__desc-licenze-type">
         <img src={news.url_photo}></img> 

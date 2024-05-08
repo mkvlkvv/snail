@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../../images/logo.svg";
 import AuthModal from "./Auth";
 import { useState, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-alice-carousel";
 
 const useModal = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -45,7 +47,9 @@ const Header = ({ isAuthenticated, onLogout }) => {
   return (
     <div className={headerClass}>
       <div className="header__menu">
+        <NavLink to="/snailweb">
         <img src={logo} alt="Логотип" className="logo" />
+        </NavLink>
         <div className="left-menu-container">
           <a className="header__button">3D модели</a>
           <a className="header__button">Слайсер</a>
