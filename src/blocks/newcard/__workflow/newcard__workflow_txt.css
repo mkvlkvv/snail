@@ -28,6 +28,17 @@
     margin-top: 23px;
     width: 107px;
     height: 48px;
+    background-color: #1c1c1c;
+    border: 1px solid #EB572F;
+    border-radius: 50px;
+    margin-left: 105px;
+    place-content: center;
+}
+
+.newcard__workflow_txt_overview:hover{
+    margin-top: 23px;
+    width: 107px;
+    height: 48px;
     background-color: #EB572F;
     border-radius: 50px;
     margin-left: 105px;
@@ -46,4 +57,94 @@
     width: 317px;
     height: 173px;
     margin-left: 391px;
+}
+
+.newcard__step1_fileblock{
+    height: 380px;
+    width: auto;
+    margin-top: 23px;
+}
+
+.newcard__step1_fileblock_head{
+    height: 48px;
+    width: auto;
+    display: grid;
+    place-items: center;
+}
+
+.newcard__step1_fileblock_head div{
+    border: 1px solid #EB572F;
+    border-radius: 50px;
+    height: 48px;
+    width: 316px;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.newcard__step1_fileblock_filesgrid{
+    width: 1100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.newcard__step1_fileblock_filesgrid_div{
+    width: 546px;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+
+.newcard__step1_fileblock_filesgrid_f{
+    width: 506px;
+    height: 292px;
+}
+
+.file{
+    margin-top: 0px;
+    width: 506px;
+    height: 32px;
+    display: flex;
+}
+
+.file:hover{
+    background-color: #292929;
+    border-radius: 12px;
+}
+
+.file img{
+    width: 24px;
+    height: 24px;
+}
+
+.file img:nth-child(1){
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+.file_p1{
+    font: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-left: 8px;
+    width: 305px;
+}
+
+.file_img_2{
+    margin-left: 15px;
+    margin-top: 4px;
+}
+
+.file_p2{
+    font: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-left: 15px;
+    color: #6d6d6d;
+    width: 58px;
 }
