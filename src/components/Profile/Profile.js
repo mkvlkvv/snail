@@ -5,10 +5,12 @@ import follow from '../../images/follow.svg';
 import download from '../../images/download.svg';
 import { Link } from "react-router-dom";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Profile = () => {
-
+  const alias = useSelector(state => state.alias);
+  const alias_local = localStorage.getItem('alias');
   const data = {
     name: "yaane",
     avatarSrc: "/images/profile.png",
@@ -26,6 +28,8 @@ const Profile = () => {
     setActiveButton(index); // Устанавливаем индекс активной кнопки
   };
 
+
+
   return (
     <div class="profile">
       <div class="profile__background-container">
@@ -35,7 +39,7 @@ const Profile = () => {
         <img className="profile__avatar" src={data.avatarSrc} alt="Аватар профиля" />
         <div className="profile__info">
           <p className="profile__name">{data.name}</p>
-          <p className="profile__nickname">{data.nickname}</p>
+          <p className="profile__nickname">{alias_local}</p>
           <div className="profile__stat">
             <button className="profile__stat-item">
               <img className="profile__stat-img" src={follow} alt="repost button" /> {data.followers}

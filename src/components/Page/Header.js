@@ -4,9 +4,17 @@ import AuthModal from "./Auth";
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-alice-carousel";
+import search from "../../images/search.svg"
+import enter from "../../images/enter.svg"
+import plus from "../../images/addcard.svg"
+import chat from "../../images/chat_bubble.svg"
+import notif from "../../images/notifications.svg"
+import packag from "../../images/package_2.svg"
+import ava from "../../images/avatarka.jpg"
 
 const useModal = () => {
   const [isShowing, setIsShowing] = useState(false);
+ 
 
   function toggle() {
     setIsShowing(!isShowing);
@@ -27,10 +35,16 @@ const useModal = () => {
 
 const Header = ({ isAuthenticated, onLogout }) => {
   const [headerClass, setHeaderClass] = useState("header");
-
+  
+  const [isAuth, setAuth] = useState(true);
   const [isShowingModal, toggleModal, closeModal] = useModal();
 
   const modalRef = useRef();
+
+  
+  const handleDataFromName = (data) =>{
+    setAuth(data);
+  }
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -44,27 +58,68 @@ const Header = ({ isAuthenticated, onLogout }) => {
     };
   }, [modalRef, closeModal]);
 
-  return (
-    <div className={headerClass}>
-      <div className="header__menu">
+  return (<div>
+    {isAuth ? (<div className={headerClass}>
         <NavLink to="/snailweb">
         <img src={logo} alt="Логотип" className="logo" />
         </NavLink>
         <div className="left-menu-container">
-          <a className="header__button">3D модели</a>
-          <a className="header__button">Слайсер</a>
-          <a className="header__button">Печать</a>
+          <a className="a1">О нас</a>
+          <a className="a2">3D модели</a>
+          <a className="a3">Слайсер</a>
+          <a className="a4">Печать</a>
         </div>
-      </div>
+          <form className="header__form_active">
+            <img src={search}></img>
+
+            <input placeholder="Поиск">
+            </input>
+
+          </form>
+          <div className="header__user-panel">
+              <div className="header__user-panel-newcard">
+                <img src={plus}></img>
+              </div>
+              <img src={chat}></img>
+              <img src={packag}></img>
+              <img src={notif}></img>
+              <div className="header__user-panel-user">
+                  <p>yaane</p>
+                  <img src={ava}></img>
+              </div>
+          </div>
+    </div>):(
+    <div className={headerClass}>
+        <NavLink to="/snailweb">
+        <img src={logo} alt="Логотип" className="logo" />
+        </NavLink>
+        <div className="left-menu-container">
+          <a className="a1">О нас</a>
+          <a className="a2">3D модели</a>
+          <a className="a3">Слайсер</a>
+          <a className="a4">Печать</a>
+        </div>
+        <div className="header__search_form">
+          <form className="header__form">
+            <img src={search}></img>
+
+            <input placeholder="Поиск">
+            </input>
+
+          </form>
+        </div>
       <AuthModal
         show={isShowingModal}
         onCloseButtonClick={closeModal}
       ></AuthModal>
-      <button
-        className="header__button header__button_exit"
+      <div
+        className= "header_auth"
         onClick={toggleModal}
-      ></button>
+      >
+        <img src={enter}></img>
+      </div>
       {isAuthenticated && <button>Кнопка</button>}
+    </div>)}
     </div>
   );
 };

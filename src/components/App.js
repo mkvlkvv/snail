@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectSavedCardId } from "./selectors.js";
+
+import { Provider } from "react-redux";
+import store from "./store/store.js";
+
 import Header from "./Page/Header.js";
 import ProductCard from "./Card/ProductCard.js";
 import ProductDetails from "./Card/ProductDetails.js";
@@ -143,6 +147,7 @@ const App = ({ savedCardId }) => {
   };
 
   return (
+    <Provider store={store}>
     <Router>
       <div className="page">
         <Header />
@@ -150,12 +155,13 @@ const App = ({ savedCardId }) => {
           {Object.entries(urls).map(([key, { path, element }]) => (
             <Route key={key} path={path} element={element} />
           ))}
-<Route path="/card/:id" element={<CARD_OF_PRODUCT />} />
+          <Route path="/card/:id" element={<CARD_OF_PRODUCT />} />
           <Route path="*" element={<NOT_FOUND />} />
         </Routes>
         <Footer />
       </div>
     </Router>
+    </Provider>
   );
 };
 

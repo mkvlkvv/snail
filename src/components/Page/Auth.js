@@ -6,6 +6,9 @@ import instagram from "../../images/instagram.svg";
 import west from "../../images/west.svg";
 import west_dark from "../../images/west_dark.svg";
 
+import { useDispatch } from "react-redux";
+import { setAlias } from "../store/action";
+
 function parseJwt (token) {
   var base64Url = token.split('.')[1];
   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -17,7 +20,7 @@ function parseJwt (token) {
   return data.user_id;
 };
 
-const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
+const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
 
   const [profileURL, setProfileURL] = useState('');
 
@@ -25,12 +28,16 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
   const [isStep1, setIsStep1] = useState(false);
   const [isStep2, setIsStep2] = useState(false);
 
+  const [isSuc, setSuc] = useState('no');
+
   const [inputValue1, setInputValue1] = useState('');
   const [inputValue2, setInputValue2] = useState('');
   const [inputValue3, setInputValue3] = useState('');
   const [savedValue1, setSavedValue1] = useState('');
   const [savedValue2, setSavedValue2] = useState('');
   const [savedValue3, setSavedValue3] = useState('');
+
+  const dispatch = useDispatch();
 
 
   const handleSaveValues = () => {
@@ -122,7 +129,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
         throw new Error('Ошибка при проверке валидности access токена');
       }
   
-      // Дальнейшие действия при успешной авторизации
+      
   
     } catch (error) {
       console.error('Произошла ошибка:', error.message);
@@ -133,8 +140,8 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
   const handleReg = async() =>{
     //
     const email = inputValue1;
-    const password = inputValue2;
-    const alias = inputValue3;
+    const password = inputValue3;
+    const alias = inputValue2;
     console.log(email, password, alias);
     const body={
       alias: {alias},
@@ -154,6 +161,9 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
       });
       console.log(response.text());
       //переход на страницу
+      dispatch(setAlias(alias));
+      localStorage.setItem('alias', alias);
+      setSuc('ok');
       
     } catch (error) {
       console.error('Произошла ошибка при регистрации:', error.message);
@@ -382,7 +392,6 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess  }) => {
           </div>
         </div>
       )}
-      ;
     </div>
   );
 };
