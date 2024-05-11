@@ -4,6 +4,7 @@ import draft from "../../../../images/draft.png"
 import delet from "../../../../images/delete.png"
 import drug from "../../../../images/drag_indicator.png"
 
+
 function transform(bytes, decimals=2){
     console.log(bytes);
     var k = 1024;
@@ -13,13 +14,20 @@ function transform(bytes, decimals=2){
     return Math.round(parseFloat((bytes/Math.pow(k, s)).toFixed(dm))) + ras[s];
 }
 
-const NewCardWorkflow = () =>{
+const NewCardWorkflow = (props) =>{
     const [drag, setDrag] = useState(false);
     const fileInputRef = useRef(null);
 
     const [filegrid, setFileGrid] = useState(false);
-    const [file_mass, setFile_mass] = useState([]);
     const [items, setItems] = useState([]);
+
+    const sendDataToParent = () =>{
+        const data = {
+            command: 'next',
+            files: {items}
+        };
+        props.sendDataToParent(data);
+      }
 
     const handleOverviewClick = () =>{
         fileInputRef.current.click();
@@ -111,7 +119,7 @@ const NewCardWorkflow = () =>{
         </div>)}
         {filegrid ? (<div className="newcard__step1_fileblock">
             <div className="newcard__step1_fileblock_head">
-                <div>Продолжить</div>
+                <div onClick={sendDataToParent}>Продолжить</div>
             </div>
             <div className="newcard__step1_fileblock_filesgrid">
                 {render2Files()}

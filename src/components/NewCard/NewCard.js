@@ -21,6 +21,9 @@ const NewCard = () =>{
     const [name, setName] = useState('untitled model');
     const [mainPhoto, setPhoto] = useState(photo);
 
+    const[step1_data, setData1] = useState();
+    const[step2_data, setData2] = useState();
+
     const switchToStep2 = () => {
         setIsStep1(!isStep1);
         setdiv1(!isdiv1);
@@ -33,6 +36,14 @@ const NewCard = () =>{
 
     const handleDataFromImage = (data) =>{
       setPhoto(data);
+    }
+
+    const handleDataFromStep1 = (data) =>{
+      if (data.command === 'next'){
+        switchToStep2()
+      };
+      setData1(data.files);
+      console.log(data.files)
     }
     return(
         <div className="newcard__container">
@@ -57,7 +68,7 @@ const NewCard = () =>{
                 </div>
             </div>
 
-            {isStep1 ? (<NewCardWorkflow />):(
+            {isStep1 ? (<NewCardWorkflow sendDataToParent={handleDataFromStep1}/>):(
                 <div className="card__desc">
 
             <div className="card__conteiner">

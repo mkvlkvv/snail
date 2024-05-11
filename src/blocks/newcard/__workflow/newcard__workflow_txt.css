@@ -84,6 +84,19 @@
     place-items: center;
 }
 
+.newcard__step1_fileblock_head div:hover{
+    border: 1px solid #EB572F;
+    border-radius: 50px;
+    background-color: #EB572F;
+    height: 48px;
+    width: 316px;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+}
+
 .newcard__step1_fileblock_filesgrid{
     width: 1100px;
     height: auto;
