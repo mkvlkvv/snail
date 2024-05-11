@@ -60,7 +60,7 @@
 }
 
 .newcard__step1_fileblock{
-    height: 380px;
+    height: auto;
     width: auto;
     margin-top: 23px;
 }
@@ -88,14 +88,15 @@
     width: 1100px;
     height: auto;
     display: flex;
+    margin-top: 20px; 
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .newcard__step1_fileblock_filesgrid_div{
     width: 546px;
     height: auto;
     display: grid;
-    place-items: center;
 }
 
 .newcard__step1_fileblock_filesgrid_f{
@@ -147,4 +148,9 @@
     margin-left: 15px;
     color: #6d6d6d;
     width: 58px;
+    text-align: end;
+}
+
+.psvd{
+    height: 90px;
 }

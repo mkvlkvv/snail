@@ -34,7 +34,7 @@ const NewCardWorkflow = () =>{
     }
 
     const render2Files = () =>{
-        const chunks = Array.from({length: Math.ceil(items.length / 9)}, (_, index) => items.slice(index*9, index*9+9));
+        const chunks = Array.from({length: Math.ceil(items.length / 20)}, (_, index) => items.slice(index*20, index*20+20));
         const data = chunks.map((chunk, index) =>(
             <div className="newcard__step1_fileblock_filesgrid_div" key={index}>
                 <div className=".newcard__step1_fileblock_filesgrid_f">
@@ -52,23 +52,6 @@ const NewCardWorkflow = () =>{
             </div>
         ));
         return data;
-    }
-
-    const renderFiles = (files) =>{
-        const data = files.map((file) => (
-            <div className="file">
-                            <img src={draft}></img>
-                            <p className="file_p1">{file.name.substring(0, 27)}</p>
-                            <p className="file_p2">{transform(file.size)}</p>
-                            <img src={delet} className="file_img_2"></img>
-                            <img src={drug} className="file_img_2"></img>
-
-                        </div>
-        )
-
-        )
-        console.log(data);
-        setFile_mass(previosdata => [...previosdata, ...data]);
     }
 
     const onDropHandler = (e) =>{
@@ -133,7 +116,7 @@ const NewCardWorkflow = () =>{
             <div className="newcard__step1_fileblock_filesgrid">
                 {render2Files()}
             </div>
-        </div>):(<op></op>)}
+        </div>):(<div className="psvd"></div>)}
         </div>
     )
 };
