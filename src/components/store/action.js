@@ -1,6 +1,6 @@
-export const setAlias = (alias) =>({
+export const setAlias = (alias, token, app) =>({
     type: 'SET_ALIAS',
-    payload: alias
+    payload: {alias, token, app}
 }
 
 )

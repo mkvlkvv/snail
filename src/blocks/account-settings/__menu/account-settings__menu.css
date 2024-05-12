@@ -1,0 +1,32 @@
+.account_settings__menu{
+    width: 258px;
+    height: 195px;
+    display: grid;
+    grid-template-rows: repeat(3, 3fr);
+    grid-gap: 15px;
+}
+
+.account_settings__menu div{
+    width: 258px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: #222222;
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+}
+
+.account_settings__menu div:hover{
+    width: 258px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: #292929;
+    border: 1px solid #EB572F;
+}
+
+.account_settings__menu p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+}
+

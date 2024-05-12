@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 const Profile = () => {
   const alias = useSelector(state => state.alias);
-  const alias_local = localStorage.getItem('alias');
   const data = {
     name: "yaane",
     avatarSrc: "/images/profile.png",
@@ -39,7 +38,7 @@ const Profile = () => {
         <img className="profile__avatar" src={data.avatarSrc} alt="Аватар профиля" />
         <div className="profile__info">
           <p className="profile__name">{data.name}</p>
-          <p className="profile__nickname">{alias_local}</p>
+          <p className="profile__nickname">{'@'+ alias}</p>
           <div className="profile__stat">
             <button className="profile__stat-item">
               <img className="profile__stat-img" src={follow} alt="repost button" /> {data.followers}

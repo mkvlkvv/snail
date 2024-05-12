@@ -1,0 +1,9 @@
+.account_settings__settings{
+    width: 916px;
+    height: 2,266px;
+    margin-left: 80px;
+    border: 1px solid #d9d9d9;
+    display: grid;
+    grid-template-rows: repeat(3, 3fr);
+    grid-gap: 32px;
+}

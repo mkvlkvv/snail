@@ -1,7 +1,11 @@
 import { createStore } from "redux";
+import { persistStore, persistReducer} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const initialState = {
-    alias: ''
+    alias: '',
+    token: '',
+    app: '',
 }
 
 const userReducer = (state = initialState, action) =>{
@@ -9,14 +13,25 @@ const userReducer = (state = initialState, action) =>{
         case 'SET_ALIAS':
             return {
                 ...state,
-                alias: action.payload
+                alias: action.payload.alias,
+                token: action.payload.token,
+                app: action.payload.app
             };
             default:
                 return state;
+        
     }    
+};
+
+const persistConfig = {
+    key: 'root',
+    storage
 }
 
+const persistReduc = persistReducer(persistConfig, userReducer);
 
-const store = createStore(userReducer);
 
-export default store;
+const store = createStore(persistReduc);
+const persistor = persistStore(store);
+
+export {store, persistor};

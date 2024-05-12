@@ -11,6 +11,7 @@ import chat from "../../images/chat_bubble.svg"
 import notif from "../../images/notifications.svg"
 import packag from "../../images/package_2.svg"
 import ava from "../../images/avatarka.jpg"
+import { useSelector } from "react-redux";
 
 const useModal = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -34,17 +35,19 @@ const useModal = () => {
 };
 
 const Header = ({ isAuthenticated, onLogout }) => {
+  const alias = useSelector(state => state.alias)
+  const data = useSelector(state => state.app)
+  console.log(data);
   const [headerClass, setHeaderClass] = useState("header");
-  
-  const [isAuth, setAuth] = useState(true);
+  const [isAuth, setAuth] = useState(data);
   const [isShowingModal, toggleModal, closeModal] = useModal();
 
   const modalRef = useRef();
 
-  
-  const handleDataFromName = (data) =>{
+  useEffect(() =>{
     setAuth(data);
-  }
+  }, [data])
+
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -84,7 +87,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
               <img src={packag}></img>
               <img src={notif}></img>
               <div className="header__user-panel-user">
-                  <p>yaane</p>
+                  <p>{alias}</p>
                   <img src={ava}></img>
               </div>
           </div>

@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { selectSavedCardId } from "./selectors.js";
 
 import { Provider } from "react-redux";
-import store from "./store/store.js";
+import { PersistGate } from "redux-persist/integration/react";
+import {store, persistor} from "./store/store.js"
 
 import Header from "./Page/Header.js";
 import ProductCard from "./Card/ProductCard.js";
@@ -26,6 +27,7 @@ import MainPageAuthors from "./MainPage/MainPageAuthors.js";
 import ProfileReports from "./Profile/ProfileReports.js";
 import NewCard from "./NewCard/NewCard.js";
 import NotFound from "./Page/NotFound.js";
+import AccountSettings from "./AccountSettings/ASettings.js";
 
 const CARD_OF_PRODUCT = () => (
   <div>
@@ -98,6 +100,12 @@ const NOT_FOUND = () => (
   </div>
 );
 
+const ACCOUNT_SETTINGS = () =>(
+  <div>
+    <AccountSettings/>
+  </div>
+)
+
 const App = ({ savedCardId }) => {
   const onDataReceived = (data) => {
     console.log("Данные получены:", data);
@@ -144,10 +152,15 @@ const App = ({ savedCardId }) => {
     not_found: {
       element: <NOT_FOUND />,
     },
+    account_settings: {
+      path: "/settings",
+      element: <ACCOUNT_SETTINGS />
+    }
   };
 
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
     <Router>
       <div className="page">
         <Header />
@@ -161,6 +174,7 @@ const App = ({ savedCardId }) => {
         <Footer />
       </div>
     </Router>
+    </PersistGate>
     </Provider>
   );
 };

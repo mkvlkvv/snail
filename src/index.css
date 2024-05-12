@@ -155,3 +155,8 @@
 @import url("./blocks/newcard/__workflow/newcard__workflow_txt.css");
 @import url("./blocks/newcard/__step2/card__conteiner.css");
 @import url("./blocks/newcard/__step2/newcard__desc-area.css");
+@import url("./blocks/account-settings/account_settings.css");
+@import url("./blocks/account-settings/__menu/account-settings__menu.css");
+@import url("./blocks/account-settings/__settings/account_settings__settings.css");
+
+@import url("./blocks/account-settings/__settings/__bio/account_settings__settings-bio.css");

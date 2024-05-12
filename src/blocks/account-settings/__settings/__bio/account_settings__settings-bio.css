@@ -1,0 +1,264 @@
+.account_settings__settings-bio{
+    width: 916px;
+    height: 1011.22px;
+    display: grid;
+    grid-template-rows: repeat(4, 4fr);
+    grid-gap: 20px;
+}
+
+.account_settings__settings-bio p{
+    margin-top: 0px;
+    width: 271px;
+    height: 33px;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.bio_ava{
+    width: 916px;
+    height: 193.22px;
+    background-color: #292929;
+    border-radius: 40px;
+}
+
+
+.bio_inf{
+    width: 916px;
+    height: 598px;
+    background-color: #292929;
+    border-radius: 40px; 
+}
+
+.bio_fav{
+    width: 916px;
+    height: 127px;
+    background-color: #292929;
+    border-radius: 40px;
+    
+}
+
+.bio_ava p{
+    width: 68px;
+    height: 24px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-bottom: 0px;
+}
+
+.bio_ava_div{
+    width: 235px;
+    height: 99.22px;
+    margin-left: 32px;
+    margin-top: 12px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 2fr) !important;
+}
+
+.bio_ava img{
+    width: 100px;
+    height: 99.22px;
+    border-radius: 50%;
+}
+
+.bio_ava_change{
+    width: 115px !important;
+    height: 43px !important;
+    background-color: #222222;
+    border-radius: 50px;
+    margin-top: 28px !important;
+    margin-left: 20px !important;
+}
+
+.bio_ava_change p{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;
+    margin-top: 13px;
+    margin-left: 20px;
+}
+
+.bio_inf_alias{
+    width: 849px;
+    height: 82px;
+    margin-top: 20px !important;
+    margin-left: 32px;
+}
+
+.bio_inf_alias p{
+    margin: 0px;
+    height: 14px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.bio_inf_alias form{
+    width: 849px;
+    height: 43px;
+    border-radius: 50px;
+    background-color: #222222;
+    border: 1px solid #6d6d6d;
+    margin-top: 16px;
+}
+
+.bio_inf_alias input{
+    width: 821px;
+    height: 23px;
+    outline: none;
+    background-color: #222222;
+    border: none;
+    margin-left: 14px;
+    margin-top: 10px;
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bio_inf_alias input::placeholder{
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bio_inf_name{
+    width: 849px;
+    height: 82px;
+    margin-top: 32px !important;
+    margin-left: 32px;
+}
+
+.bio_inf_name p{
+    margin: 0px;
+    height: 14px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.bio_inf_name form{
+    width: 849px;
+    height: 43px;
+    border-radius: 50px;
+    background-color: #222222;
+    border: 1px solid #6d6d6d;
+    margin-top: 16px;
+}
+
+.bio_inf_name input{
+    width: 821px;
+    height: 23px;
+    outline: none;
+    background-color: #222222;
+    border: none;
+    margin-left: 14px;
+    margin-top: 10px;
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bio_inf_name input::placeholder{
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bio_inf_desc{
+    width: 849px;
+    height: 169px;
+    margin-top: 20px !important;
+    margin-left: 32px;
+}
+
+.bio_inf_desc p{
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 900;
+    height: 14px;
+}
+
+.bio_inf_desc form{
+    width: 849px;
+    height: 139px;
+    border-radius: 20px;
+    background-color: #222222;
+    border: 1px solid #6d6d6d;
+    margin-top: 16px;
+}
+
+.bio_inf_desc textarea{
+    width: 821px;
+    height: 111px;
+    outline: none;
+    background-color: #222222;
+    border: none;
+    border-radius: 0%;
+    margin-left: 14px;
+    margin-top: 14px;
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bio_inf_desc textarea::placeholder{
+    color: #6d6d6d;
+    font-size: 20px;
+    font-weight: 400;
+    top: 10px;
+}
+
+.bio_inf_social{
+    width: 849px;
+    height: 141px;
+    margin-top: 20px !important;
+    margin-left: 32px;
+}
+
+.bio_inf_social p{
+    margin: 0px;
+    height: 14px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.bio_inf_social form{
+    width: 849px;
+    height: 43px;
+    border-radius: 50px;
+    background-color: #222222;
+    border: 1px solid #6d6d6d;
+    margin-top: 16px;
+}
+
+.bio_inf_social input{
+    width: 821px;
+    height: 23px;
+    outline: none;
+    background-color: #222222;
+    border: none;
+    margin-left: 14px;
+    margin-top: 10px;
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bio_inf_social input::placeholder{
+    color: #d9d9d9;
+    font-size: 20px;
+    font-weight: 400;
+}
+.bio_inf_social div{
+    width: 173px;
+    height: 43px;
+    margin-top: 16px;
+    border-radius: 50px;
+    background-color: #222222;
+    display: grid;
+    place-content: center;
+}
+
+.bio_inf_social div:hover{
+    border: 1px solid #EB572F;
+}
+

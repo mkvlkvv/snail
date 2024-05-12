@@ -5,6 +5,7 @@ import gmail from "../../images/gmail.svg";
 import instagram from "../../images/instagram.svg";
 import west from "../../images/west.svg";
 import west_dark from "../../images/west_dark.svg";
+import { useSelector } from "react-redux";
 
 import { useDispatch } from "react-redux";
 import { setAlias } from "../store/action";
@@ -16,11 +17,11 @@ function parseJwt (token) {
       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
   const data = JSON.parse(jsonPayload);
-  console.log(data.user_id);
+  console.log(data);
   return data.user_id;
 };
 
-const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
+const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess}) => {
 
   const [profileURL, setProfileURL] = useState('');
 
@@ -28,7 +29,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
   const [isStep1, setIsStep1] = useState(false);
   const [isStep2, setIsStep2] = useState(false);
 
-  const [isSuc, setSuc] = useState('no');
+  const [isSuc, setSuc] = useState();
 
   const [inputValue1, setInputValue1] = useState('');
   const [inputValue2, setInputValue2] = useState('');
@@ -38,6 +39,12 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
   const [savedValue3, setSavedValue3] = useState('');
 
   const dispatch = useDispatch();
+
+  const sendDataToParent = (e) =>{
+    const data = e;
+    console.log('data', e)
+    handleLoginSuccess.sendDataToParent(data);
+  }
 
 
   const handleSaveValues = () => {
@@ -99,7 +106,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
     console.log(alias, password);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/token/", {
+      const response = await fetch("http://79.174.92.231/api/token/", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -129,7 +136,8 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
         throw new Error('Ошибка при проверке валидности access токена');
       }
   
-      
+      dispatch(setAlias(alias, token, true))
+      setSuc(true);
   
     } catch (error) {
       console.error('Произошла ошибка:', error.message);
@@ -160,13 +168,25 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
         body: JSON.stringify({alias, email, password}),
       });
       console.log(response.text());
-      //переход на страницу
-      dispatch(setAlias(alias));
-      localStorage.setItem('alias', alias);
-      setSuc('ok');
+      
+      dispatch(setAlias(alias, '', true))
       
     } catch (error) {
       console.error('Произошла ошибка при регистрации:', error.message);
+    }
+  }
+
+  const handleClose = () =>{
+    console.log('hh', isSuc)
+    if (isSuc === true){
+      const d = true;
+      localStorage.setItem('auth', d)
+      onCloseButtonClick();
+      resetState();
+    } else {
+      const d = false;
+      localStorage.setItem('auth', d)
+      console.log('не прокатило')
     }
   }
 
@@ -211,7 +231,7 @@ const AuthModal = ({ show, onCloseButtonClick, handleLoginSuccess, props}) => {
               </form>
             </div>
             <div class="auth__login__enter" onClick={() => {handleSaveValues();
-              handleLogin()}}>
+              handleLogin(); handleClose()}}>
               <p>Войти</p>
             </div>
           </div>        
