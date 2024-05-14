@@ -1,5 +1,6 @@
 import React from "react";
 import Bio from "./components/Bio";
+import Account from "./components/Account";
 
 const AccountSettings = () =>{
     
@@ -12,6 +13,7 @@ const AccountSettings = () =>{
             </div>
             <div className="account_settings__settings">
                 <Bio />
+                <Account />
             </div>
         </div>
     )
