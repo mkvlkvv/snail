@@ -16,57 +16,60 @@ import profile_works_card_avatar2 from "../../images/avatar2.png";
 import save from "../../images/save.png";
 import like from "../../images/like.png";
 import star from "../../images/star.png";
+import ava from "../../images/av.jpg"
+import dn from "../../images/danila.jpg"
+import { NavLink } from "react-router-dom";
 
 const ProfileWorks = ({ onDataReceived, saveCardId, savedCardId }) => {
   const { id } = useParams();
   const works = [
     {
-      name: "Crocs",
-      imgSrc: "../images/profile_card_1.svg",
-      star: "2",
+      name: "Modern Apple Home",
+      imgSrc: "https://makerworld.bblmw.com/makerworld/model/USdd016072f24da4/design/2024-04-14_d86efdeddff48.png?image_process=resize,w_1000/format,webp",
+      star: "5",
       saved: "1",
       like: "6",
-      owners: ["../images/avatar.png", "../images/avatar2.png"],
+      owners: [ava],
     },
     {
-      name: "Монстрик",
-      imgSrc: "../images/profile_card_2.svg",
+      name: "Chibi Figure",
+      imgSrc: "https://makerworld.bblmw.com/makerworld/model/USdc7b34753bb31f/design/2024-05-10_1ad4105e1755e.png?image_process=resize,w_1000/format,webp",
       star: "3",
       saved: "4",
       like: "4",
-      owners: ["../images/avatar.png"],
+      owners: [dn, ava],
     },
     {
-      name: "Девушка в одежде",
-      imgSrc: "../images/profile_card_3.svg",
+      name: "Sea Turtle Pendant",
+      imgSrc: "https://makerworld.bblmw.com/makerworld/model/US68ca4842829262/design/2024-05-09_d249f01334e3f.jpg?image_process=resize,w_1000/format,webp",
       star: "2",
       saved: "8",
       like: "1",
-      owners: ["../images/avatar.png", "../images/avatar2.png"],
+      owners: [ava],
     },
     {
-      name: "Crocs",
-      imgSrc: "../images/profile_card_4.svg",
+      name: "Ghostbusters Logo",
+      imgSrc: "https://makerworld.bblmw.com/makerworld/model/USbab466328a5856/design/2024-05-10_eefdf7d80dcb1.jpg?image_process=resize,w_400/format,webp",
       star: "4",
       saved: "4",
       like: "4",
-      owners: ["../images/avatar.png"],
+      owners: [ava],
     },
     {
       name: "Crocs",
-      imgSrc: "../images/profile_card_5.svg",
+      imgSrc: "https://makerworld.bblmw.com/makerworld/model/USdbedef32f86041/design/2024-05-11_53a3dd22b19228.jpg?image_process=resize,w_400/format,webp",
       star: "6",
       saved: "6",
       like: "6",
-      owners: ["../images/avatar.png"],
+      owners: [ava],
     },
     {
-      name: "Crocs",
-      imgSrc: "../images/profile_card_6.svg",
+      name: "Naruto - Side View",
+      imgSrc: "https://makerworld.bblmw.com/makerworld/model/US23f47fda3d882e/design/2024-05-12_5a590169826a2.jpg?image_process=resize,w_400/format,webp",
       star: "7",
       saved: "7",
       like: "9",
-      owners: ["../images/avatar.png"],
+      owners: [ava],
     },
   ];
 
@@ -150,7 +153,7 @@ const ProfileWorks = ({ onDataReceived, saveCardId, savedCardId }) => {
           <div class="profile__works-card-maininfo">
             <p>{work.name}</p>
             <div class="profile__works-card-buttons">
-              <button className="profile__button profile__button_eye" />
+
               <button className="profile__button profile__button_choose" />
             </div>
           </div>
@@ -160,7 +163,9 @@ const ProfileWorks = ({ onDataReceived, saveCardId, savedCardId }) => {
           <div class="profile__works-card-info">
             <div class="profile__works-card-avatar">
               {work.owners.map((owner) => (
+                <NavLink to="/card/5">
                 <img src={owner} key={owner} alt="card_avatar" />
+                </NavLink>
               ))}
             </div>
             <div class="profile__works-card-info-count">

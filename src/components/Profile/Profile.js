@@ -6,18 +6,20 @@ import download from '../../images/download.svg';
 import { Link } from "react-router-dom";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ava from "../../images/av.jpg"
+
 
 
 const Profile = () => {
   const alias = useSelector(state => state.alias);
   const data = {
-    name: "yaane",
-    avatarSrc: "/images/profile.png",
-    nickname: "@coemet",
+    name: "diduk",
+    avatarSrc: ava,
+    nickname: "@diduk001",
     followers: "150",
     saved: "1",
     like: "6",
-    bio: "Привет! Сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня!",
+    bio: "Любитель авантюр и непредсказуемых обедов",
   };
 
   const [activeButton, setActiveButton] = useState(null); // Состояние для активной кнопки
@@ -38,7 +40,7 @@ const Profile = () => {
         <img className="profile__avatar" src={data.avatarSrc} alt="Аватар профиля" />
         <div className="profile__info">
           <p className="profile__name">{data.name}</p>
-          <p className="profile__nickname">{'@'+ alias}</p>
+          <p className="profile__nickname">{data.nickname}</p>
           <div className="profile__stat">
             <button className="profile__stat-item">
               <img className="profile__stat-img" src={follow} alt="repost button" /> {data.followers}
@@ -65,7 +67,7 @@ const Profile = () => {
       <div className="profile__objects">
         <div className="profile__objects-info">
           <div className="profile__objects-leftinfo">
-            <NavLink className={({ isActive }) => (isActive ? "profile__objects-leftinfo_works_active": "profile__objects-leftinfo_works")} to="/profile/works" >
+            <NavLink className="profile__objects-leftinfo_works_active" to="/profile/works" >
               <div className="profile__objects-leftinfo_works_block"><a>Работы</a></div>
             </NavLink>
             <NavLink className={({ isActive }) => (isActive ? "profile__objects-leftinfo_fav_active": "profile__objects-leftinfo_fav")} to="/profile/favourites">
