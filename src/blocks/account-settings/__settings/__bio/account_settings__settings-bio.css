@@ -377,14 +377,14 @@
 }
 
 .bio_fav_menu_1 p{
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 5px;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-top: 5px !important;
 }
 
 .bio_fav_menu_0 p{
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 5px;   
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-top: 5px !important;   
 }
 

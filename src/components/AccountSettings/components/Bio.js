@@ -79,6 +79,8 @@ const Bio = () =>{
         setQ0(true)
     }
 
+    
+
     return(<div className="account_settings__settings-bio">
         <p>Изменение профиля</p>
         <div className="bio_ava">

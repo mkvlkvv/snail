@@ -201,4 +201,115 @@
     margin-top: 5px;
 }
 
+.tresh{
+    width: 249px;
+    height: 63px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.tresh p{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 900;
+    height: 23px;
+    width: 249px;
+}
+
+.tresh_choose{
+    width: 151px;
+    height: 24px;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+}
+
+.pswd_1{
+    height: 431px;
+    width: 82px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.pswd_1 p{
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0;
+    height: 23px;
+}
+
+.pswd_pswd{
+    width: 431px;
+    height: 43px;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 16px;
+}
+
+.pswd_pswd form{
+    width: 300px;
+    height: 43px;
+    border: 1px solid #6d6d6d;
+    border-radius: 50px;
+    background-color: #222222;
+}
+
+.pswd_change{
+    width: 115px;
+    height: 43px;
+    border-radius: 50px;
+    background-color: #222222;
+    display: grid;
+    box-sizing: border-box;
+}
+
+.pswd_change:hover{
+    border: 1px solid#EB572F;
+    
+}
+
+.pswd_change p{
+    margin: 0;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 11px;
+    width: 75px;
+}
+
+.account_settings__acc p{
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-bottom: 0px;
+}
+
+.acc_delete{
+    width: 166px;
+    height: 43px;
+    margin-top: 10px;
+    margin-left: 32px;
+    border-radius: 50px;
+    background-color: #222222;
+    display: grid;
+    box-sizing: border-box;
+}
+
+.acc_delete p{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 13px;
+    margin-left: 20px;
+    
+}
+
+.acc_delete:hover{
+    border: 1px solid #EB572F;
+}
+
 
