@@ -61,7 +61,28 @@ const Account = () =>{
                 </div>
 
             </div>
-            <div className="account_settings__tresh"></div>
+            <div className="account_settings__tresh">
+            <div className="bio_fav_div">
+                <p>Открыть ли другим пользоателям "Избранное"?</p>
+                <div className="bio_fav_menu">
+                    <div className="bio_fav_menu_1">
+                        {isQ1 ? (<div className="krug_1">
+                            <div></div>
+                        </div>):(<div className="krug_0" onClick={handleQ1}>
+                    </div>)}
+
+                    <p>Да</p>
+                    </div>
+                    <div className="bio_fav_menu_0">
+                    {isQ0 ? (<div className="krug_1">
+                            <div></div>
+                        </div>):(<div className="krug_0" onClick={handleQ0}>
+                    </div>)}
+                    <p>Нет</p>
+                    </div>
+                </div>
+            </div>
+            </div>
             <div className="account_settings__pswd"></div>
             <div className="account_settings__acc"></div>
     </div>)

@@ -9,6 +9,15 @@ import Printer from "./Printer";
 import add from "../../images/add.svg";
 import { useParams } from "react-router-dom";
 
+import p1 from "../../images/t1.webp"
+import p2 from "../../images/t2.webp"
+import p3 from "../../images/t3.webp"
+import p4 from "../../images/t4.webp"
+import p5 from "../../images/t5.webp"
+import ava from "../../images/av.jpg"
+
+import prof from "../../images/profilepg.webp"
+
 const ProductCard = ({ onDataReceived }) => {
   const [dataResponseUsername, setDataResponseUsername] = useState(null);
   const [dataResponseName, setDataResponseName] = useState(null);
@@ -16,15 +25,16 @@ const ProductCard = ({ onDataReceived }) => {
   console.log("ID from URL:", id);
   const data = {
     images: [
-      "/images/main-photo.png",
-      "../images/photo2.jpeg",
-      "../images/photo3.jpeg",
-      "../images/photo1.jpeg",
+      p1,
+      p2,
+      p3,
+      p4,
+      p5,
     ],
     name: "cross",
     avatar: "avatar.jpg",
     avatarName: "anlnv",
-    description: "3D/Обувь",
+    description: "3D/Дом",
     rating_data: "4",
     likes: "6",
     repost: "5",
@@ -32,28 +42,28 @@ const ProductCard = ({ onDataReceived }) => {
     printers: [
       {
         name: "X1 Carbon,P1S,X1,X1E,A1",
-        imgSrc: "../images/main-photo.png",
+        imgSrc: prof,
         time: "2,6ч",
         items: ["Прочность", "Качество", "Успех"],
         rating: "4,8",
       },
       {
         name: "X1 Carbon,P1S,X1",
-        imgSrc: "../images/main-photo.png",
+        imgSrc: prof,
         time: "2,3ч",
         items: ["Качество", "Успех"],
         rating: "4,1",
       },
       {
         name: "X1 Carbon",
-        imgSrc: "../images/main-photo.png",
+        imgSrc: prof,
         time: "1,6ч",
         items: ["Успех"],
         rating: "3,0",
       },
       {
         name: "X1 Carbon",
-        imgSrc: "../images/main-photo.png",
+        imgSrc: prof,
         time: "1,6ч",
         items: ["Успех"],
         rating: "3,0",
@@ -206,7 +216,7 @@ const ProductCard = ({ onDataReceived }) => {
           <button className="slider__button_back" onClick={handlePrev} />
           <img
             className="card__img"
-            src={slides[slideIndex]}
+            src={p1}
             alt="основное фото"
           />
           <button className="slider__button_next" onClick={handleNext} />
@@ -228,10 +238,10 @@ const ProductCard = ({ onDataReceived }) => {
       <div className="card__info">
         <div className="bio">
           <p className="bio__description">{data.description}</p>
-          <p className="card__name">{dataResponseName}</p>
+          <p className="card__name">Modern Apple Home</p>
           <div className="avatar">
-            <img className="avatar__img" src={[data.images[0]]} alt="Avatar" />
-            <p className="avatar__name">{dataResponseUsername}</p>
+            <img className="avatar__img" src={ava} alt="Avatar" />
+            <p className="avatar__name">diduk</p>
             <button className="card__button" id="follow">
               <img className="" src={follow} alt="repost button" />
             </button>
@@ -307,7 +317,7 @@ const ProductCard = ({ onDataReceived }) => {
             {Array.from({ length: 5 - data.rating_data }, (_, i) => (
               <img src={star_black} alt="star_black" key={i} />
             ))}
-            <p className="card__text">(3)</p>
+            <p className="card__text">(5)</p>
           </div>
         </div>
       </div>

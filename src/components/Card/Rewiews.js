@@ -4,89 +4,79 @@ import star_black from "../../images/Star-white.svg";
 import star_yellow_fill from "../../images/star.svg";
 import star_yellow from "../../images/Star-black.svg";
 import like from "../../images/like.svg";
+import rdml from "../../images/rdml.jpeg" 
+import lob from "../../images/lobashik.jpg"
+import anlnv from "../../images/anlnv.jpg"
+import c1 from "../../images/c1.webp"
+import c2 from "../../images/c21.webp"
+import c21 from "../../images/c22.webp"
+import c3 from "../../images/c3.webp"
+import mk from "../../images/mkvlkv.jpg"
+import cm1 from "../../images/cm1.webp"
+import cm2 from "../../images/cm2.webp"
+import dn from "../../images/danila.jpg"
+
 
 const Reviews = () => {
   const data = {
     reviews: [
       {
-        name: "Иван Иванов",
-        date: "15 февраля 2024",
-        text: "Я впервые попробовал 3D печать, и это был настоящий переворот для меня. Возможность создавать трехмерные объекты прямо на моем столе просто поражает воображение. Я уже использовал ее для создания прототипов для моих проектов и даже для персональных подарков. Это такая удивительная технология, которая точно изменит будущее производства!",
+        name: "rdml",
+        date: "10 мая 2024",
+        text: "Этот горшок для фикуса просто великолепен! Он выглядит настолько реалистично, что иногда забываешь, что это всего лишь виртуальная модель. Дизайн безупречен, текстуры прекрасно передают структуру глины, а детализация поражает воображение. Нет никаких сомнений, что это лучший выбор для моего сада!",
         rating: 5,
-        likes: 6,
-        mainPhoto: "/images/photo4.jpg",
-        photos: [
-          "/images/photo4.jpg",
-          "/images/photo2.jpeg",
-          "/images/photo3.jpeg",
-        ],
-      },
-      {
-        name: "Пётр Петров",
-        date: "14 февраля 2024",
-        text: "Были проблемы",
-        rating: 4,
         likes: 4,
-        mainPhoto: "/images/photo4.jpg",
+        mainPhoto: c1,
         photos: [
-          "/images/photo4.jpg",
-          "/images/photo2.jpeg",
-          "/images/photo3.jpeg",
-          "/images/photo1.jpeg",
         ],
+        avatar: rdml,
       },
       {
-        name: "Пётр Петров",
-        date: "14 февраля 2024",
-        rating: 5,
-        text: "Были проблемы",
-        likes: 1,
-        mainPhoto: "/images/photo4.jpg",
-        photos: [],
+        name: "Lobaaashik",
+        date: "9 мая 2024",
+        text: "При масштабировании некоторые детали начинают выглядеть не слишком реалистично. В целом, хороший продукт, но надеюсь на улучшения в будущем",
+        rating: 4,
+        likes: 7,
+        mainPhoto: c2,
+        photos: [
+          c2, c21
+        ],
+        avatar: lob
       },
       {
-        name: "Пётр Петров",
-        date: "14 февраля 2024",
+        name: "annlnv",
+        date: "13 марта 2024",
         rating: 5,
-        text: "Были проблемы",
+        text: "Всё круто! 5 из 5 звёзд!",
         likes: 1,
         id: "no_photo",
         mainPhoto: null,
         photos: [],
+        avatar: anlnv
       },
       {
-        name: "Пётр Петров",
-        date: "14 февраля 2024",
+        name: "mkvlkvv",
+        date: "12 марта 2024",
+        text: "Этот горшок для растений - настоящая находка!",
         rating: 5,
-        text: "Были проблемы",
-        likes: 1,
-        id: "no_photo",
-        mainPhoto: null,
-        photos: [],
-      },
-      {
-        name: "Пётр Петров",
-        date: "14 февраля 2024",
-        rating: 5,
-        text: "Были проблемы",
-        likes: 1,
-        mainPhoto: "/images/photo4.jpg",
-        photos: [],
-      },
-      {
-        name: "Пётр Петров",
-        date: "14 февраля 2024",
-        text: "Были проблемы",
-        rating: 4,
-        likes: 4,
-        mainPhoto: "/images/photo4.jpg",
+        likes: 7,
+        mainPhoto: cm1,
         photos: [
-          "/images/photo4.jpg",
-          "/images/photo2.jpeg",
-          "/images/photo3.jpeg",
-          "/images/photo1.jpeg",
+          cm1, cm2
         ],
-      }
+        avatar: mk
+      },
+      {
+        name: "Danila",
+        date: "11 января 2024",
+        text: "Этот горшок для фикуса просто великолепен!",
+        rating: 5,
+        likes: 8,
+        mainPhoto: "https://makerworld.bblmw.com/makerworld/model/428498/comment/05b19620-08b2-11ef-b04a-f3cf0ef06e7c.jpg?image_process=resize,w_300/format,webp",
+        photos: [
+        ],
+        avatar: dn,
+      },
     ],
   };
 
@@ -186,7 +176,7 @@ const Reviews = () => {
                 <div className="info">
                   <div className="left-info">
                     <div className="avatar">
-                      <img src="/images/photo3.jpeg" alt="Аватар" />
+                      <img src={review.avatar} alt="Аватар" />
                     </div>
                     <div className="details">
                       <span>{review.name}</span>

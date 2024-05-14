@@ -10,7 +10,8 @@ import plus from "../../images/addcard.svg"
 import chat from "../../images/chat_bubble.svg"
 import notif from "../../images/notifications.svg"
 import packag from "../../images/package_2.svg"
-import ava from "../../images/avatarka.jpg"
+//import ava from "../../images/avatarka.jpg"
+import ava from "../../images/av.jpg"
 import { useSelector } from "react-redux";
 
 const useModal = () => {
@@ -87,7 +88,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
               <img src={packag}></img>
               <img src={notif}></img>
               <div className="header__user-panel-user">
-                  <p>{alias}</p>
+                  <p>diduk</p>
                   <img src={ava}></img>
               </div>
           </div>

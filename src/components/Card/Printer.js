@@ -1,6 +1,7 @@
 import React from "react";
 import clock from '../../images/Clock.svg';
 import star from '../../images/star.svg';
+import prof from "../../images/profilepg.webp"
 
 const Printer = () => {
   const data = {
@@ -14,28 +15,28 @@ const Printer = () => {
     "printers": [
       {
         "name": "X1 Carbon,P1S,X1,X1E,A1",
-        "imgSrc": "/images/main-photo.png",
+        "imgSrc": prof,
         "time": "2,6ч",
         "items": ["Прочность", "Качество", "Успех"],
         "rating": "4,8"
       },
       {
         "name": "X1 Carbon,P1S,X1",
-        "imgSrc": "/images/main-photo.png",
-        "time": "2,3ч",
+        "imgSrc": prof,
+        "time": "3ч",
         "items": ["Качество", "Успех"],
         "rating": "4,1"
       },
       {
         "name": "X1 Carbon",
-        "imgSrc": "/images/main-photo.png",
+        "imgSrc": prof,
         "time": "1,6ч",
         "items": ["Успех"],
         "rating": "3,0"
       },
       {
         "name": "X1 Carbon",
-        "imgSrc": "/images/main-photo.png",
+        "imgSrc": prof,
         "time": "1,6ч",
         "items": ["Успех"],
         "rating": "3,0"
