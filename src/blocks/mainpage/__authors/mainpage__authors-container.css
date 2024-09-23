@@ -1,28 +1,24 @@
 .mainpage__authors-container {
-    margin-top: 4vh;
-    margin-left: 4vw;
+    margin-top: 32px;
+    margin-left: 32px;
     width: 100%;
-    max-width: 96vw;
-    height: 25vh;
-}
-
-.mainpage__authors-container-topic-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 1856px; /* Установлено максимальная ширина для больших экранов */
+    height: 222px;
 }
 
 .mainpage__authors-container-topic-name a {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 28px;
+    width: 100%;
+    max-width: 105px;
     font-weight: bold;
 }
 
 .mainpage__authors-author {
-    height: 20vh;
-    margin-top: 3vh;
-    gap: 2vw;
+    height: 181px;
+    margin-top: 24px;
+    gap: 20px;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -33,15 +29,17 @@
 }
 
 .mainpage__authors-author-container {
-    min-width: 10vw;
-    height: 20vh;
-    padding: 0 1vw;
-    gap: 1vw;
+    min-width: 130px; /* Минимальная ширина для контейнеров */
+    max-width: 15%; /* Максимальная ширина для адаптации */
+    height: 178px;
+    padding: 0 8px;
+    gap: 8px;
 }
 
 .mainpage__authors-author-container img {
-    width: 10vw;
-    height: 10vw;
+    width: 100%; 
+    height: auto;
+    max-width: 114px;
     margin: 0 auto;
 }
 
@@ -49,72 +47,58 @@
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 28px;
+    display: block;
 }
 
 .mainpage__authors-author-info {
-    width: 8vw;
-    height: 6vw;
+    width: 100%;
+    max-width: 76px;
+    height: 56px;
     margin: 0 auto;
 }
 
 .mainpage__authors-author-container-count {
-    height: 3vh;
-    width: 6vw;
-    margin-top: 1.5vh;
+    height: 24px;
+    width: 100%;
+    max-width: 60px;
+    margin-top: 12px;
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .mainpage__authors-author-container-count img {
-    width: 2vw;
-    height: 1.8vw;
+    margin-left: 8px;
+    width: 22px;
+    height: 18px;
+    margin-right: 3px;
 }
 
 .mainpage__authors-author-container-count a {
     font-weight: unset;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 16px;
 }
 
 .small-right-image {
-    position: absolute;
-    top: -22.5vh;
-    right: 0;
+    margin-left: 1700px;
 }
 
 .small-right-image, .small-left-image {
-    position: absolute;
-    top: -22.5vh;
+    margin-top: -180px;
 }
 
-.small-left-gradient {
+.small-left-gradient, .small-right-gradient {
     background-color: #34343433;
     backdrop-filter: blur(5px);
-    height: 23vh;
-    width: 10vw;
+    height: 190px;
+    width: 125px;
     opacity: 0.5;
-    top: -16.25vh;
-    right: 0.5vw;
     z-index: 2;
     position: absolute;
-    border-top-left-radius: 0.5vw;
-    border-bottom-left-radius: 0.5vw;
-}
-
-.small-right-gradient {
-    background-color: #34343433;
-    backdrop-filter: blur(5px);
-    height: 23vh;
-    width: 10vw;
-    opacity: 0.5;
-    top: -22.5vh;
-    right: 0;
-    z-index: 2;
-    position: absolute;
-    border-top-right-radius: 0.5vw;
-    border-bottom-right-radius: 0.5vw;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .small-left-gradient {
@@ -130,45 +114,51 @@
 }
 
 /* Медиа-запросы для адаптивности */
-@media (max-width: 992px) {
-    .mainpage__authors-container-topic-name a {
-        font-size: 2.2vw;
+@media (max-width: 1200px) {
+    .mainpage__authors-container {
+        margin-left: 16px;
     }
 
-    .mainpage__authors-author-container img {
-        width: 9vw;
-        height: 9vw;
+    .small-right-image {
+        margin-left: 1500px;
     }
 
-    .mainpage__authors-author-container a,
-    .mainpage__authors-author-container-count a {
-        font-size: 2.2vw;
+    .small-right-gradient {
+        height: 120px;
+        width: 100px;
+        margin-left: 1600px;
     }
 }
 
 @media (max-width: 768px) {
-    .mainpage__authors-author-container {
-        min-width: 8vw;
+    .mainpage__authors-container {
+        margin-left: 10px;
     }
-    
+
+    .small-right-image {
+        margin-left: 1000px;
+    }
+
+    .small-right-gradient {
+        display: none; /* Убираем эти изображения на маленьких экранах */
+    }
+
+    .mainpage__authors-container-topic-name a {
+        font-size: 20px;
+    }
+
     .mainpage__authors-author-container img {
-        width: 8.5vw;
-        height: 8.5vw;
+        max-width: 80px;
     }
 }
 
-@media (max-width: 576px) {
-    .mainpage__authors-container-topic-name a {
-        font-size: 1.8vw;
+@media (max-width: 480px) {
+    /* Некоторые стили для еще более маленьких экранов */
+    .mainpage__authors-author-container a {
+        font-size: 16px;
     }
 
-    .mainpage__authors-author-container img {
-        width: 7vw;
-        height: 7vw;
-    }
-
-    .mainpage__authors-author-container a,
     .mainpage__authors-author-container-count a {
-        font-size: 1.6vw;
+        font-size: 14px;
     }
 }
