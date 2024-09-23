@@ -2,33 +2,31 @@
   display: grid;
   padding: 0;
   grid-template-columns: repeat(4, 4fr);
-  height: 80px;
-  width: 100%;
-  max-width: 1640px;
+  height: 5vw; /* 79.56px относительно ширины экрана */
+  width: 100vw; /* 1640px относительно ширины экрана */
   margin: 0 auto;
   z-index: 2000;
 }
 
-.header img{
-  margin-top: 29px;
+.header img {
+  margin-top: 1.8vw; /* 29px относительно ширины экрана */
   cursor: pointer;
 }
 
 .left-menu-container {
   display: grid;
-  gap: 20px;
-  margin-top: 33px;
-  grid-template-columns: repeat(4, 1fr);
-  width: auto;
-  max-width: 360px;
-  height: 23px;
+  gap: 1.2vw; /* 20px относительно ширины экрана */
+  margin-top: 2vw; /* 33px относительно ширины экрана */
+  grid-template-columns: repeat(4, 4fr);
+  width: 22vw; /* 360px относительно ширины экрана */
+  height: 1.4vw; /* 23px относительно ширины экрана */
 }
 
 .left-menu-container a {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   font-weight: 400;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1.2vw; /* 20px относительно ширины экрана */
+  height: 1.4vw; /* 23px относительно ширины экрана */
   color: #D9D9D9;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -38,169 +36,163 @@
   color: #ffffff;
 }
 
-.a1, .a2, .a3, .a4 {
-  width: auto;
+.a1 {
+  width: 3.2vw; /* 52px относительно ширины экрана */
+}
+
+.a2 {
+  width: 6vw; /* 101px относительно ширины экрана */
+}
+
+.a3 {
+  width: 4.8vw; /* 80px относительно ширины экрана */
+}
+
+.a4 {
+  width: 4vw; /* 67px относительно ширины экрана */
 }
 
 .header__form {
-  margin-top: 22px;
-  width: 100%;
-  max-width: 781px;
-  height: 40px;
+  margin-top: 1.4vw; /* 22px относительно ширины экрана */
+  width: 48vw; /* 781px относительно ширины экрана */
+  height: 2.4vw; /* 40px относительно ширины экрана */
   border: 1px solid #D9D9D9;
   border-radius: 50px;
-  margin-left: 20px;
+  margin-left: 9vw; /* 145px относительно ширины экрана */
   display: grid;
-  grid-template-columns: 1fr 24px;
+  grid-template-columns: repeat(2, 2fr);
 }
 
 .header__form img {
-  width: 24px;
-  height: 24px;
-  margin-left: 14px;
-  margin-top: 9px;
+  width: 1.5vw; /* 24px относительно ширины экрана */
+  height: 1.5vw; /* 24px относительно ширины экрана */
+  margin-left: 0.8vw; /* 14px относительно ширины экрана */
+  margin-top: 0.6vw; /* 9px относительно ширины экрана */
 }
 
 .header__form input {
   background-color: #1d1C1C;
-  border: none;
-  margin-left: 4px;
-  margin-top: 9px;
-  width: 100%;
-  margin-right: 14px;
-  height: 23px;
+  border-style: none !important;
+  margin-left: 0.2vw; /* 4px относительно ширины экрана */
+  margin-top: 0.6vw; /* 9px относительно ширины экрана */
+  width: 44vw; /* 720px относительно ширины экрана */
+  margin-right: 0.8vw; /* 14px относительно ширины экрана */
+  height: 1.4vw; /* 23px относительно ширины экрана */
   outline: none;
-  font-size: 20px;
+  font-size: 1.2vw; /* 20px относительно ширины экрана */
   color: #D9D9D9;
 }
 
-.header__form input::placeholder {
-  font-size: 20px;
+.header__search_form input::placeholder {
+  font-size: 1.2vw; /* 20px относительно ширины экрана */
   color: #D9D9D9;
 }
 
 .header_auth {
-  margin-top: 24px;
+  margin-top: 1.5vw; /* 24px относительно ширины экрана */
   border: 1px solid #6d6d6d;
   border-radius: 50px;
-  width: 50px;
-  height: 36px;
-  margin-left: 20px;
+  width: 3vw; /* 50px относительно ширины экрана */
+  height: 2.3vw; /* 36px относительно ширины экрана */
+  margin-left: 11vw; /* 185px относительно ширины экрана */
 }
 
 .header_auth img {
-  height: 20px;
-  width: 25px;
-  margin-top: 8px;
-  margin-left: 12px;
+  height: 1.2vw; /* 20px относительно ширины экрана */
+  width: 1.5vw; /* 25px относительно ширины экрана */
+  margin-top: 0.5vw; /* 8px относительно ширины экрана */
+  margin-left: 0.7vw; /* 12px относительно ширины экрана */
 }
 
 .header__user-panel {
-  width: 100%;
-  max-width: 318px;
-  height: 48px;
-  margin-left: 20px;
-  margin-top: 20px;
+  width: 19vw; /* 318px относительно ширины экрана */
+  height: 3vw; /* 48px относительно ширины экрана */
+  margin-left: 2.4vw; /* 40px относительно ширины экрана */
+  margin-top: 1.2vw; /* 20px относительно ширины экрана */
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 5fr);
+}
+
+.header__form_active {
+  margin-top: 1.4vw; /* 22px относительно ширины экрана */
+  width: 48vw; /* 781px относительно ширины экрана */
+  height: 2.4vw; /* 40px относительно ширины экрана */
+  border: 1px solid #D9D9D9;
+  border-radius: 50px;
+  margin-left: 2.4vw; /* 40px относительно ширины экрана */
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+}
+
+.header__form_active img {
+  width: 1.5vw; /* 24px относительно ширины экрана */
+  height: 1.5vw; /* 24px относительно ширины экрана */
+  margin-left: 0.8vw; /* 14px относительно ширины экрана */
+  margin-top: 0.6vw; /* 9px относительно ширины экрана */
+}
+
+.header__form_active input {
+  background-color: #1d1C1C;
+  border-style: none !important;
+  margin-left: 0.2vw; /* 4px относительно ширины экрана */
+  margin-top: 0.6vw; /* 9px относительно ширины экрана */
+  width: 44vw; /* 720px относительно ширины экрана */
+  margin-right: 0.8vw; /* 14px относительно ширины экрана */
+  height: 1.4vw; /* 23px относительно ширины экрана */
+  outline: none;
+  font-size: 1.2vw; /* 20px относительно ширины экрана */
+  color: #D9D9D9;
+}
+
+.header__form_active input::placeholder {
+  font-size: 1.2vw; /* 20px относительно ширины экрана */
+  color: #D9D9D9;
 }
 
 .header__user-panel-newcard {
-  width: 48px;
-  height: 48px;
+  width: 3vw; /* 48px относительно ширины экрана */
+  height: 3vw; /* 48px относительно ширины экрана */
   border-radius: 48px;
   border: 2px solid #EB572F;
   cursor: pointer;
 }
 
 .header__user-panel-newcard img {
-  width: 24px;
-  height: 24px;
-  margin: 12px !important;
+  width: 1.5vw; /* 24px относительно ширины экрана */
+  height: 1.5vw; /* 24px относительно ширины экрана */
+  margin-top: 0.7vw !important; /* 12px относительно ширины экрана */
+  margin-left: 0.7vw !important; /* 12px относительно ширины экрана */
 }
 
 .header__user-panel img {
-  width: 24px;
-  height: 24px;
-  margin: 12px;
+  width: 1.5vw; /* 24px относительно ширины экрана */
+  height: 1.5vw; /* 24px относительно ширины экрана */
+  margin-top: 0.7vw; /* 12px относительно ширины экрана */
+  margin-left: 1.5vw; /* 24px относительно ширины экрана */
   cursor: pointer;
 }
 
 .header__user-panel-user {
-  width: auto;
-  height: 40px;
-  margin-top: 4px;
-  margin-left: 24px;
+  width: 6vw; /* 102px относительно ширины экрана */
+  height: 2.4vw; /* 40px относительно ширины экрана */
+  margin-top: 0.2vw; /* 4px относительно ширины экрана */
+  margin-left: 1.5vw; /* 24px относительно ширины экрана */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 2fr);
 }
 
 .header__user-panel-user p {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   font-weight: 900;
-  font-size: 20px;
-  margin: 8px 0;
+  font-size: 1.2vw; /* 20px относительно ширины экрана */
+  margin: 0;
+  margin-top: 0.5vw; /* 8px относительно ширины экрана */
 }
 
-.header {
-  display: grid;
-  padding: 0;
-  grid-template-columns: repeat(4, 1fr);
-  height: 10vh; /* Зависит от высоты экрана */
-  width: 100%;
-  max-width: 1640px;
-  margin: 0 auto;
-  z-index: 2000;
-}
-
-.header img {
-  margin-top: 3vh;
-  cursor: pointer;
-  width: auto; /* Автоматическая ширина для адаптации */
-}
-
-.left-menu-container {
-  display: grid;
-  gap: 1vw;
-  margin-top: 3vh;
-  grid-template-columns: repeat(4, auto);
-  width: auto;
-  max-width: 22vw; /* Пропорциональная ширина */
-  height: auto;
-}
-
-.left-menu-container a {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 2vw; /* Зависит от ширины экрана */
-  color: #D9D9D9;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.left-menu-container a:hover {
-  color: #ffffff;
-}
-
-.a1, .a2, .a3, .a4 {
-  width: auto;
-}
-
-.header__form {
-  margin-top: 2vh;
-  width: 100%;
-  max-width: 48vw; /* Пропорциональная ширина */
-  height: auto;
-  border: 1px solid #D9D9D9;
-  border-radius: 50px;
-  margin-left: 1vw;
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
-
-.header__form img {
-  width: 3vw; /* Зависит от ширины экрана */
-  height: auto;
-  margin-left: 1vw;
-  margin-top: 1vh;
+.header__user-panel-user img {
+  width: 2.5vw; /* 40px относительно ширины экрана */
+  height: 2.5vw; /* 40px относительно ширины экрана */
+  border-radius: 50%;
+  margin-top: 0;
+  margin-left: 0.5vw; /* 8px относительно ширины экрана */
 }
